@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Target, Zap, TrendingUp, Activity } from 'lucide-react';
 
 const CalorieCalculator = () => {
@@ -191,22 +191,23 @@ const CalorieCalculator = () => {
                 </div>
 
                 <div className="space-y-6">
+                 
                   {/* Basic Information */}
                   <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Age</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Age</label>
                       <input
                         type="number"
                         value={age}
                         onChange={(e) => setAge(e.target.value)}
                         placeholder="Enter age"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
+                        className="w-full px-4 py-3 text-gray-900 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
                       />
-                      <p className="text-xs text-gray-500 mt-1">Age range: 15-80 years</p>
+                      <p className="text-xs text-gray-900 mt-1">Age range: 15-80 years</p>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-3">Gender</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-3">Gender</label>
                       <div className="flex space-x-4">
                         <label className="flex items-center cursor-pointer">
                           <input
@@ -216,7 +217,7 @@ const CalorieCalculator = () => {
                             onChange={(e) => setGender(e.target.value)}
                             className="mr-3 w-5 h-5 text-gray-900"
                           />
-                          <span className="text-base">Male</span>
+                          <span className="text-base text-gray-900">Male</span>
                         </label>
                         <label className="flex items-center cursor-pointer">
                           <input
@@ -226,7 +227,7 @@ const CalorieCalculator = () => {
                             onChange={(e) => setGender(e.target.value)}
                             className="mr-3 w-5 h-5 text-gray-900"
                           />
-                          <span className="text-base">Female</span>
+                          <span className="text-base text-gray-900">Female</span>
                         </label>
                       </div>
                     </div>
@@ -234,32 +235,32 @@ const CalorieCalculator = () => {
 
                   <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Height</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Height</label>
                       <div className="relative">
                         <input
                           type="number"
                           value={height}
                           onChange={(e) => setHeight(e.target.value)}
                           placeholder={unitSystem === 'metric' ? 'e.g., 175' : 'e.g., 69'}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-16"
+                          className="w-full text-gray-900 px-4 py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-16"
                         />
-                        <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">
+                        <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-900 font-medium">
                           {unitSystem === 'metric' ? 'cm' : 'in'}
                         </span>
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Weight</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Weight</label>
                       <div className="relative">
                         <input
                           type="number"
                           value={weight}
                           onChange={(e) => setWeight(e.target.value)}
                           placeholder={unitSystem === 'metric' ? 'e.g., 70' : 'e.g., 154'}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-16"
+                          className="w-full px-4 text-gray-900 py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-16"
                         />
-                        <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">
+                        <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-900 font-medium">
                           {unitSystem === 'metric' ? 'kg' : 'lbs'}
                         </span>
                       </div>
@@ -268,10 +269,10 @@ const CalorieCalculator = () => {
 
                   {/* Activity Level */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Activity Level</label>
+                    <label className="block text-sm font-semibold text-gray-900 mb-3">Activity Level</label>
                     <div className="space-y-2">
                       {activityLevels.map((level) => (
-                        <label key={level.value} className="flex items-center p-3 border-2 border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                        <label key={level.value} className="flex items-center p-3 border-2 border-gray-900 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
                           <input
                             type="radio"
                             value={level.value}
@@ -280,8 +281,8 @@ const CalorieCalculator = () => {
                             className="mr-3 w-5 h-5 text-gray-900 flex-shrink-0"
                           />
                           <div className="flex-1">
-                            <span className="font-medium text-sm sm:text-base">{level.label}</span>
-                            <span className="text-xs sm:text-sm text-gray-500 ml-2">({level.factor}x)</span>
+                            <span className="font-medium text-sm sm:text-base text-gray-900">{level.label}</span>
+                            <span className="text-xs sm:text-sm text-gray-900 ml-2">({level.factor}x)</span>
                           </div>
                         </label>
                       ))}
@@ -301,11 +302,11 @@ const CalorieCalculator = () => {
                     {showAdvanced && (
                       <div className="mt-4 p-4 bg-gray-50 rounded-lg space-y-4">
                         <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">BMR Calculation Method</label>
+                          <label className="block text-sm font-semibold text-gray-900 mb-2">BMR Calculation Method</label>
                           <select
                             value={calculationMethod}
                             onChange={(e) => setCalculationMethod(e.target.value)}
-                            className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
+                            className="w-full  text-gray-900 px-3 py-2 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
                           >
                             <option value="mifflin">Mifflin-St Jeor (Most Accurate)</option>
                             <option value="harris">Harris-Benedict (Traditional)</option>
@@ -315,24 +316,25 @@ const CalorieCalculator = () => {
 
                         {calculationMethod === 'katch' && (
                           <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">Body Fat Percentage</label>
+                            <label className="block text-sm font-semibold text-gray-900 mb-2">Body Fat Percentage</label>
                             <div className="relative">
                               <input
                                 type="number"
                                 value={bodyFatPercentage}
                                 onChange={(e) => setBodyFatPercentage(e.target.value)}
                                 placeholder="e.g., 15"
-                                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-12"
+                                className="w-full px-4 py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-12"
                                 step="0.1"
                               />
-                              <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">%</span>
+                              <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-900 font-medium">%</span>
                             </div>
-                            <p className="text-xs text-gray-600 mt-1">Required for Katch-McArdle formula accuracy</p>
+                            <p className="text-xs text-gray-900 mt-1">Required for Katch-McArdle formula accuracy</p>
                           </div>
                         )}
                       </div>
                     )}
                   </div>
+                  
 
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-3 pt-4">

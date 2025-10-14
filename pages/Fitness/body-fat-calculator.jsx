@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Activity, Target, TrendingUp } from 'lucide-react';
 
 const BodyFatCalculator = () => {
@@ -214,20 +214,20 @@ const BodyFatCalculator = () => {
                   <div className="flex-1 p-6">
                     <div className="space-y-4">
                       <div className="flex items-center space-x-4">
-                        <label className="w-20 text-right text-sm">Age</label>
+                        <label className="w-20 text-right text-sm text-gray-900">Age</label>
                         <input
                           type="number"
                           value={age}
                           onChange={(e) => setAge(e.target.value)}
-                          className="w-24 px-2 py-1 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                         />
-                        <span className="text-xs text-gray-500">ages: 15 - 80</span>
+                        <span className="text-xs text-gray-900">ages: 15 - 80</span>
                       </div>
 
                       <div className="flex items-center space-x-4">
-                        <label className="w-20 text-right text-sm">Gender</label>
+                        <label className="w-20 text-right text-sm text-gray-900">Gender</label>
                         <div className="flex space-x-4">
-                          <label className="flex items-center text-sm">
+                          <label className="flex items-center text-sm text-gray-900">
                             <input
                               type="radio"
                               value="male"
@@ -237,7 +237,7 @@ const BodyFatCalculator = () => {
                             />
                             Male
                           </label>
-                          <label className="flex items-center text-sm">
+                          <label className="flex items-center text-sm text-gray-900">
                             <input
                               type="radio"
                               value="female"
@@ -251,67 +251,67 @@ const BodyFatCalculator = () => {
                       </div>
 
                       <div className="flex items-center space-x-4">
-                        <label className="w-20 text-right text-sm">Height</label>
+                        <label className="w-20 text-right text-sm text-gray-900">Height</label>
                         <input
                           type="number"
                           value={height}
                           onChange={(e) => setHeight(e.target.value)}
-                          className="w-24 px-2 py-1 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                         />
-                        <span className="text-xs text-gray-500">
+                        <span className="text-xs text-gray-900">
                           {units === 'metric' ? 'cm' : 'inches'}
                         </span>
                       </div>
 
                       <div className="flex items-center space-x-4">
-                        <label className="w-20 text-right text-sm">Weight</label>
+                        <label className="w-20 text-right text-sm text-gray-900">Weight</label>
                         <input
                           type="number"
                           value={weight}
                           onChange={(e) => setWeight(e.target.value)}
-                          className="w-24 px-2 py-1 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                          className="w-24 px-2 text-gray-900  py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                         />
-                        <span className="text-xs text-gray-500">
+                        <span className="text-xs text-gray-900">
                           {units === 'metric' ? 'kg' : 'lbs'}
                         </span>
                       </div>
 
                       <div className="flex items-center space-x-4">
-                        <label className="w-20 text-right text-sm">Neck</label>
+                        <label className="w-20 text-right text-sm text-gray-900">Neck</label>
                         <input
                           type="number"
                           value={neck}
                           onChange={(e) => setNeck(e.target.value)}
-                          className="w-24 px-2 py-1 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                         />
-                        <span className="text-xs text-gray-500">
+                        <span className="text-xs text-gray-900">
                           {units === 'metric' ? 'cm' : 'inches'}
                         </span>
                       </div>
 
                       <div className="flex items-center space-x-4">
-                        <label className="w-20 text-right text-sm">Waist</label>
+                        <label className="w-20 text-right text-sm text-gray-900">Waist</label>
                         <input
                           type="number"
                           value={waist}
                           onChange={(e) => setWaist(e.target.value)}
-                          className="w-24 px-2 py-1 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                         />
-                        <span className="text-xs text-gray-500">
+                        <span className="text-xs text-gray-900">
                           {units === 'metric' ? 'cm' : 'inches'}
                         </span>
                       </div>
 
                       {gender === 'female' && (
                         <div className="flex items-center space-x-4">
-                          <label className="w-20 text-right text-sm">Hip</label>
+                          <label className="w-20 text-right text-sm text-gray-900">Hip</label>
                           <input
                             type="number"
                             value={hip}
                             onChange={(e) => setHip(e.target.value)}
-                            className="w-24 px-2 py-1 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                            className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                           />
-                          <span className="text-xs text-gray-500">
+                          <span className="text-xs text-gray-900">
                             {units === 'metric' ? 'cm' : 'inches'}
                           </span>
                         </div>
@@ -463,33 +463,33 @@ const BodyFatCalculator = () => {
                 
                 <div className="space-y-5">
                   <div className="border-l-4 border-green-500 pl-4">
-                    <h3 className="text-lg font-semibold mb-2 text-gray-800">U.S. Navy Method (Recommended)</h3>
-                    <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                    <h3 className="text-lg font-semibold mb-2 text-gray-900">U.S. Navy Method (Recommended)</h3>
+                    <div className="bg-gray-50 p-4 rounded text-gray-900 mb-2 text-sm">
                       <div><strong>Men:</strong> Uses waist, neck, and height measurements</div>
                       <div><strong>Women:</strong> Uses waist, hip, neck, and height measurements</div>
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-900">
                       Most accurate for the general population. Developed by the U.S. Navy and widely validated across diverse demographics.
                     </p>
                   </div>
 
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <h3 className="text-lg font-semibold mb-2 text-gray-800">BMI Method</h3>
-                    <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                    <h3 className="text-lg text-gray-900 font-semibold mb-2 text-gray-890">BMI Method</h3>
+                    <div className="bg-gray-50 p-4 text-gray-900 rounded mb-2 text-sm">
                       <div><strong>Formula:</strong> Uses BMI and age to estimate body fat</div>
                       <div><strong>Accuracy:</strong> Moderate for general population</div>
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-900">
                       Simple method using BMI and age. Less accurate than Navy method but useful for quick estimates.
                     </p>
                   </div>
 
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <h3 className="text-lg font-semibold mb-2 text-gray-800">DEXA Scan Method</h3>
-                    <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                    <h3 className="text-lg font-semibold mb-2 text-gray-900">DEXA Scan Method</h3>
+                    <div className="bg-gray-50 p-4 text-gray-900 rounded mb-2 text-sm">
                       <strong>Professional dual-energy X-ray absorptiometry scanning</strong>
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-900">
                       Most accurate method available. Requires professional equipment and trained technicians. 
                       Gold standard for body composition analysis.
                     </p>

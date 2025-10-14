@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Activity, Zap, Timer } from 'lucide-react';
 
 const PaceCalculator = () => {
@@ -197,17 +197,17 @@ const PaceCalculator = () => {
 
                 <div className="flex flex-col lg:flex-row">
                   {/* Input Section */}
-                  <div className="flex-1 p-6 border-b lg:border-b-0 lg:border-r border-gray-200">
+                  <div className="flex-1 p-6 border-b lg:border-b-0 lg:border-r border-gray-900">
                     <div className="space-y-5">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">What do you want to calculate?</label>
+                        <label className="block text-sm font-medium text-gray-900 mb-2">What do you want to calculate?</label>
                         <select
                           value={calculationType}
                           onChange={(e) => {
                             setCalculationType(e.target.value);
                             resetForm();
                           }}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                          className="w-full px-3 text-gray-900 py-2 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                         >
                           <option value="pace">Pace (from distance & time)</option>
                           <option value="time">Time (from distance & pace)</option>
@@ -217,19 +217,19 @@ const PaceCalculator = () => {
 
                       {calculationType !== 'distance' && (
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">Distance</label>
+                          <label className="block text-sm font-medium text-gray-900 mb-2">Distance</label>
                           <div className="flex gap-2">
                             <input
                               type="number"
                               value={distance}
                               onChange={(e) => setDistance(e.target.value)}
                               placeholder="Enter distance"
-                              className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                              className="flex-1 px-3 text-gray-900 py-2 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                             />
                             <select
                               value={distanceUnit}
                               onChange={(e) => setDistanceUnit(e.target.value)}
-                              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                              className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                             >
                               <option value="km">km</option>
                               <option value="miles">miles</option>
@@ -240,28 +240,28 @@ const PaceCalculator = () => {
 
                       {calculationType !== 'time' && (
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">Time</label>
+                          <label className="block text-sm font-medium text-gray-900 mb-2">Time</label>
                           <div className="grid grid-cols-3 gap-2">
                             <input
                               type="number"
                               value={hours}
                               onChange={(e) => setHours(e.target.value)}
                               placeholder="Hours"
-                              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                              className="px-3 py-2  text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                             />
                             <input
                               type="number"
                               value={minutes}
                               onChange={(e) => setMinutes(e.target.value)}
                               placeholder="Minutes"
-                              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                              className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                             />
                             <input
                               type="number"
                               value={seconds}
                               onChange={(e) => setSeconds(e.target.value)}
                               placeholder="Seconds"
-                              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                              className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                             />
                           </div>
                         </div>
@@ -269,21 +269,21 @@ const PaceCalculator = () => {
 
                       {calculationType !== 'pace' && (
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">Pace (per {distanceUnit === 'km' ? 'km' : 'mile'})</label>
+                          <label className="block text-sm font-medium text-gray-900 mb-2">Pace (per {distanceUnit === 'km' ? 'km' : 'mile'})</label>
                           <div className="grid grid-cols-2 gap-2">
                             <input
                               type="number"
                               value={pace}
                               onChange={(e) => setPace(e.target.value)}
                               placeholder="Minutes"
-                              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                              className="px-3 py-2  text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                             />
                             <input
                               type="number"
                               value={paceSeconds}
                               onChange={(e) => setPaceSeconds(e.target.value)}
                               placeholder="Seconds"
-                              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                              className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                             />
                           </div>
                         </div>
@@ -452,32 +452,32 @@ const PaceCalculator = () => {
                 <div className="space-y-5">
                   <div className="border-l-4 border-green-500 pl-4">
                     <h3 className="text-lg font-semibold mb-2 text-gray-800">Time-Distance Method (Most Common)</h3>
-                    <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                    <div className="bg-gray-50 p-4 text-gray-800 rounded mb-2 text-sm">
                       <div><strong>Formula:</strong> Pace = Total Time ÷ Distance</div>
                       <div><strong>Example:</strong> 30 minutes for 5km = 6:00 min/km</div>
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-800">
                       Most straightforward method. Divide your total running time by the distance covered to get your average pace per unit.
                     </p>
                   </div>
 
                   <div className="border-l-4 border-blue-500 pl-4">
                     <h3 className="text-lg font-semibold mb-2 text-gray-800">GPS Watch Method</h3>
-                    <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                    <div className="bg-gray-50 text-gray-800 p-4 rounded mb-2 text-sm">
                       <div><strong>Technology:</strong> Real-time GPS tracking</div>
                       <div><strong>Accuracy:</strong> Instant pace updates every few seconds</div>
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-800">
                       Modern running watches provide real-time pace data, allowing you to adjust your speed during runs to maintain target pace zones.
                     </p>
                   </div>
 
                   <div className="border-l-4 border-purple-500 pl-4">
                     <h3 className="text-lg font-semibold mb-2 text-gray-800">Perceived Effort Method</h3>
-                    <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                    <div className="bg-gray-50 p-4 text-gray-800 rounded mb-2 text-sm">
                       <strong>Based on: Heart rate zones, breathing rate, and subjective effort level</strong>
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-800">
                       Experienced runners can estimate pace based on how hard they're working. Useful when GPS isn't available or for trails where pace varies significantly.
                     </p>
                   </div>

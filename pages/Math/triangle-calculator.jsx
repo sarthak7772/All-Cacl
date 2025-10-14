@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import Link from 'next/link';
 import Head from "next/head";
 import { Calculator,  } from 'lucide-react';
@@ -303,122 +303,121 @@ const TriangleCalculator = () => {
 
             <div className="p-4 md:p-8">
               {/* Angle Unit Selection */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-3">Angle Unit</label>
-                <select 
-                  value={triangleData.angleUnit}
-                  onChange={(e) => updateTriangleData('angleUnit', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                >
-                  <option value="degree">Degrees (°)</option>
-                  <option value="radian">Radians (rad)</option>
-                </select>
-              </div>
+<div className="mb-6">
+  <label className="block text-sm font-medium text-gray-900 mb-3">Angle Unit</label>
+  <select 
+    value={triangleData.angleUnit}
+    onChange={(e) => updateTriangleData('angleUnit', e.target.value)}
+    className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none text-base md:text-lg"
+  >
+    <option value="degree">Degrees (°)</option>
+    <option value="radian">Radians (rad)</option>
+  </select>
+</div>
 
-              {/* Triangle Visualization */}
-              <div className="flex justify-center mb-8">
-                <div className="bg-white p-6 rounded-lg border-2 border-gray-200">
-                  <svg width="400" height="280" viewBox="0 0 400 280" className="rounded">
-                    <polygon points="200,40 100,220 300,220" fill="rgba(59,130,246,0.1)" stroke="#2563EB" strokeWidth="3"/>
-                    <circle cx="200" cy="40" r="5" fill="#DC2626" />
-                    <circle cx="100" cy="220" r="5" fill="#DC2626" />
-                    <circle cx="300" cy="220" r="5" fill="#DC2626" />
-                    <text x="200" y="28" textAnchor="middle" className="text-lg font-bold fill-red-600">C</text>
-                    <text x="85" y="235" textAnchor="middle" className="text-lg font-bold fill-red-600">A</text>
-                    <text x="315" y="235" textAnchor="middle" className="text-lg font-bold fill-red-600">B</text>
-                    <text x="150" y="135" textAnchor="middle" className="text-sm font-semibold fill-green-600" transform="rotate(-65 150 135)">side b</text>
-                    <text x="250" y="135" textAnchor="middle" className="text-sm font-semibold fill-green-600" transform="rotate(65 250 135)">side a</text>
-                    <text x="200" y="245" textAnchor="middle" className="text-sm font-semibold fill-green-600">side c</text>
-                  </svg>
-                </div>
-              </div>
+{/* Triangle Visualization */}
+<div className="flex justify-center mb-8">
+  <div className="bg-white p-6 rounded-lg border-2 border-gray-900">
+    <svg width="400" height="280" viewBox="0 0 400 280" className="rounded">
+      <polygon points="200,40 100,220 300,220" fill="rgba(59,130,246,0.1)" stroke="#2563EB" strokeWidth="3"/>
+      <circle cx="200" cy="40" r="5" fill="#DC2626" />
+      <circle cx="100" cy="220" r="5" fill="#DC2626" />
+      <circle cx="300" cy="220" r="5" fill="#DC2626" />
+      <text x="200" y="28" textAnchor="middle" className="text-lg font-bold fill-red-600">C</text>
+      <text x="85" y="235" textAnchor="middle" className="text-lg font-bold fill-red-600">A</text>
+      <text x="315" y="235" textAnchor="middle" className="text-lg font-bold fill-red-600">B</text>
+      <text x="150" y="135" textAnchor="middle" className="text-sm font-semibold fill-green-600" transform="rotate(-65 150 135)">side b</text>
+      <text x="250" y="135" textAnchor="middle" className="text-sm font-semibold fill-green-600" transform="rotate(65 250 135)">side a</text>
+      <text x="200" y="245" textAnchor="middle" className="text-sm font-semibold fill-green-600">side c</text>
+    </svg>
+  </div>
+</div>
 
-              {/* Side Inputs */}
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Side Lengths</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">Side A</label>
-                    <input
-                      type="number"
-                      step="any"
-                      value={triangleData.sideA}
-                      onChange={(e) => updateTriangleData('sideA', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Enter side A"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">Side B</label>
-                    <input
-                      type="number"
-                      step="any"
-                      value={triangleData.sideB}
-                      onChange={(e) => updateTriangleData('sideB', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Enter side B"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">Side C</label>
-                    <input
-                      type="number"
-                      step="any"
-                      value={triangleData.sideC}
-                      onChange={(e) => updateTriangleData('sideC', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Enter side C"
-                    />
-                  </div>
-                </div>
-              </div>
+{/* Side Inputs */}
+<div className="mb-6">
+  <h3 className="text-lg font-semibold text-gray-900 mb-4">Side Lengths</h3>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Side A</label>
+      <input
+        type="number"
+        step="any"
+        value={triangleData.sideA}
+        onChange={(e) => updateTriangleData('sideA', e.target.value)}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+        placeholder="Enter side A"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Side B</label>
+      <input
+        type="number"
+        step="any"
+        value={triangleData.sideB}
+        onChange={(e) => updateTriangleData('sideB', e.target.value)}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+        placeholder="Enter side B"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Side C</label>
+      <input
+        type="number"
+        step="any"
+        value={triangleData.sideC}
+        onChange={(e) => updateTriangleData('sideC', e.target.value)}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+        placeholder="Enter side C"
+      />
+    </div>
+  </div>
+</div>
 
-              {/* Angle Inputs */}
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Angles</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Angle A ({triangleData.angleUnit === 'degree' ? '°' : 'rad'})
-                    </label>
-                    <input
-                      type="number"
-                      step="any"
-                      value={triangleData.angleA}
-                      onChange={(e) => updateTriangleData('angleA', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Enter angle A"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Angle B ({triangleData.angleUnit === 'degree' ? '°' : 'rad'})
-                    </label>
-                    <input
-                      type="number"
-                      step="any"
-                      value={triangleData.angleB}
-                      onChange={(e) => updateTriangleData('angleB', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Enter angle B"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Angle C ({triangleData.angleUnit === 'degree' ? '°' : 'rad'})
-                    </label>
-                    <input
-                      type="number"
-                      step="any"
-                      value={triangleData.angleC}
-                      onChange={(e) => updateTriangleData('angleC', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Enter angle C"
-                    />
-                  </div>
-                </div>
-              </div>
-
+{/* Angle Inputs */}
+<div className="mb-6">
+  <h3 className="text-lg font-semibold text-gray-900 mb-4">Angles</h3>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">
+        Angle A ({triangleData.angleUnit === 'degree' ? '°' : 'rad'})
+      </label>
+      <input
+        type="number"
+        step="any"
+        value={triangleData.angleA}
+        onChange={(e) => updateTriangleData('angleA', e.target.value)}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+        placeholder="Enter angle A"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">
+        Angle B ({triangleData.angleUnit === 'degree' ? '°' : 'rad'})
+      </label>
+      <input
+        type="number"
+        step="any"
+        value={triangleData.angleB}
+        onChange={(e) => updateTriangleData('angleB', e.target.value)}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+        placeholder="Enter angle B"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">
+        Angle C ({triangleData.angleUnit === 'degree' ? '°' : 'rad'})
+      </label>
+      <input
+        type="number"
+        step="any"
+        value={triangleData.angleC}
+        onChange={(e) => updateTriangleData('angleC', e.target.value)}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2 text-base md:text-lg"
+        placeholder="Enter angle C"
+      />
+    </div>
+  </div>
+</div>
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <button

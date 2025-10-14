@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Home,   } from 'lucide-react';
 
 const MortgageCalculator = () => {
@@ -261,31 +261,31 @@ const MortgageCalculator = () => {
                     
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Home Purchase Price</label>
+                        <label className="block text-sm font-semibold text-gray-900 mb-2">Home Purchase Price</label>
                         <div className="relative">
                           <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></span>
                           <input
                             type="number"
                             value={homePrice}
                             onChange={(e) => updateHomePrice(e.target.value)}
-                            className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
+                            className="w-full text-gray-900 pl-8 pr-4 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
                           />
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Down Payment</label>
+                        <label className="block text-sm font-semibold text-gray-900 mb-2">Down Payment</label>
                         <div className="grid grid-cols-2 gap-3">
                           <div className="relative">
                             <input
                               type="number"
                               value={Math.round(downPaymentPercent)}
                               onChange={(e) => updateDownPayment(e.target.value, true)}
-                              className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-8"
+                              className="w-full text-gray-900  px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-8"
                             />
-                            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">%</span>
+                            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-900">%</span>
                           </div>
-                          <div className="flex items-center px-3 bg-gray-200 rounded text-gray-700 font-medium text-xs md:text-sm">
+                          <div className="flex items-center px-3 bg-gray-300 rounded text-gray-900 font-medium text-xs md:text-sm">
                             {formatCurrency(downPayment)}
                           </div>
                         </div>
@@ -293,72 +293,72 @@ const MortgageCalculator = () => {
 
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">Loan Term</label>
+                          <label className="block text-sm font-semibold text-gray-900 mb-2">Loan Term</label>
                           <div className="relative">
                             <input
                               type="number"
                               value={loanTerm}
                               onChange={(e) => setLoanTerm(e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-14"
+                              className="w-full text-gray-900  px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-14"
                             />
-                            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm">years</span>
+                            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-900 text-sm">years</span>
                           </div>
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">Interest Rate</label>
+                          <label className="block text-sm font-semibold text-gray-900 mb-2">Interest Rate</label>
                           <div className="relative">
                             <input
                               type="number"
                               step="0.001"
                               value={interestRate}
                               onChange={(e) => setInterestRate(e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-8"
+                              className="w-full text-gray-900  px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-8"
                             />
-                            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">%</span>
+                            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-900">%</span>
                           </div>
                         </div>
                       </div>
 
                       <div className="bg-white p-4 rounded-lg border">
-                        <h4 className="font-bold text-gray-800 mb-3 text-sm">Additional Monthly Costs</h4>
+                        <h4 className="font-bold text-gray-900 mb-3 text-sm">Additional Monthly Costs</h4>
                         
                         <div className="space-y-3">
                           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-                            <label className="text-xs font-medium text-gray-700">Property Tax (Annual)</label>
+                            <label className="text-xs font-medium text-gray-900">Property Tax (Annual)</label>
                             <div className="flex items-center space-x-1">
                               <span className="text-xs"></span>
                               <input
                                 type="number"
                                 value={propertyTax}
                                 onChange={(e) => setPropertyTax(Number(e.target.value))}
-                                className="w-full sm:w-24 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
+                                className="w-full text-gray-900  sm:w-24 px-2 py-1 text-sm border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
                               />
                             </div>
                           </div>
 
                           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-                            <label className="text-xs font-medium text-gray-700">Home Insurance (Annual)</label>
+                            <label className="text-xs font-medium text-gray-900">Home Insurance (Annual)</label>
                             <div className="flex items-center space-x-1">
                               <span className="text-xs"></span>
                               <input
                                 type="number"
                                 value={homeInsurance}
                                 onChange={(e) => setHomeInsurance(Number(e.target.value))}
-                                className="w-full sm:w-24 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
+                                className="w-full text-gray-900  sm:w-24 px-2 py-1 text-sm border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
                               />
                             </div>
                           </div>
 
                           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-                            <label className="text-xs font-medium text-gray-700">HOA Fees (Monthly)</label>
+                            <label className="text-xs font-medium text-gray-900">HOA Fees (Monthly)</label>
                             <div className="flex items-center space-x-1">
                               <span className="text-xs"></span>
                               <input
                                 type="number"
                                 value={hoaFees}
                                 onChange={(e) => setHoaFees(Number(e.target.value))}
-                                className="w-full sm:w-24 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
+                                className="w-full  text-gray-900 sm:w-24 px-2 py-1 text-sm border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
                               />
                             </div>
                           </div>

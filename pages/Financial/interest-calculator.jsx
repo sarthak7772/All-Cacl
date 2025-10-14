@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator,  PieChart, Home,  } from 'lucide-react';
 
 const InterestCalculator = () => {
@@ -333,46 +333,46 @@ const InterestCalculator = () => {
 
                   <div className="space-y-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Initial Investment</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Initial Investment</label>
                       <div className="flex items-center">
                         <span className="mr-2 text-gray-500"></span>
                         <input
                           type="number"
                           value={initialInvestment}
                           onChange={(e) => setInitialInvestment(Number(e.target.value) || 0)}
-                          className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
+                          className="flex-1 text-gray-900 px-4 py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Annual Contribution</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Annual Contribution</label>
                       <div className="flex items-center">
                         <span className="mr-2 text-gray-500"></span>
                         <input
                           type="number"
                           value={annualContribution}
                           onChange={(e) => setAnnualContribution(Number(e.target.value) || 0)}
-                          className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
+                          className="flex-1  text-gray-900 px-4 py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Monthly Contribution</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Monthly Contribution</label>
                       <div className="flex items-center">
                         <span className="mr-2 text-gray-500"></span>
                         <input
                           type="number"
                           value={monthlyContribution}
                           onChange={(e) => setMonthlyContribution(Number(e.target.value) || 0)}
-                          className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
+                          className="flex-1  text-gray-900 px-4 py-3 border-2 border-gray-000 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Contribute at the</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Contribute at the</label>
                       <div className="flex space-x-4">
                         <label className="flex items-center cursor-pointer">
                           <input
@@ -382,7 +382,7 @@ const InterestCalculator = () => {
                             onChange={(e) => setContributeTiming(e.target.value)}
                             className="mr-2"
                           />
-                          <span>Beginning</span>
+                          <span className="text-xs text-gray-900 ">Beginning</span>
                         </label>
                         <label className="flex items-center cursor-pointer">
                           <input
@@ -392,32 +392,32 @@ const InterestCalculator = () => {
                             onChange={(e) => setContributeTiming(e.target.value)}
                             className="mr-2"
                           />
-                          <span>End</span>
+                          <span className="text-xs text-gray-900 " >End</span>
                         </label>
                       </div>
-                      <p className="text-xs text-gray-600 mt-1">of each compounding period</p>
+                      <p className="text-xs text-gray-900 mt-1">of each compounding period</p>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Interest Rate</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Interest Rate</label>
                       <div className="flex items-center">
                         <input
                           type="number"
                           step="0.1"
                           value={interestRate}
                           onChange={(e) => setInterestRate(Number(e.target.value) || 0)}
-                          className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
+                          className="flex-1 text-gray-900 px-4 py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
                         />
-                        <span className="ml-2 text-gray-500">%</span>
+                        <span className="ml-2 text-gray-900">%</span>
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Compound Frequency</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Compound Frequency</label>
                       <select
                         value={compoundFrequency}
                         onChange={(e) => setCompoundFrequency(e.target.value)}
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none"
+                        className="w-full  text-gray-900 px-4 py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none"
                       >
                         {compoundingOptions.map((option) => (
                           <option key={option.value} value={option.value}>
@@ -428,7 +428,7 @@ const InterestCalculator = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Investment Length</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Investment Length</label>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="flex flex-col">
                           <input
@@ -439,10 +439,10 @@ const InterestCalculator = () => {
                               const value = Number(e.target.value);
                               setInvestmentLengthYears(value >= 0 ? value : 0);
                             }}
-                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
+                            className="w-full px-4 py-3  text-gray-900 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
                             placeholder="0"
                           />
-                          <span className="mt-1 text-sm text-gray-600 text-center">years</span>
+                          <span className="mt-1 text-sm text-gray-900 text-center">years</span>
                         </div>
                         <div className="flex flex-col">
                           <input
@@ -456,39 +456,39 @@ const InterestCalculator = () => {
                               if (value > 11) value = 11;
                               setInvestmentLengthMonths(value);
                             }}
-                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
+                            className="w-full text-gray-900 px-4 py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
                             placeholder="0"
                           />
-                          <span className="mt-1 text-sm text-gray-600 text-center">months</span>
+                          <span className="mt-1 text-sm text-gray-900 text-center">months</span>
                         </div>
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Tax Rate</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Tax Rate</label>
                       <div className="flex items-center">
                         <input
                           type="number"
                           step="0.1"
                           value={taxRate}
                           onChange={(e) => setTaxRate(Number(e.target.value) || 0)}
-                          className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
+                          className="flex-1 px-4 text-gray-900 py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
                         />
-                        <span className="ml-2 text-gray-500">%</span>
+                        <span className="ml-2 text-gray-900">%</span>
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Inflation Rate</label>
+                      <label className="block text-sm font-semibold text-gray-900 mb-2">Inflation Rate</label>
                       <div className="flex items-center">
                         <input
                           type="number"
                           step="0.1"
                           value={inflationRate}
                           onChange={(e) => setInflationRate(Number(e.target.value) || 0)}
-                          className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
+                          className="flex-1 px-4 text-gray-900 py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-lg"
                         />
-                        <span className="ml-2 text-gray-500">%</span>
+                        <span className="ml-2 text-gray-900">%</span>
                       </div>
                     </div>
 
@@ -502,7 +502,7 @@ const InterestCalculator = () => {
                       </button>
                       <button
                         onClick={clearForm}
-                        className="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-red-300 hover:text-red-600 transition-colors"
+                        className="px-4 py-3 bg-gray-400 text-white rounded hover:bg-gray-500 transition-colors"
                       >
                         Clear
                       </button>
@@ -521,44 +521,44 @@ const InterestCalculator = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-4">
                           <div className="flex justify-between items-center py-3 border-b">
-                            <span className="font-medium text-gray-700 text-sm md:text-base">Ending Balance:</span>
-                            <span className="text-xl md:text-2xl font-bold" style={{color: '#800000'}}>{formatCurrency(endingBalance)}</span>
+                            <span className="font-medium text-gray-900 text-sm md:text-base">Ending Balance:</span>
+                            <span className="text-xl md:text-2xl text-gray-900 font-bold" style={{color: '#800000'}}>{formatCurrency(endingBalance)}</span>
                           </div>
                           <div className="flex justify-between items-center py-3 border-b">
-                            <span className="font-medium text-gray-700 text-sm md:text-base">Total Principal:</span>
-                            <span className="font-bold text-sm md:text-base">{formatCurrency(totalPrincipal)}</span>
+                            <span className="font-medium text-gray-900 text-sm md:text-base">Total Principal:</span>
+                            <span className="font-bold text-sm text-gray-900 md:text-base">{formatCurrency(totalPrincipal)}</span>
                           </div>
                           <div className="flex justify-between items-center py-3 border-b">
-                            <span className="font-medium text-gray-700 text-sm md:text-base">Total Contributions:</span>
-                            <span className="font-bold text-sm md:text-base">{formatCurrency(totalContributions)}</span>
+                            <span className="font-medium text-gray-900 text-sm md:text-base">Total Contributions:</span>
+                            <span className="font-bold text-sm text-gray-900 md:text-base">{formatCurrency(totalContributions)}</span>
                           </div>
                           <div className="flex justify-between items-center py-3">
-                            <span className="font-medium text-gray-700 text-sm md:text-base">Total Interest:</span>
+                            <span className="font-medium text-gray-900 text-sm md:text-base">Total Interest:</span>
                             <span className="font-bold text-green-600 text-sm md:text-base">{formatCurrency(totalInterest)}</span>
                           </div>
                         </div>
                         <div className="space-y-4">
                           <div className="flex justify-between items-center py-3 border-b">
-                            <span className="font-medium text-gray-700 text-sm md:text-base">Interest on Initial:</span>
-                            <span className="font-bold text-sm md:text-base">{formatCurrency(interestOfInitial)}</span>
+                            <span className="font-medium text-gray-900 text-sm md:text-base">Interest on Initial:</span>
+                            <span className="font-bold text-gray-900 text-sm md:text-base">{formatCurrency(interestOfInitial)}</span>
                           </div>
                           <div className="flex justify-between items-center py-3 border-b">
-                            <span className="font-medium text-gray-700 text-sm md:text-base">Interest on Contributions:</span>
-                            <span className="font-bold text-sm md:text-base">{formatCurrency(interestOfContributions)}</span>
+                            <span className="font-medium text-gray-900 text-sm md:text-base">Interest on Contributions:</span>
+                            <span className="font-bold text-sm text-gray-900 md:text-base">{formatCurrency(interestOfContributions)}</span>
                           </div>
                           <div className="flex justify-between items-center py-3 border-b">
-                            <span className="font-medium text-gray-700 text-xs md:text-sm">After-Tax Balance:</span>
-                            <span className="font-bold text-sm md:text-base">{formatCurrency(endingBalance)}</span>
+                            <span className="font-medium text-gray-900 text-xs md:text-sm">After-Tax Balance:</span>
+                            <span className="font-bold text-sm text-gray-900 md:text-base">{formatCurrency(endingBalance)}</span>
                           </div>
                           <div className="flex justify-between items-center py-3">
-                            <span className="font-medium text-gray-700 text-xs md:text-sm">Buying Power:</span>
-                            <span className="font-bold text-sm md:text-base">{formatCurrency(buyingPowerEndBalance)}</span>
+                            <span className="font-medium text-gray-900 text-xs md:text-sm">Buying Power:</span>
+                            <span className="font-bold text-sm text-gray-900 md:text-base">{formatCurrency(buyingPowerEndBalance)}</span>
                           </div>
                         </div>
                       </div>
 
                       <div className="mt-8">
-                        <h4 className="font-bold text-center mb-4">Investment Breakdown</h4>
+                        <h4 className="font-bold text-center mb-4 text-gray-900">Investment Breakdown</h4>
                         <div className="flex flex-col md:flex-row items-center justify-center">
                           <div className="relative w-40 h-40">
                             <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
@@ -588,23 +588,23 @@ const InterestCalculator = () => {
                             </svg>
                             <div className="absolute inset-0 flex items-center justify-center">
                               <div className="text-center">
-                                <div className="text-sm font-bold">{Math.round((totalInterest / endingBalance) * 100)}%</div>
-                                <div className="text-xs">Interest</div>
+                                <div className="text-sm text-gray-900 font-bold">{Math.round((totalInterest / endingBalance) * 100)}%</div>
+                                <div className="text-xs text-gray-900">Interest</div>
                               </div>
                             </div>
                           </div>
                           <div className="ml-0 md:ml-6 mt-4 md:mt-0 space-y-2 text-sm">
                             <div className="flex items-center">
                               <div className="w-4 h-4 rounded mr-2" style={{backgroundColor: '#800000'}}></div>
-                              <span>Initial ({Math.round((initialInvestment / endingBalance) * 100)}%)</span>
+                              <span className="text-gray-900">Initial ({Math.round((initialInvestment / endingBalance) * 100)}%)</span>
                             </div>
                             <div className="flex items-center">
                               <div className="w-4 h-4 bg-green-600 rounded mr-2"></div>
-                              <span>Contributions ({Math.round((totalContributions / endingBalance) * 100)}%)</span>
+                              <span className="text-gray-900">Contributions ({Math.round((totalContributions / endingBalance) * 100)}%)</span>
                             </div>
                             <div className="flex items-center">
                               <div className="w-4 h-4 bg-gray-900 rounded mr-2"></div>
-                              <span>Interest ({Math.round((totalInterest / endingBalance) * 100)}%)</span>
+                              <span className="text-gray-900">Interest ({Math.round((totalInterest / endingBalance) * 100)}%)</span>
                             </div>
                           </div>
                         </div>
@@ -619,19 +619,19 @@ const InterestCalculator = () => {
                         <table className="w-full text-sm">
                           <thead className="bg-gray-50">
                             <tr>
-                              <th className="p-3 text-left font-semibold">Year</th>
-                              <th className="p-3 text-left font-semibold">Deposit</th>
-                              <th className="p-3 text-left font-semibold">Interest</th>
-                              <th className="p-3 text-left font-semibold">Balance</th>
+                              <th className="p-3 text-left font-semibold text-gray-900">Year</th>
+                              <th className="p-3 text-left font-semibold text-gray-900">Deposit</th>
+                              <th className="p-3 text-left font-semibold text-gray-900">Interest</th>
+                              <th className="p-3 text-left font-semibold text-gray-900">Balance</th>
                             </tr>
                           </thead>
                           <tbody>
                             {accumulationSchedule.slice(0, 10).map((item, index) => (
                               <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                                <td className="p-3">{item.year}</td>
-                                <td className="p-3">{formatCurrency(item.deposit)}</td>
+                                <td className="p-3 text-gray-900">{item.year}</td>
+                                <td className="p-3 text-gray-900">{formatCurrency(item.deposit)}</td>
                                 <td className="p-3 text-green-600">{formatCurrency(item.interest)}</td>
-                                <td className="p-3 font-medium">{formatCurrency(item.balance)}</td>
+                                <td className="p-3 text-gray-900 font-medium">{formatCurrency(item.balance)}</td>
                               </tr>
                             ))}
                           </tbody>

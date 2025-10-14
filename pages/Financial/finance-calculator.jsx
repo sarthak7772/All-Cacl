@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator,  } from 'lucide-react';
 
 const FinanceCalculator = () => {
@@ -263,44 +263,44 @@ const FinanceCalculator = () => {
 
                   <div className="space-y-4">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-2">
-                      <label className="sm:w-32 text-sm font-medium">N (Periods)</label>
+                      <label className="sm:w-32 text-sm N text-gray-900 font-medium">N (Periods)</label>
                       <input type="number" value={numberOfPeriods}
                         onChange={(e) => setNumberOfPeriods(Number(e.target.value))}
-                        className="w-full sm:w-24 px-2 py-2 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
+                        className="w-full text-gray-900 sm:w-24 px-2 py-2 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                         disabled={activeTab === 'N'}
                       />
-                      <span className="text-xs text-gray-500">periods</span>
+                      <span className="text-xs text-gray-900">periods</span>
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-2">
-                      <label className="sm:w-32 text-sm font-medium">I/Y (Interest)</label>
+                      <label className="sm:w-32 text-sm text-gray-900 font-medium">I/Y (Interest)</label>
                       <input type="number" step="0.01" value={interestRate}
                         onChange={(e) => setInterestRate(Number(e.target.value))}
-                        className="w-full sm:w-24 px-2 py-2 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
+                        className="w-full sm:w-24  text-gray-900 px-2 py-2 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                         disabled={activeTab === 'I/Y'}
                       />
-                      <span className="text-xs text-gray-500">% per year</span>
+                      <span className="text-xs text-gray-900">% per year</span>
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-2">
-                      <label className="sm:w-32 text-sm font-medium">PV (Present)</label>
+                      <label className="sm:w-32 text-sm text-gray-900 font-medium">PV (Present)</label>
                       <div className="flex items-center space-x-1">
                         <span className="text-sm"></span>
                         <input type="number" value={presentValue}
                           onChange={(e) => setPresentValue(Number(e.target.value))}
-                          className="w-full sm:w-28 px-2 py-2 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
+                          className="w-full sm:w-28  text-gray-900 px-2 py-2 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                           disabled={activeTab === 'PV'}
                         />
                       </div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-2">
-                      <label className="sm:w-32 text-sm font-medium">PMT (Payment)</label>
+                      <label className="sm:w-32  text-gray-900 text-sm font-medium">PMT (Payment)</label>
                       <div className="flex items-center space-x-1">
                         <span className="text-sm"></span>
                         <input type="number" value={periodicPayment}
                           onChange={(e) => setPeriodicPayment(Number(e.target.value))}
-                          className="w-full sm:w-28 px-2 py-2 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
+                          className="w-full text-gray-900 sm:w-28 px-2 py-2 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                           disabled={activeTab === 'PMT'}
                         />
                       </div>
@@ -308,12 +308,12 @@ const FinanceCalculator = () => {
 
                     {activeTab !== 'FV' && (
                       <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-2">
-                        <label className="sm:w-32 text-sm font-medium">FV (Future)</label>
+                        <label className="sm:w-32 text-gray-900 text-sm font-medium">FV (Future)</label>
                         <div className="flex items-center space-x-1">
                           <span className="text-sm"></span>
                           <input type="number" value={futureValue}
                             onChange={(e) => setFutureValue(Number(e.target.value))}
-                            className="w-full sm:w-28 px-2 py-2 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
+                            className="w-full text-gray-900 sm:w-28 px-2 py-2 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                           />
                         </div>
                       </div>

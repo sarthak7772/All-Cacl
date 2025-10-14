@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Clock, DollarSign, PiggyBank, Target } from 'lucide-react';
 
 const RetirementCalculator = () => {
@@ -311,7 +311,7 @@ const RetirementCalculator = () => {
                             <label className="font-medium text-gray-700 text-sm">Your current age</label>
                             <input type="number" value={currentAge}
                               onChange={(e) => setCurrentAge(Number(e.target.value) || 0)}
-                              className="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900"
+                              className="w-full text-gray-900 sm:w-24 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900"
                               min="18" max="100"/>
                           </div>
 
@@ -319,7 +319,7 @@ const RetirementCalculator = () => {
                             <label className="font-medium text-gray-700 text-sm">Your planned retirement age</label>
                             <input type="number" value={retirementAge}
                               onChange={(e) => setRetirementAge(Number(e.target.value) || 0)}
-                              className="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900"
+                              className="w-full text-gray-900 sm:w-24 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900"
                               min="50" max="100"/>
                           </div>
 
@@ -327,7 +327,7 @@ const RetirementCalculator = () => {
                             <label className="font-medium text-gray-700 text-sm">Your life expectancy</label>
                             <input type="number" value={lifeExpectancy}
                               onChange={(e) => setLifeExpectancy(Number(e.target.value) || 0)}
-                              className="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900"
+                              className="w-full text-gray-900 sm:w-24 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900"
                               min="60" max="120"/>
                           </div>
 
@@ -336,9 +336,9 @@ const RetirementCalculator = () => {
                             <div className="flex items-center gap-2">
                               <input type="number" value={currentIncome}
                                 onChange={(e) => setCurrentIncome(Number(e.target.value) || 0)}
-                                className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900"
+                                className="w-full text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900"
                                 min="0"/>
-                              <span className="text-xs">/year</span>
+                              <span className="text-xs Your text-gray-900">/year</span>
                             </div>
                           </div>
 
@@ -351,9 +351,9 @@ const RetirementCalculator = () => {
                               <div className="flex items-center gap-2">
                                 <input type="number" value={incomeNeeded}
                                   onChange={(e) => setIncomeNeeded(Number(e.target.value) || 0)}
-                                  className="w-20 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 text-sm"
+                                  className="w-20 text-gray-900 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 text-sm"
                                   min="0" max="150"/>
-                                <span className="text-xs">% of current</span>
+                                <span className="text-xs text-gray-900">% of current</span>
                               </div>
                             </div>
 
@@ -362,9 +362,9 @@ const RetirementCalculator = () => {
                               <div className="flex items-center gap-2">
                                 <input type="number" step="0.1" value={investmentReturn}
                                   onChange={(e) => setInvestmentReturn(Number(e.target.value) || 0)}
-                                  className="w-20 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 text-sm"
+                                  className="w-20 text-gray-900 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 text-sm"
                                   min="0" max="20"/>
-                                <span className="text-xs">%/year</span>
+                                <span className="text-xs text-gray-900">%/year</span>
                               </div>
                             </div>
 
@@ -373,9 +373,9 @@ const RetirementCalculator = () => {
                               <div className="flex items-center gap-2">
                                 <input type="number" step="0.1" value={inflationRate}
                                   onChange={(e) => setInflationRate(Number(e.target.value) || 0)}
-                                  className="w-20 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 text-sm"
+                                  className="w-20 text-gray-900 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 text-sm"
                                   min="0" max="15"/>
-                                <span className="text-xs">%/year</span>
+                                <span className="text-xs text-gray-900">%/year</span>
                               </div>
                             </div>
 
@@ -384,7 +384,7 @@ const RetirementCalculator = () => {
                               <div className="flex items-center gap-2">
                                 <input type="number" value={currentSavings}
                                   onChange={(e) => setCurrentSavings(Number(e.target.value) || 0)}
-                                  className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 text-sm"
+                                  className="w-full text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 text-sm"
                                   min="0"/>
                               </div>
                             </div>
@@ -459,7 +459,7 @@ const RetirementCalculator = () => {
                               <label className="font-medium text-gray-700 text-sm">Your age now</label>
                               <input type="number" value={saveCurrentAge}
                                 onChange={(e) => setSaveCurrentAge(Number(e.target.value) || 0)}
-                                className="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                                className="w-full text-gray-900 sm:w-24 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-green-500"
                                 min="18" max="100"/>
                             </div>
 
@@ -467,7 +467,7 @@ const RetirementCalculator = () => {
                               <label className="font-medium text-gray-700 text-sm">Your planned retirement age</label>
                               <input type="number" value={saveRetirementAge}
                                 onChange={(e) => setSaveRetirementAge(Number(e.target.value) || 0)}
-                                className="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                                className="w-full text-gray-900 sm:w-24 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-green-500"
                                 min="50" max="100"/>
                             </div>
 
@@ -476,7 +476,7 @@ const RetirementCalculator = () => {
                               <div className="flex items-center gap-2">
                                 <input type="number" value={amountNeeded}
                                   onChange={(e) => setAmountNeeded(Number(e.target.value) || 0)}
-                                  className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                                  className="w-full text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-green-500"
                                   min="0"/>
                               </div>
                             </div>
@@ -486,7 +486,7 @@ const RetirementCalculator = () => {
                               <div className="flex items-center gap-2">
                                 <input type="number" value={saveCurrentSavings}
                                   onChange={(e) => setSaveCurrentSavings(Number(e.target.value) || 0)}
-                                  className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                                  className="w-full text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-green-500"
                                   min="0"/>
                               </div>
                             </div>
@@ -496,9 +496,9 @@ const RetirementCalculator = () => {
                               <div className="flex items-center gap-2">
                                 <input type="number" step="0.1" value={saveInvestmentReturn}
                                   onChange={(e) => setSaveInvestmentReturn(Number(e.target.value) || 0)}
-                                  className="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                                  className="w-20  text-gray-900 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-green-500"
                                   min="0" max="20"/>
-                                <span className="text-xs">%/year</span>
+                                <span className="text-xs text-gray-900">%/year</span>
                               </div>
                             </div>
 
@@ -567,7 +567,7 @@ const RetirementCalculator = () => {
                             <label className="font-medium text-gray-700 text-sm">Current age</label>
                             <input type="number" value={withdrawCurrentAge}
                               onChange={(e) => setWithdrawCurrentAge(Number(e.target.value) || 0)}
-                              className="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                              className="w-full text-gray-900 sm:w-24 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500"
                               min="18" max="100"/>
                           </div>
 
@@ -575,7 +575,7 @@ const RetirementCalculator = () => {
                             <label className="font-medium text-gray-700 text-sm">Retirement age</label>
                             <input type="number" value={withdrawRetirementAge}
                               onChange={(e) => setWithdrawRetirementAge(Number(e.target.value) || 0)}
-                              className="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                              className="w-full  text-gray-900 sm:w-24 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500"
                               min="50" max="100"/>
                           </div>
 
@@ -583,7 +583,7 @@ const RetirementCalculator = () => {
                             <label className="font-medium text-gray-700 text-sm">Life expectancy</label>
                             <input type="number" value={withdrawLifeExpectancy}
                               onChange={(e) => setWithdrawLifeExpectancy(Number(e.target.value) || 0)}
-                              className="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                              className="w-full text-gray-900 sm:w-24 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500"
                               min="60" max="120"/>
                           </div>
 
@@ -592,7 +592,7 @@ const RetirementCalculator = () => {
                             <div className="flex items-center gap-2">
                               <input type="number" value={withdrawSavings}
                                 onChange={(e) => setWithdrawSavings(Number(e.target.value) || 0)}
-                                className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                className="w-full text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500"
                                 min="0"/>
                             </div>
                           </div>
@@ -602,7 +602,7 @@ const RetirementCalculator = () => {
                             <div className="flex items-center gap-2">
                               <input type="number" value={monthlyContribution}
                                 onChange={(e) => setMonthlyContribution(Number(e.target.value) || 0)}
-                                className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                className="w-full text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500"
                                 min="0"/>
                             </div>
                           </div>
@@ -612,9 +612,9 @@ const RetirementCalculator = () => {
                             <div className="flex items-center gap-2">
                               <input type="number" step="0.1" value={withdrawInvestmentReturn}
                                 onChange={(e) => setWithdrawInvestmentReturn(Number(e.target.value) || 0)}
-                                className="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                className="w-20  text-gray-900 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500"
                                 min="0" max="20"/>
-                              <span className="text-xs">%/year</span>
+                              <span className="text-xs text-gray-900">%/year</span>
                             </div>
                           </div>
 
@@ -623,9 +623,9 @@ const RetirementCalculator = () => {
                             <div className="flex items-center gap-2">
                               <input type="number" step="0.1" value={withdrawInflationRate}
                                 onChange={(e) => setWithdrawInflationRate(Number(e.target.value) || 0)}
-                                className="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                className="w-20  text-gray-900 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500"
                                 min="0" max="15"/>
-                              <span className="text-xs">%/year</span>
+                              <span className="text-xs text-gray-900 ">%/year</span>
                             </div>
                           </div>
 
@@ -694,7 +694,7 @@ const RetirementCalculator = () => {
                             <div className="flex items-center gap-2">
                               <input type="number" value={totalAmount}
                                 onChange={(e) => setTotalAmount(Number(e.target.value) || 0)}
-                                className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                className="w-full text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-purple-500"
                                 min="0"/>
                             </div>
                           </div>
@@ -704,7 +704,7 @@ const RetirementCalculator = () => {
                             <div className="flex items-center gap-2">
                               <input type="number" value={monthlyWithdraw}
                                 onChange={(e) => setMonthlyWithdraw(Number(e.target.value) || 0)}
-                                className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                className="w-full text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-purple-500"
                                 min="0"/>
                             </div>
                           </div>
@@ -714,9 +714,9 @@ const RetirementCalculator = () => {
                             <div className="flex items-center gap-2">
                               <input type="number" step="0.1" value={lastInvestmentReturn}
                                 onChange={(e) => setLastInvestmentReturn(Number(e.target.value) || 0)}
-                                className="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                className="w-20  text-gray-900 px-3 py-2 border border-gray-900 rounded-lg focus:ring-2 focus:ring-purple-500"
                                 min="0" max="20"/>
-                              <span className="text-xs">%/year</span>
+                              <span className="text-xs text-gray-900">%/year</span>
                             </div>
                           </div>
 

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, } from 'lucide-react';
 
 const FractionCalculator = () => {
@@ -413,7 +413,7 @@ const FractionCalculator = () => {
           </p>
 
           {/* Basic Fraction Calculator */}
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
             <h2 className="text-xl font-bold text-gray-900 mb-4">Basic Fraction Calculator</h2>
             
             <div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 mb-4">
@@ -422,21 +422,21 @@ const FractionCalculator = () => {
                   type="number"
                   value={num1}
                   onChange={(e) => setNum1(e.target.value)}
-                  className="w-24 px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
+                  className="w-24 px-3 text-gray-900 py-2 border-2 border-gray-900 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
                 />
-                <div className="border-t-2 border-black w-24 my-1"></div>
+                <div className="border-t-2 border-gray-900 w-24 my-1"></div>
                 <input
                   type="number"
                   value={den1}
                   onChange={(e) => setDen1(e.target.value)}
-                  className="w-24 px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
+                  className="w-24 px-3 text-gray-900  py-2 border-2 border-gray-900 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
                 />
               </div>
               
               <select
                 value={operation}
                 onChange={(e) => setOperation(e.target.value)}
-                className="px-4 py-2 text-xl border-2 border-gray-300 rounded focus:border-gray-900 focus:outline-none font-bold"
+                className="px-4 py-2 text-gray-900 text-xl border-2 border-gray-900 rounded focus:border-gray-900 focus:outline-none font-bold"
               >
                 <option value="+">+</option>
                 <option value="-">−</option>
@@ -449,24 +449,23 @@ const FractionCalculator = () => {
                   type="number"
                   value={num2}
                   onChange={(e) => setNum2(e.target.value)}
-                  className="w-24 px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
+                  className="w-24 px-3 text-gray-900  py-2 border-2 border-gray-900 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
                 />
-                <div className="border-t-2 border-black w-24 my-1"></div>
+                <div className="border-t-2 border-gray-900 w-24 my-1"></div>
                 <input
                   type="number"
                   value={den2}
                   onChange={(e) => setDen2(e.target.value)}
-                  className="w-24 px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
+                  className="w-24 px-3 text-gray-900  py-2 border-2 border-gray-900 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
                 />
               </div>
               
-              <span className="text-2xl font-bold">=</span>
+              <span className="text-2xl font-bold text-gray-900">=</span>
               
               <div className="min-w-0 flex-1 text-center sm:text-left">
                 <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{basicResult || '?'}</span>
               </div>
             </div>
-            
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={calculateBasicFraction}
@@ -484,43 +483,42 @@ const FractionCalculator = () => {
           </div>
 
           {/* Mixed Numbers Calculator */}
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Mixed Numbers Calculator</h2>
-            <p className="text-gray-600 mb-4 text-sm">Enter mixed numbers like: -1 3/4 or 2 5/7</p>
-            <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-6">
-              <input
-                type="text"
-                value={mixedNum1}
-                onChange={(e) => setMixedNum1(e.target.value)}
-                className="w-full sm:w-32 px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                placeholder="-1 3/4"
-              />
-              
-              <select
-                value={mixedOperation}
-                onChange={(e) => setMixedOperation(e.target.value)}
-                className="px-4 py-2 border-2 border-gray-300 rounded focus:border-gray-900 focus:outline-none"
-              >
-                <option value="+">+</option>
-                <option value="-">-</option>
-                <option value="*">×</option>
-                <option value="/">÷</option>
-              </select>
-              
-              <input
-                type="text"
-                value={mixedNum2}
-                onChange={(e) => setMixedNum2(e.target.value)}
-                className="w-full sm:w-32 px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                placeholder="2 5/7"
-              />
-              
-              <span className="text-xl font-bold">=</span>
-              <div className="min-w-0 flex-1 text-center sm:text-left">
-                <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{mixedResult || '?'}</span>
-              </div>
-            </div>
-            
+         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+  <h2 className="text-xl font-bold text-gray-900 mb-4">Mixed Numbers Calculator</h2>
+  <p className="text-gray-600 mb-4 text-sm">Enter mixed numbers like: -1 3/4 or 2 5/7</p>
+  <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-6">
+    <input
+      type="text"
+      value={mixedNum1}
+      onChange={(e) => setMixedNum1(e.target.value)}
+      className="w-full sm:w-32 px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      placeholder="-1 3/4"
+    />
+    
+    <select
+      value={mixedOperation}
+      onChange={(e) => setMixedOperation(e.target.value)}
+      className="px-4 py-2 border-2 border-gray-900 text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+    >
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">×</option>
+      <option value="/">÷</option>
+    </select>
+    
+    <input
+      type="text"
+      value={mixedNum2}
+      onChange={(e) => setMixedNum2(e.target.value)}
+      className="w-full sm:w-32 px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      placeholder="2 5/7"
+    />
+    
+    <span className="text-xl font-bold text-gray-900">=</span>
+    <div className="min-w-0 flex-1 text-center sm:text-left">
+      <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{mixedResult || '?'}</span>
+    </div>
+  </div>
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={calculateMixedNumbers}
@@ -538,31 +536,30 @@ const FractionCalculator = () => {
           </div>
 
           {/* Simplify Fractions Calculator */}
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Simplify Fractions Calculator</h2>
-            <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-6">
-              <div className="flex flex-col items-center w-full sm:w-32">
-                <input
-                  type="number"
-                  value={simplifyNum}
-                  onChange={(e) => setSimplifyNum(e.target.value)}
-                  className="w-full px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                />
-                <div className="border-t-2 border-black w-full my-1"></div>
-                <input
-                  type="number"
-                  value={simplifyDen}
-                  onChange={(e) => setSimplifyDen(e.target.value)}
-                  className="w-full px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                />
-              </div>
-              
-              <span className="text-xl font-bold">=</span>
-              <div className="min-w-0 flex-1 text-center sm:text-left">
-                <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{simplifyResult || '?'}</span>
-              </div>
-            </div>
-            
+              <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+  <h2 className="text-xl font-bold text-gray-900 mb-4">Simplify Fractions Calculator</h2>
+  <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-6">
+    <div className="flex flex-col items-center w-full sm:w-32">
+      <input
+        type="number"
+        value={simplifyNum}
+        onChange={(e) => setSimplifyNum(e.target.value)}
+        className="w-full px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      />
+      <div className="border-t-2 border-gray-900 w-full my-1"></div>
+      <input
+        type="number"
+        value={simplifyDen}
+        onChange={(e) => setSimplifyDen(e.target.value)}
+        className="w-full px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      />
+    </div>
+    
+    <span className="text-xl font-bold text-gray-900">=</span>
+    <div className="min-w-0 flex-1 text-center sm:text-left">
+      <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{simplifyResult || '?'}</span>
+    </div>
+  </div>
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={calculateSimplify}
@@ -581,23 +578,22 @@ const FractionCalculator = () => {
 
           {/* Decimal to Fraction Calculator */}
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Decimal to Fraction Calculator</h2>
-            <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-6">
-              <input
-                type="number"
-                step="any"
-                value={decimal}
-                onChange={(e) => setDecimal(e.target.value)}
-                className="w-full sm:w-32 px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                placeholder="1.375"
-              />
-              
-              <span className="text-xl font-bold">=</span>
-              <div className="min-w-0 flex-1 text-center sm:text-left">
-                <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{decimalResult || '?'}</span>
-              </div>
-            </div>
-            
+  <h2 className="text-xl font-bold text-gray-900 mb-4">Decimal to Fraction Calculator</h2>
+  <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-6">
+    <input
+      type="number"
+      step="any"
+      value={decimal}
+      onChange={(e) => setDecimal(e.target.value)}
+      className="w-full sm:w-32 px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      placeholder="1.375"
+    />
+    
+    <span className="text-xl font-bold text-gray-900">=</span>
+    <div className="min-w-0 flex-1 text-center sm:text-left">
+      <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{decimalResult || '?'}</span>
+    </div>
+  </div>
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={calculateDecimalToFraction}
@@ -616,29 +612,29 @@ const FractionCalculator = () => {
 
           {/* Fraction to Decimal Calculator */}
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Fraction to Decimal Calculator</h2>
-            <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-6">
-              <div className="flex flex-col items-center w-full sm:w-32">
-                <input
-                  type="number"
-                  value={fracToDecNum}
-                  onChange={(e) => setFracToDecNum(e.target.value)}
-                  className="w-full px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                />
-                <div className="border-t-2 border-black w-full my-1"></div>
-                <input
-                  type="number"
-                  value={fracToDecDen}
-                  onChange={(e) => setFracToDecDen(e.target.value)}
-                  className="w-full px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                />
-              </div>
-              
-              <span className="text-xl font-bold">=</span>
-              <div className="min-w-0 flex-1 text-center sm:text-left">
-                <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{fracToDecResult || '?'}</span>
-              </div>
-            </div>
+  <h2 className="text-xl font-bold text-gray-900 mb-4">Fraction to Decimal Calculator</h2>
+  <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-6">
+    <div className="flex flex-col items-center w-full sm:w-32">
+      <input
+        type="number"
+        value={fracToDecNum}
+        onChange={(e) => setFracToDecNum(e.target.value)}
+        className="w-full px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      />
+      <div className="border-t-2 border-gray-900 w-full my-1"></div>
+      <input
+        type="number"
+        value={fracToDecDen}
+        onChange={(e) => setFracToDecDen(e.target.value)}
+        className="w-full px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      />
+    </div>
+    
+    <span className="text-xl font-bold text-gray-900">=</span>
+    <div className="min-w-0 flex-1 text-center sm:text-left">
+      <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{fracToDecResult || '?'}</span>
+    </div>
+  </div>
             
             <div className="flex flex-wrap gap-3">
               <button
@@ -657,62 +653,61 @@ const FractionCalculator = () => {
           </div>
 
           {/* Big Number Fraction Calculator */}
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Big Number Fraction Calculator</h2>
-            <p className="text-gray-600 mb-4 text-sm">Use this calculator if the numerators or denominators are very big integers.</p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <div className="flex flex-col items-center">
-                <input
-                  type="text"
-                  value={bigNum1}
-                  onChange={(e) => setBigNum1(e.target.value)}
-                  className="w-full px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                />
-                <div className="border-t-2 border-black w-full my-1"></div>
-                <input
-                  type="text"
-                  value={bigDen1}
-                  onChange={(e) => setBigDen1(e.target.value)}
-                  className="w-full px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                />
-              </div>
-              
-              <div className="flex flex-col items-center">
-                <input
-                  type="text"
-                  value={bigNum2}
-                  onChange={(e) => setBigNum2(e.target.value)}
-                  className="w-full px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                />
-                <div className="border-t-2 border-black w-full my-1"></div>
-                <input
-                  type="text"
-                  value={bigDen2}
-                  onChange={(e) => setBigDen2(e.target.value)}
-                  className="w-full px-3 py-2 border-2 border-gray-300 text-center text-sm rounded focus:border-gray-900 focus:outline-none"
-                />
-              </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-6">
-              <select
-                value={bigOperation}
-                onChange={(e) => setBigOperation(e.target.value)}
-                className="px-4 py-2 border-2 border-gray-300 rounded focus:border-gray-900 focus:outline-none"
-              >
-                <option value="+">+</option>
-                <option value="-">-</option>
-                <option value="*">×</option>
-                <option value="/">÷</option>
-              </select>
-              
-              <span className="text-xl font-bold">=</span>
-              <div className="min-w-0 flex-1 text-center sm:text-left">
-                <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{bigResult || '?'}</span>
-              </div>
-            </div>
-            
+         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+  <h2 className="text-xl font-bold text-gray-900 mb-4">Big Number Fraction Calculator</h2>
+  <p className="text-gray-600 mb-4 text-sm">Use this calculator if the numerators or denominators are very big integers.</p>
+  
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <div className="flex flex-col items-center">
+      <input
+        type="text"
+        value={bigNum1}
+        onChange={(e) => setBigNum1(e.target.value)}
+        className="w-full px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      />
+      <div className="border-t-2 border-gray-900 w-full my-1"></div>
+      <input
+        type="text"
+        value={bigDen1}
+        onChange={(e) => setBigDen1(e.target.value)}
+        className="w-full px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      />
+    </div>
+    
+    <div className="flex flex-col items-center">
+      <input
+        type="text"
+        value={bigNum2}
+        onChange={(e) => setBigNum2(e.target.value)}
+        className="w-full px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      />
+      <div className="border-t-2 border-gray-900 w-full my-1"></div>
+      <input
+        type="text"
+        value={bigDen2}
+        onChange={(e) => setBigDen2(e.target.value)}
+        className="w-full px-3 py-2 border-2 border-gray-900 text-center text-sm text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+      />
+    </div>
+  </div>
+  
+  <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-6">
+    <select
+      value={bigOperation}
+      onChange={(e) => setBigOperation(e.target.value)}
+      className="px-4 py-2 border-2 border-gray-900 text-gray-900 rounded focus:border-gray-900 focus:outline-none"
+    >
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">×</option>
+      <option value="/">÷</option>
+    </select>
+    
+    <span className="text-xl font-bold text-gray-900">=</span>
+    <div className="min-w-0 flex-1 text-center sm:text-left">
+      <span className="text-sm lg:text-base break-all font-semibold text-gray-900">{bigResult || '?'}</span>
+    </div>
+  </div>
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={calculateBigNumbers}

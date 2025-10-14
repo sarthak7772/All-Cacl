@@ -2,7 +2,7 @@
                       import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { TrendingUp, Percent, Calculator,  } from 'lucide-react';
 
 const InterestRateCalculator = () => {
@@ -305,67 +305,67 @@ const InterestRateCalculator = () => {
 
                     <div className="space-y-6">
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Calculate Based On</label>
+                        <label className="block text-sm font-semibold text-gray-900 mb-2">Calculate Based On</label>
                         <select 
                           value={calculationMethod}
                           onChange={(e) => setCalculationMethod(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none text-sm md:text-base"
+                          className="w-full text-gray-900 px-3 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg "
                         >
-                          <option value="loan-payment">Loan Amount & Monthly Payment</option>
+                          <option value="loan-payment ">Loan Amount & Monthly Payment</option>
                           <option value="total-interest">Loan Amount & Total Interest</option>
                           <option value="known-rate">Known Interest Rate</option>
                         </select>
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Loan Amount</label>
+                        <label className="block text-sm font-semibold text-gray-900 mb-2">Loan Amount</label>
                         <div className="flex items-center">
-                          <span className="mr-2 text-gray-500"></span>
+                          <span className="mr-2 text-gray-900"></span>
                           <input
                             type="number"
                             value={loanAmount}
                             onChange={(e) => setLoanAmount(parseFloat(e.target.value) || 0)}
-                            className="flex-1 px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
+                            className="flex-1 px-3 text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg "
                             step="100"
                           />
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Loan Term</label>
+                        <label className="block text-sm font-semibold text-gray-900 mb-2">Loan Term</label>
                         <div className="grid grid-cols-2 gap-4">
                           <div className="flex flex-col">
                             <input
                               type="number"
                               value={loanTermYears}
                               onChange={(e) => setLoanTermYears(parseInt(e.target.value) || 0)}
-                              className="w-full px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
+                              className="w-full px-3 text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
                             />
-                            <span className="mt-1 text-xs md:text-sm text-gray-600 text-center">years</span>
+                            <span className="mt-1 text-xs md:text-sm text-gray-900 text-center">years</span>
                           </div>
                           <div className="flex flex-col">
                             <input
                               type="number"
                               value={loanTermMonths}
                               onChange={(e) => setLoanTermMonths(parseInt(e.target.value) || 0)}
-                              className="w-full px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
+                              className="w-full px-3 text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
                               max="11"
                             />
-                            <span className="mt-1 text-xs md:text-sm text-gray-600 text-center">months</span>
+                            <span className="mt-1 text-xs md:text-sm text-gray-900 text-center">months</span>
                           </div>
                         </div>
                       </div>
 
                       {calculationMethod === 'loan-payment' && (
                         <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">Monthly Payment</label>
+                          <label className="block text-sm font-semibold text-gray-900 mb-2">Monthly Payment</label>
                           <div className="flex items-center">
                             <span className="mr-2 text-gray-500"></span>
                             <input
                               type="number"
                               value={monthlyPayment}
                               onChange={(e) => setMonthlyPayment(parseFloat(e.target.value) || 0)}
-                              className="flex-1 px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
+                              className="flex-1 px-3 text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
                               step="10"
                             />
                           </div>
@@ -374,14 +374,14 @@ const InterestRateCalculator = () => {
 
                       {calculationMethod === 'total-interest' && (
                         <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">Total Interest Amount</label>
+                          <label className="block text-sm font-semibold text-gray-900 mb-2">Total Interest Amount</label>
                           <div className="flex items-center">
-                            <span className="mr-2 text-gray-500">$</span>
+                            <span className="mr-2 text-gray-900"></span>
                             <input
                               type="number"
                               value={totalInterest}
                               onChange={(e) => setTotalInterest(parseFloat(e.target.value) || 0)}
-                              className="flex-1 px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
+                              className="flex-1 text-gray-900 px-3 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg "
                               step="100"
                             />
                           </div>
@@ -390,16 +390,16 @@ const InterestRateCalculator = () => {
 
                       {calculationMethod === 'known-rate' && (
                         <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">Interest Rate</label>
+                          <label className="block text-sm font-semibold text-gray-900 mb-2">Interest Rate</label>
                           <div className="flex items-center">
                             <input
                               type="number"
                               value={knownRate}
                               onChange={(e) => setKnownRate(parseFloat(e.target.value) || 0)}
-                              className="flex-1 px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
+                              className="flex-1 px-3 text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg "
                               step="0.1"
                             />
-                            <span className="ml-2 text-gray-500">%</span>
+                            <span className="ml-2 text-gray-900">%</span>
                           </div>
                         </div>
                       )}
@@ -414,7 +414,7 @@ const InterestRateCalculator = () => {
                         </button>
                         <button
                           onClick={clearForm}
-                          className="px-4 md:px-6 py-2 md:py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-red-300 hover:text-red-600 transition-colors"
+                      className="px-4 py-3 bg-gray-400 text-white rounded hover:bg-gray-500 transition-colors"
                         >
                           Reset
                         </button>
@@ -437,17 +437,17 @@ const InterestRateCalculator = () => {
                             </div>
                             <div className="flex justify-between items-center py-3 border-b text-sm md:text-base">
                               <span className="font-medium text-gray-700">Monthly Payment:</span>
-                              <span className="font-bold">{formatCurrency(results.monthlyPayment)}</span>
+                              <span className="font-bold text-gray-800">{formatCurrency(results.monthlyPayment)}</span>
                             </div>
                             <div className="flex justify-between items-center py-3 border-b text-sm md:text-base">
                               <span className="font-medium text-gray-700">Loan Amount:</span>
-                              <span className="font-bold">{formatCurrency(loanAmount)}</span>
+                              <span className="font-bold text-gray-800">{formatCurrency(loanAmount)}</span>
                             </div>
                           </div>
                           <div className="space-y-4">
                             <div className="flex justify-between items-center py-3 border-b text-sm md:text-base">
                               <span className="font-medium text-gray-700">Total Payments:</span>
-                              <span className="font-bold">{formatCurrency(results.totalPayments)}</span>
+                              <span className="font-bold text-gray-800">{formatCurrency(results.totalPayments)}</span>
                             </div>
                             <div className="flex justify-between items-center py-3 border-b text-sm md:text-base">
                               <span className="font-medium text-gray-700">Total Interest:</span>
@@ -455,13 +455,13 @@ const InterestRateCalculator = () => {
                             </div>
                             <div className="flex justify-between items-center py-3 border-b text-sm md:text-base">
                               <span className="font-medium text-gray-700">Loan Term:</span>
-                              <span className="font-bold">{loanTermYears}y {loanTermMonths}m</span>
+                              <span className="font-bold text-gray-800">{loanTermYears}y {loanTermMonths}m</span>
                             </div>
                           </div>
                         </div>
 
                         <div className="mt-6 md:mt-8">
-                          <h4 className="font-bold text-center mb-4 text-sm md:text-base">Payment Breakdown</h4>
+                          <h4 className="font-bold text-center text-gray-800 mb-4 text-sm md:text-base">Payment Breakdown</h4>
                           <div className="flex flex-col md:flex-row items-center justify-center">
                             <div className="relative w-32 h-32 md:w-40 md:h-40">
                               <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
@@ -483,18 +483,18 @@ const InterestRateCalculator = () => {
                               </svg>
                               <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="text-center">
-                                  <div className="text-xs md:text-sm font-bold">{results.interestRate}%</div>
+                                  <div className="text-xs md:text-sm text-gray-800 font-bold">{results.interestRate}%</div>
                                 </div>
                               </div>
                             </div>
                             <div className="ml-0 md:ml-6 mt-4 md:mt-0 space-y-2 text-xs md:text-sm">
                               <div className="flex items-center">
                                 <div className="w-4 h-4 rounded mr-2" style={{backgroundColor: '#800000'}}></div>
-                                <span>Principal ({Math.round((loanAmount / parseFloat(results.totalPayments)) * 100)}%)</span>
+                                <span className="text-gray-900">Principal ({Math.round((loanAmount / parseFloat(results.totalPayments)) * 100)}%)</span>
                               </div>
                               <div className="flex items-center">
                                 <div className="w-4 h-4 bg-green-600 rounded mr-2"></div>
-                                <span>Interest ({Math.round((parseFloat(results.totalInterest) / parseFloat(results.totalPayments)) * 100)}%)</span>
+                                <span className="text-gray-900">Interest ({Math.round((parseFloat(results.totalInterest) / parseFloat(results.totalPayments)) * 100)}%)</span>
                               </div>
                             </div>
                           </div>
@@ -506,24 +506,24 @@ const InterestRateCalculator = () => {
                         <div className="flex justify-between items-center mb-4">
                           <div className="text-center flex-1">
                             <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full mx-auto mb-2 ${getCurrentRatePhase().phase >= 1 ? 'bg-green-600' : 'bg-gray-300'}`}></div>
-                            <div className="text-xs font-medium">Excellent</div>
-                            <div className="text-xs text-gray-600">0-3%</div>
+                            <div className="text-xs text-gray-800 font-medium">Excellent</div>
+                            <div className="text-xs text-gray-800">0-3%</div>
                           </div>
                           <div className="text-center flex-1">
                             <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full mx-auto mb-2 ${getCurrentRatePhase().phase >= 2 ? 'bg-blue-600' : 'bg-gray-300'}`}></div>
-                            <div className="text-xs font-medium">Good</div>
-                            <div className="text-xs text-gray-600">3-6%</div>
+                            <div className="text-xs text-gray-800 font-medium">Good</div>
+                            <div className="text-xs text-gray-800">3-6%</div>
                           </div>
                           
                         <div className="text-center flex-1">
                           <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full mx-auto mb-2 ${getCurrentRatePhase().phase >= 3 ? 'bg-yellow-600' : 'bg-gray-300'}`}></div>
-                          <div className="text-xs font-medium">Average</div>
-                          <div className="text-xs text-gray-600">6-10%</div>
+                          <div className="text-xs text-gray-800 font-medium">Average</div>
+                          <div className="text-xs text-gray-800">6-10%</div>
                         </div>
                         <div className="text-center flex-1">
                           <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full mx-auto mb-2 ${getCurrentRatePhase().phase >= 4 ? 'bg-red-600' : 'bg-gray-300'}`}></div>
-                          <div className="text-xs font-medium">High</div>
-                          <div className="text-xs text-gray-600">10%+</div>
+                          <div className="text-xs text-gray-800 font-medium">High</div>
+                          <div className="text-xs text-gray-800">10%+</div>
                         </div>
                       </div>
                       
@@ -602,8 +602,8 @@ const InterestRateCalculator = () => {
                         🧮
                       </div>
                     </div>
-                    <h4 className="font-bold text-center mb-2 text-sm md:text-base">Rate Calculation</h4>
-                    <p className="text-xs md:text-sm text-center">
+                    <h4 className="font-bold text-center mb-2 text-gray-900 text-sm md:text-base">Rate Calculation</h4>
+                    <p className="text-xs text-gray-900 md:text-sm text-center">
                       Easily determine simple or compound interest on loans, deposits, or investments 
                       by entering principal, rate, and time period.
                     </p>
@@ -615,8 +615,8 @@ const InterestRateCalculator = () => {
                         💵
                       </div>
                     </div>
-                    <h4 className="font-bold text-center mb-2 text-sm md:text-base">Financial Planning</h4>
-                    <p className="text-xs md:text-sm text-center">
+                    <h4 className="font-bold text-center text-gray-900 mb-2 text-sm md:text-base">Financial Planning</h4>
+                    <p className="text-xs text-gray-900  md:text-sm text-center">
                       Compare borrowing costs, savings returns, and investment opportunities 
                       to make informed financial decisions.
                     </p>
@@ -628,8 +628,8 @@ const InterestRateCalculator = () => {
                         📊
                       </div>
                     </div>
-                    <h4 className="font-bold text-center mb-2 text-sm md:text-base">Result Insights</h4>
-                    <p className="text-xs md:text-sm text-center">
+                    <h4 className="font-bold text-center mb-2 text-gray-900  text-sm md:text-base">Result Insights</h4>
+                    <p className="text-xs text-gray-900  md:text-sm text-center">
                       Analyze total interest paid, final maturity value, and repayment schedules 
                       to better plan your finances.
                     </p>
@@ -637,7 +637,7 @@ const InterestRateCalculator = () => {
                 </div>
 
                 <div className="bg-yellow-50 p-4 rounded border-l-4 border-yellow-500">
-                  <p className="text-xs md:text-sm">
+                  <p className="text-xs text-gray-900  md:text-sm">
                     <strong>Note:</strong> Interest rate results are based on the inputs provided. Actual financial outcomes 
                     may differ due to market changes, taxes, fees, and other external factors. Always verify with your 
                     bank or financial advisor before making decisions.

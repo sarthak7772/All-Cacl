@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calendar, Plus,  Clock } from 'lucide-react';
 
 const DateCalculator = () => {
@@ -330,88 +330,88 @@ const DateCalculator = () => {
               </p>
 
               {/* Date Inputs */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                {/* Start Date */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
-                  <div className="grid grid-cols-3 gap-2">
-                    <select
-                      value={daysBetween.startDate.month}
-                      onChange={(e) => handleDaysBetweenChange('startDate', 'month', e.target.value)}
-                      className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                    >
-                      {months.map(month => (
-                        <option key={month} value={month}>{month}</option>
-                      ))}
-                    </select>
-                    <select
-                      value={daysBetween.startDate.day}
-                      onChange={(e) => handleDaysBetweenChange('startDate', 'day', e.target.value)}
-                      className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                    >
-                      {generateDayOptions(daysBetween.startDate.month, daysBetween.startDate.year).map(day => (
-                        <option key={day} value={day}>{day}</option>
-                      ))}
-                    </select>
-                    <select
-                      value={daysBetween.startDate.year}
-                      onChange={(e) => handleDaysBetweenChange('startDate', 'year', e.target.value)}
-                      className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                    >
-                      {generateYearOptions().map(year => (
-                        <option key={year} value={year}>{year}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+  {/* Start Date */}
+  <div>
+    <label className="block text-sm font-medium text-gray-900 mb-2">Start Date</label>
+    <div className="grid grid-cols-3 gap-2">
+      <select
+        value={daysBetween.startDate.month}
+        onChange={(e) => handleDaysBetweenChange('startDate', 'month', e.target.value)}
+        className="p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      >
+        {months.map(month => (
+          <option key={month} value={month}>{month}</option>
+        ))}
+      </select>
+      <select
+        value={daysBetween.startDate.day}
+        onChange={(e) => handleDaysBetweenChange('startDate', 'day', e.target.value)}
+        className="p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      >
+        {generateDayOptions(daysBetween.startDate.month, daysBetween.startDate.year).map(day => (
+          <option key={day} value={day}>{day}</option>
+        ))}
+      </select>
+      <select
+        value={daysBetween.startDate.year}
+        onChange={(e) => handleDaysBetweenChange('startDate', 'year', e.target.value)}
+        className="p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      >
+        {generateYearOptions().map(year => (
+          <option key={year} value={year}>{year}</option>
+        ))}
+      </select>
+    </div>
+  </div>
 
-                {/* End Date */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">End Date</label>
-                  <div className="grid grid-cols-3 gap-2">
-                    <select
-                      value={daysBetween.endDate.month}
-                      onChange={(e) => handleDaysBetweenChange('endDate', 'month', e.target.value)}
-                      className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                    >
-                      {months.map(month => (
-                        <option key={month} value={month}>{month}</option>
-                      ))}
-                    </select>
-                    <select
-                      value={daysBetween.endDate.day}
-                      onChange={(e) => handleDaysBetweenChange('endDate', 'day', e.target.value)}
-                      className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                    >
-                      {generateDayOptions(daysBetween.endDate.month, daysBetween.endDate.year).map(day => (
-                        <option key={day} value={day}>{day}</option>
-                      ))}
-                    </select>
-                    <select
-                      value={daysBetween.endDate.year}
-                      onChange={(e) => handleDaysBetweenChange('endDate', 'year', e.target.value)}
-                      className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                    >
-                      {generateYearOptions().map(year => (
-                        <option key={year} value={year}>{year}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-              </div>
+  {/* End Date */}
+  <div>
+    <label className="block text-sm font-medium text-gray-900 mb-2">End Date</label>
+    <div className="grid grid-cols-3 gap-2">
+      <select
+        value={daysBetween.endDate.month}
+        onChange={(e) => handleDaysBetweenChange('endDate', 'month', e.target.value)}
+        className="p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      >
+        {months.map(month => (
+          <option key={month} value={month}>{month}</option>
+        ))}
+      </select>
+      <select
+        value={daysBetween.endDate.day}
+        onChange={(e) => handleDaysBetweenChange('endDate', 'day', e.target.value)}
+        className="p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      >
+        {generateDayOptions(daysBetween.endDate.month, daysBetween.endDate.year).map(day => (
+          <option key={day} value={day}>{day}</option>
+        ))}
+      </select>
+      <select
+        value={daysBetween.endDate.year}
+        onChange={(e) => handleDaysBetweenChange('endDate', 'year', e.target.value)}
+        className="p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      >
+        {generateYearOptions().map(year => (
+          <option key={year} value={year}>{year}</option>
+        ))}
+      </select>
+    </div>
+  </div>
+</div>
 
-              {/* Options */}
-              <div className="mb-6">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={daysBetween.includeEndDay}
-                    onChange={(e) => handleDaysBetweenChange('includeEndDay', null, e.target.checked)}
-                    className="mr-2 accent-gray-900"
-                  />
-                  Include end day (add 1 day)
-                </label>
-              </div>
+{/* Options */}
+<div className="mb-6">
+  <label className="flex items-center text-gray-900">
+    <input
+      type="checkbox"
+      checked={daysBetween.includeEndDay}
+      onChange={(e) => handleDaysBetweenChange('includeEndDay', null, e.target.checked)}
+      className="mr-2 accent-gray-900 border border-gray-900"
+    />
+    Include end day (add 1 day)
+  </label>
+</div>
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
@@ -472,100 +472,101 @@ const DateCalculator = () => {
             </div>
 
             <div className="p-4 lg:p-8">
-              <p className="text-gray-700 mb-6">
-                Add or subtract years, months, weeks, and days from a starting date to find the result date.
-              </p>
+  <p className="text-gray-900 mb-6">
+    Add or subtract years, months, weeks, and days from a starting date to find the result date.
+  </p>
 
-              {/* Start Date */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
-                <div className="grid grid-cols-3 gap-2">
-                  <select
-                    value={dateAddSubtract.startDate.month}
-                    onChange={(e) => handleAddSubtractChange('startDate', 'month', e.target.value)}
-                    className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  >
-                    {months.map(month => (
-                      <option key={month} value={month}>{month}</option>
-                    ))}
-                  </select>
-                  <select
-                    value={dateAddSubtract.startDate.day}
-                    onChange={(e) => handleAddSubtractChange('startDate', 'day', e.target.value)}
-                    className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  >
-                    {generateDayOptions(dateAddSubtract.startDate.month, dateAddSubtract.startDate.year).map(day => (
-                      <option key={day} value={day}>{day}</option>
-                    ))}
-                  </select>
-                  <select
-                    value={dateAddSubtract.startDate.year}
-                    onChange={(e) => handleAddSubtractChange('startDate', 'year', e.target.value)}
-                    className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  >
-                    {generateYearOptions().map(year => (
-                      <option key={year} value={year}>{year}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+  {/* Start Date */}
+  <div className="mb-6">
+    <label className="block text-sm font-medium text-gray-900 mb-2">Start Date</label>
+    <div className="grid grid-cols-3 gap-2">
+      <select
+        value={dateAddSubtract.startDate.month}
+        onChange={(e) => handleAddSubtractChange('startDate', 'month', e.target.value)}
+        className="p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      >
+        {months.map(month => (
+          <option key={month} value={month}>{month}</option>
+        ))}
+      </select>
+      <select
+        value={dateAddSubtract.startDate.day}
+        onChange={(e) => handleAddSubtractChange('startDate', 'day', e.target.value)}
+        className="p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      >
+        {generateDayOptions(dateAddSubtract.startDate.month, dateAddSubtract.startDate.year).map(day => (
+          <option key={day} value={day}>{day}</option>
+        ))}
+      </select>
+      <select
+        value={dateAddSubtract.startDate.year}
+        onChange={(e) => handleAddSubtractChange('startDate', 'year', e.target.value)}
+        className="p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      >
+        {generateYearOptions().map(year => (
+          <option key={year} value={year}>{year}</option>
+        ))}
+      </select>
+    </div>
+  </div>
 
-              {/* Operation */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">Operation</label>
-                <select
-                  value={dateAddSubtract.operation}
-                  onChange={(e) => handleAddSubtractChange('operation', null, e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                >
-                  <option value="+">Add (+)</option>
-                  <option value="-">Subtract (-)</option>
-                </select>
-              </div>
+  {/* Operation */}
+  <div className="mb-6">
+    <label className="block text-sm font-medium text-gray-900 mb-2">Operation</label>
+    <select
+      value={dateAddSubtract.operation}
+      onChange={(e) => handleAddSubtractChange('operation', null, e.target.value)}
+      className="w-full p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+    >
+      <option value="+">Add (+)</option>
+      <option value="-">Subtract (-)</option>
+    </select>
+  </div>
 
-              {/* Time Units */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Years</label>
-                  <input
-                    type="number"
-                    min="0"
-                    value={dateAddSubtract.years}
-                    onChange={(e) => handleAddSubtractChange('years', null, parseInt(e.target.value) || 0)}
-                    className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Months</label>
-                  <input
-                    type="number"
-                    min="0"
-                    value={dateAddSubtract.months}
-                    onChange={(e) => handleAddSubtractChange('months', null, parseInt(e.target.value) || 0)}
-                    className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Weeks</label>
-                  <input
-                    type="number"
-                    min="0"
-                    value={dateAddSubtract.weeks}
-                    onChange={(e) => handleAddSubtractChange('weeks', null, parseInt(e.target.value) || 0)}
-                    className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Days</label>
-                  <input
-                    type="number"
-                    min="0"
-                    value={dateAddSubtract.days}
-                    onChange={(e) => handleAddSubtractChange('days', null, parseInt(e.target.value) || 0)}
-                    className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  />
-                </div>
-              </div>
+  {/* Time Units */}
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Years</label>
+      <input
+        type="number"
+        min="0"
+        value={dateAddSubtract.years}
+        onChange={(e) => handleAddSubtractChange('years', null, parseInt(e.target.value) || 0)}
+        className="w-full p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Months</label>
+      <input
+        type="number"
+        min="0"
+        value={dateAddSubtract.months}
+        onChange={(e) => handleAddSubtractChange('months', null, parseInt(e.target.value) || 0)}
+        className="w-full p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Weeks</label>
+      <input
+        type="number"
+        min="0"
+        value={dateAddSubtract.weeks}
+        onChange={(e) => handleAddSubtractChange('weeks', null, parseInt(e.target.value) || 0)}
+        className="w-full p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Days</label>
+      <input
+        type="number"
+        min="0"
+        value={dateAddSubtract.days}
+        onChange={(e) => handleAddSubtractChange('days', null, parseInt(e.target.value) || 0)}
+        className="w-full p-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+      />
+    </div>
+  </div>
+
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">

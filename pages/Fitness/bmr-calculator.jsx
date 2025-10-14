@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
  import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Activity, Target, TrendingUp,  } from 'lucide-react';
 
 const BMRCalculator = () => {
@@ -158,7 +158,7 @@ const BMRCalculator = () => {
               {/* Unit Toggle */}
               <div className="flex bg-gray-100 rounded-lg mb-6 p-1">
                 <button onClick={() => setUnits('metric')}
-                  className={`flex-1 py-2 md:py-3 px-4 md:px-6 font-semibold rounded-lg transition-all text-sm md:text-base ${
+                  className={`flex-1 py-2  md:py-3 px-4 md:px-6 font-semibold rounded-lg transition-all text-sm md:text-base ${
                     units === 'metric' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-600 hover:text-gray-900'
                   }`}>
                   Metric Units
@@ -175,55 +175,55 @@ const BMRCalculator = () => {
                 {/* Input Section */}
                 <div className="space-y-4 md:space-y-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Age</label>
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">Age</label>
                     <input type="number" value={age}
                       onChange={(e) => setAge(Number(e.target.value))}
-                      className="w-full px-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
+                      className="w-full text-gray-900 px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
                       placeholder="Enter your age"/>
-                    <p className="text-xs md:text-sm text-gray-500 mt-1">Age range: 15-80 years</p>
+                    <p className="text-xs md:text-sm text-gray-900 mt-1">Age range: 15-80 years</p>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Gender</label>
+                    <label className="block text-sm font-semibold text-gray-900 mb-3">Gender</label>
                     <div className="flex space-x-4">
                       <label className="flex items-center cursor-pointer">
                         <input type="radio" value="male"
                           checked={gender === 'male'}
                           onChange={(e) => setGender(e.target.value)}
                           className="mr-2 md:mr-3 w-4 h-4 md:w-5 md:h-5 text-gray-900"/>
-                        <span className="text-sm md:text-lg">Male</span>
+                        <span className="text-sm md:text-lg text-gray-900">Male</span>
                       </label>
                       <label className="flex items-center cursor-pointer">
                         <input type="radio" value="female"
                           checked={gender === 'female'}
                           onChange={(e) => setGender(e.target.value)}
                           className="mr-2 md:mr-3 w-4 h-4 md:w-5 md:h-5 text-gray-900"/>
-                        <span className="text-sm md:text-lg">Female</span>
+                        <span className="text-sm md:text-lg text-gray-900">Female</span>
                       </label>
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Height</label>
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">Height</label>
                     <div className="relative">
                       <input type="number" value={height}
                         onChange={(e) => setHeight(Number(e.target.value))}
-                        className="w-full px-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-16"
+                        className="w-full  text-gray-900 px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-16"
                         placeholder={units === 'metric' ? '175' : '69'}/>
-                      <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium text-sm">
+                      <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-900 font-medium text-sm">
                         {units === 'metric' ? 'cm' : 'in'}
                       </span>
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Weight</label>
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">Weight</label>
                     <div className="relative">
                       <input type="number" value={weight}
                         onChange={(e) => setWeight(Number(e.target.value))}
-                        className="w-full px-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-16"
+                        className="w-full  text-gray-900 px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-16"
                         placeholder={units === 'metric' ? '70' : '154'}/>
-                      <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium text-sm">
+                      <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-900 font-medium text-sm">
                         {units === 'metric' ? 'kg' : 'lbs'}
                       </span>
                     </div>
@@ -239,19 +239,18 @@ const BMRCalculator = () => {
                     
                     {showAdvanced && (
                       <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Calculation Method</label>
+                        <label className="block text-sm font-semibold text-gray-900 mb-2">Calculation Method</label>
                         <select value={equation}
                           onChange={(e) => setEquation(e.target.value)}
-                          className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm">
+                          className="w-full text-gray-900 px-3 py-2 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm">
                           <option value="mifflin">Mifflin-St Jeor (Recommended)</option>
                           <option value="harris">Harris-Benedict (Revised)</option>
                           <option value="katch">Katch-McArdle</option>
                         </select>
-                        <p className="text-xs text-gray-600 mt-1">Mifflin-St Jeor is most accurate for general population</p>
+                        <p className="text-xs text-gray-900 mt-1">Mifflin-St Jeor is most accurate for general population</p>
                       </div>
                     )}
                   </div>
-
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-4">
                     <button onClick={calculateBMR}

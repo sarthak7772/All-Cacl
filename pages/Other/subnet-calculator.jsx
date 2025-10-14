@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Network, Calculator, Globe, Wifi, Shield, Info,  } from 'lucide-react';
 
 const IPSubnetCalculator = () => {
@@ -296,11 +296,11 @@ const IPSubnetCalculator = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <label className="w-full sm:w-32 text-sm font-medium text-gray-700">Subnet Mask:</label>
+                  <label className="w-full sm:w-32 text-sm font-medium text-gray-900">Subnet Mask:</label>
                   <select
                     value={subnet}
                     onChange={(e) => setSubnet(e.target.value)}
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+                    className="flex-1 text-gray-900 px-4 py-3 border border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                   >
                     {subnetOptions.map((option) => (
                       <option key={option} value={option}>{option}</option>
@@ -309,12 +309,12 @@ const IPSubnetCalculator = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <label className="w-full sm:w-32 text-sm font-medium text-gray-700">IP Address:</label>
+                  <label className="w-full sm:w-32 text-sm font-medium text-gray-900">IP Address:</label>
                   <input
                     type="text"
                     value={ipAddress}
                     onChange={(e) => setIpAddress(e.target.value)}
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+                    className="flex-1 px-4 py-3 text-gray-900 border border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                     placeholder="e.g., 192.168.1.1"
                   />
                 </div>
@@ -385,11 +385,11 @@ const IPSubnetCalculator = () => {
             <div className="p-4 lg:p-8">
               <div className="space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <label className="w-full sm:w-32 text-sm font-medium text-gray-700">Prefix Length:</label>
+                  <label className="w-full sm:w-32 text-sm font-medium text-gray-900">Prefix Length:</label>
                   <select
                     value={ipv6PrefixLength}
                     onChange={(e) => setIpv6PrefixLength(e.target.value)}
-                    className="w-full sm:w-40 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+                    className="w-full text-gray-900 sm:w-40 px-4 py-3 border border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                   >
                     {prefixLengthOptions.map((length) => (
                       <option key={length} value={length}>/{length}</option>
@@ -398,12 +398,12 @@ const IPSubnetCalculator = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <label className="w-full sm:w-32 text-sm font-medium text-gray-700">IPv6 Address:</label>
+                  <label className="w-full sm:w-32 text-sm font-medium text-gray-900">IPv6 Address:</label>
                   <input
                     type="text"
                     value={ipv6Address}
                     onChange={(e) => setIpv6Address(e.target.value)}
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+                    className="flex-1 px-4 text-gray-900 py-3 border border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                     placeholder="e.g., 2001:db8:85a3::8a2e:370:7334"
                   />
                 </div>
@@ -688,7 +688,7 @@ const IPSubnetCalculator = () => {
                 <p className="text-sm text-gray-700 mb-2">
                   Used for router-to-router connections where only 2 hosts are needed.
                 </p>
-                <div className="bg-gray-50 p-3 rounded font-mono text-sm">
+                <div className="bg-gray-50 p-3 text-gray-800 rounded font-mono text-sm">
                   Network: 192.168.1.0/30<br/>
                   Usable IPs: 192.168.1.1 - 192.168.1.2<br/>
                   Total Hosts: 2
@@ -700,7 +700,7 @@ const IPSubnetCalculator = () => {
                 <p className="text-sm text-gray-700 mb-2">
                   Suitable for small departments or branch offices with up to 14 devices.
                 </p>
-                <div className="bg-blue-50 p-3 rounded font-mono text-sm">
+                <div className="bg-blue-50 p-3 text-gray-800 rounded font-mono text-sm">
                   Network: 192.168.1.0/28<br/>
                   Usable IPs: 192.168.1.1 - 192.168.1.14<br/>
                   Total Hosts: 14
@@ -712,7 +712,7 @@ const IPSubnetCalculator = () => {
                 <p className="text-sm text-gray-700 mb-2">
                   Traditional Class C network, perfect for most office environments.
                 </p>
-                <div className="bg-green-50 p-3 rounded font-mono text-sm">
+                <div className="bg-green-50 p-3 rounded font-mono text-sm text-gray-800">
                   Network: 192.168.1.0/24<br/>
                   Usable IPs: 192.168.1.1 - 192.168.1.254<br/>
                   Total Hosts: 254

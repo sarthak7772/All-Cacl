@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator,  } from 'lucide-react';
 
 const PaymentCalculator = () => {
@@ -292,13 +292,13 @@ const PaymentCalculator = () => {
                       <div className="mb-4">
                         <div className="flex flex-wrap gap-2">
                           <button 
-                            className={`px-4 py-2 rounded text-sm ${calculationMode === 'fixedTerm' ? 'bg-[#111827] text-white' : 'bg-gray-200 text-gray-700'}`}
+                            className={`px-4 text-gray-900 py-2 rounded text-sm ${calculationMode === 'fixedTerm' ? 'bg-[#111827] text-white' : 'bg-gray-200 text-gray-700'}`}
                             onClick={() => setCalculationMode('fixedTerm')}
                           >
                             Fixed Term
                           </button>
                           <button 
-                            className={`px-4 py-2 rounded text-sm ${calculationMode === 'fixedPayments' ? 'bg-[#111827] text-white' : 'bg-gray-200 text-gray-700'}`}
+                            className={`px-4 text-gray-900 py-2 rounded text-sm ${calculationMode === 'fixedPayments' ? 'bg-[#111827] text-white' : 'bg-gray-200 text-gray-700'}`}
                             onClick={() => setCalculationMode('fixedPayments')}
                           >
                             Fixed Payments
@@ -307,58 +307,59 @@ const PaymentCalculator = () => {
                       </div>
 
                       <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                        <label className="sm:w-32 text-sm font-medium">Loan Amount</label>
+                        <label className="sm:w-32 text-gray-900 text-sm font-medium">Loan Amount</label>
                         <div className="flex items-center space-x-1">
                           <span className="text-sm"></span>
                           <input
                             type="number"
                             value={loanAmount}
                             onChange={(e) => setLoanAmount(Number(e.target.value))}
-                            className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#800000]"
+                            className="w-full text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded text-sm focus:outline-none"
                           />
                         </div>
                       </div>
 
                       <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                        <label className="sm:w-32 text-sm font-medium">Loan Term</label>
+                        <label className="sm:w-32 text-gray-900 text-sm font-medium">Loan Term</label>
                         <div className="flex items-center space-x-1">
                           <input
                             type="number"
                             value={loanTerm}
                             onChange={(e) => setLoanTerm(Number(e.target.value))}
                             disabled={calculationMode === 'fixedPayments'}
-                            className={`w-24 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#800000] ${calculationMode === 'fixedPayments' ? 'bg-gray-100 cursor-not-allowed' : ''}`}
+                            className={`w-24 text-gray-900 px-3 py-2 border border-gray-900 rounded text-sm focus:outline-none focus:ring-2 ${calculationMode === 'fixedPayments' ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                           />
-                          <span className="text-xs text-gray-500">years</span>
+                          <span className="text-xs text-gray-900">years</span>
                         </div>
                       </div>
 
                       {calculationMode === 'fixedPayments' && (
                         <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                          <label className="sm:w-32 text-sm font-medium">Monthly Payment</label>
+                          <label className="sm:w-32 text-gray-900 text-sm font-medium">Monthly Payment</label>
                           <div className="flex items-center space-x-1">
                             <span className="text-sm"></span>
                             <input
                               type="number"
                               value={monthlyPayment}
                               onChange={(e) => setMonthlyPayment(Number(e.target.value))}
-                              className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#800000]"
+                              className="w-full  text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded text-sm focus:outline-none "
                             />
                           </div>
                         </div>
                       )}
 
                       <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                        <label className="sm:w-32 text-sm font-medium">Interest Rate</label>
+                        <label className="sm:w-32  text-gray-900 text-sm font-medium">Interest Rate</label>
                         <div className="flex items-center space-x-1">
                           <input
                             type="number"
                             step="0.01"
                             value={interestRate}
                             onChange={(e) => setInterestRate(Number(e.target.value))}
-                            className="w-24 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#800000]"
+                            className="w-24 text-gray-900 px-3 py-2 border border-gray-900 rounded text-sm focus:outline-none 
+                            "
                           />
-                          <span className="text-sm">%</span>
+                          <span className="text-sm text-gray-900">%</span>
                         </div>
                       </div>
 
@@ -499,39 +500,39 @@ const PaymentCalculator = () => {
                 <h2 className="text-xl md:text-2xl font-bold text-[#111827] mb-4">Payment Calculation Methods</h2>
                 
                 <div className="mb-6">
-                  <h3 className="text-base md:text-lg font-semibold mb-3 bg-gray-50 p-3 rounded">Fixed Term Method (Recommended)</h3>
+                  <h3 className="text-base md:text-lg text-gray-900 font-semibold mb-3 bg-gray-50 p-3 rounded">Fixed Term Method (Recommended)</h3>
                   <div className="bg-gray-50 p-4 rounded mb-2 overflow-x-auto">
-                    <div className="text-xs md:text-sm">
+                    <div className="text-xs text-gray-900 md:text-sm">
                       <div><strong>Payment:</strong> P[r(1+r)^n]/[(1+r)^n-1]</div>
                       <div><strong>Where:</strong> P = Principal, r = Monthly rate, n = Number of payments</div>
                     </div>
                   </div>
-                  <p className="text-xs md:text-sm text-gray-600">
+                  <p className="text-xs md:text-sm text-gray-900">
                     Standard amortization formula for fixed-rate loans with predetermined term length.
                   </p>
                 </div>
 
                 <div className="mb-6">
-                  <h3 className="text-base md:text-lg font-semibold mb-3 bg-gray-50 p-3 rounded">Fixed Payment Method</h3>
+                  <h3 className="text-base md:text-lg  text-gray-900 font-semibold mb-3 bg-gray-50 p-3 rounded">Fixed Payment Method</h3>
                   <div className="bg-gray-50 p-4 rounded mb-2 overflow-x-auto">
-                    <div className="text-xs md:text-sm">
+                    <div className="text-xs text-gray-900 md:text-sm">
                       <div><strong>Term:</strong> log(M/(M-P×r)) / log(1+r)</div>
                       <div><strong>Where:</strong> M = Monthly payment amount, P = Principal, r = Monthly rate</div>
                     </div>
                   </div>
-                  <p className="text-xs md:text-sm text-gray-600">
+                  <p className="text-xs md:text-sm text-gray-900">
                     Calculates loan term when monthly payment amount is predetermined or constrained.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-base md:text-lg font-semibold mb-3 bg-gray-50 p-3 rounded">Interest-Only Method</h3>
+                  <h3 className="text-base md:text-lg text-gray-900 font-semibold mb-3 bg-gray-50 p-3 rounded">Interest-Only Method</h3>
                   <div className="bg-gray-50 p-4 rounded mb-2">
-                    <div className="text-xs md:text-sm">
+                    <div className="text-xs text-gray-900 md:text-sm">
                       <strong>Payment = Principal × Monthly Interest Rate (interest only period)</strong>
                     </div>
                   </div>
-                  <p className="text-xs md:text-sm text-gray-600">
+                  <p className="text-xs md:text-sm text-gray-900">
                     Initial period with lower payments covering only interest, followed by higher amortizing payments.
                   </p>
                 </div>
@@ -642,3 +643,4 @@ const PaymentCalculator = () => {
 };
 
 export default PaymentCalculator;
+

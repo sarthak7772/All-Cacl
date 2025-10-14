@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Target, Users, TrendingUp, Activity } from 'lucide-react';
 
 const IdealWeightCalculator = () => {
@@ -186,21 +186,21 @@ const IdealWeightCalculator = () => {
                   <div className="flex-1 p-6">
                     <div className="space-y-5">
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Age</label>
+                        <label className="block text-sm font-semibold text-gray-900 mb-2">Age</label>
                         <input
                           type="number"
                           value={age}
                           onChange={(e) => setAge(e.target.value)}
                           placeholder="Enter age"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900 transition-colors"
+                          className="w-full text-gray-900 px-4 py-3 border border-gray-900 rounded-lg focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900 transition-colors"
                         />
-                        <p className="text-xs text-gray-500 mt-1">Age range: 2-80 years</p>
+                        <p className="text-xs text-gray-900 mt-1">Age range: 2-80 years</p>
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-3">Gender</label>
+                        <label className="block text-sm font-semibold text-gray-900 mb-3">Gender</label>
                         <div className="grid grid-cols-2 gap-3">
-                          <label className="flex items-center cursor-pointer p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                          <label className="flex items-center cursor-pointer p-3 border border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">
                             <input
                               type="radio"
                               name="gender"
@@ -212,7 +212,7 @@ const IdealWeightCalculator = () => {
                             <Users className="w-4 h-4 mr-2" />
                             <span className="text-sm">Male</span>
                           </label>
-                          <label className="flex items-center cursor-pointer p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                          <label className="flex items-center cursor-pointer p-3 border text-gray-900  border-gray-900 rounded-lg hover:bg-gray-50 transition-colors">
                             <input
                               type="radio"
                               name="gender"
@@ -228,16 +228,16 @@ const IdealWeightCalculator = () => {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Height</label>
+                        <label className="block text-sm font-semibold text-gray-900 mb-2">Height</label>
                         <div className="relative">
                           <input
                             type="number"
                             value={height}
                             onChange={(e) => setHeight(e.target.value)}
                             placeholder={activeTab === 'US Units' ? 'e.g., 69' : 'e.g., 175'}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900 transition-colors pr-20"
+                            className="w-full text-gray-900 px-4 py-3 border border-gray-900 rounded-lg focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900 transition-colors pr-20"
                           />
-                          <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium text-sm">
+                          <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-900 font-medium text-sm">
                             {activeTab === 'US Units' ? 'inches' : 'cm'}
                           </span>
                         </div>
@@ -352,11 +352,11 @@ const IdealWeightCalculator = () => {
                   <div className="space-y-6">
                     <div className="p-4 border-l-4 border-blue-500 bg-gray-50">
                       <h3 className="text-lg font-bold text-gray-800 mb-3">Robinson Formula (1983)</h3>
-                      <div className="bg-white p-4 rounded text-sm mb-3">
+                      <div className="bg-white text-gray-900 p-4 rounded text-sm mb-3">
                         <div className="mb-2"><strong>Male:</strong> 52 kg + (1.9 kg × inches over 5 feet)</div>
                         <div><strong>Female:</strong> 49 kg + (1.7 kg × inches over 5 feet)</div>
                       </div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-900">
                         Refined modification of the Devine formula, providing more conservative estimates. 
                         Widely used in clinical settings for its balanced approach.
                       </p>
@@ -364,11 +364,11 @@ const IdealWeightCalculator = () => {
                     
                     <div className="p-4 border-l-4 border-green-500 bg-gray-50">
                       <h3 className="text-lg font-bold text-gray-800 mb-3">Miller Formula (1983)</h3>
-                      <div className="bg-white p-4 rounded text-sm mb-3">
+                      <div className="bg-white text-gray-900 p-4 rounded text-sm mb-3">
                         <div className="mb-2"><strong>Male:</strong> 56.2 kg + (1.41 kg × inches over 5 feet)</div>
                         <div><strong>Female:</strong> 53.1 kg + (1.36 kg × inches over 5 feet)</div>
                       </div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-900">
                         Alternative modification offering higher baseline weights, particularly beneficial for individuals 
                         with larger body frames or higher muscle mass.
                       </p>
@@ -376,11 +376,11 @@ const IdealWeightCalculator = () => {
                     
                     <div className="p-4 border-l-4 border-purple-500 bg-gray-50">
                       <h3 className="text-lg font-bold text-gray-800 mb-3">Devine Formula (1974)</h3>
-                      <div className="bg-white p-4 rounded text-sm mb-3">
+                      <div className="bg-white text-gray-900 p-4 rounded text-sm mb-3">
                         <div className="mb-2"><strong>Male:</strong> 50 kg + (2.3 kg × inches over 5 feet)</div>
                         <div><strong>Female:</strong> 45.5 kg + (2.3 kg × inches over 5 feet)</div>
                       </div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-900">
                         Most commonly used formula in medical practice. Originally developed for pharmaceutical dosing 
                         but became the standard for weight assessment.
                       </p>
@@ -388,11 +388,11 @@ const IdealWeightCalculator = () => {
                     
                     <div className="p-4 border-l-4 border-orange-500 bg-gray-50">
                       <h3 className="text-lg font-bold text-gray-800 mb-3">Hamwi Formula (1964)</h3>
-                      <div className="bg-white p-4 rounded text-sm mb-3">
+                      <div className="bg-white text-gray-900 p-4 rounded text-sm mb-3">
                         <div className="mb-2"><strong>Male:</strong> 48 kg + (2.7 kg × inches over 5 feet)</div>
                         <div><strong>Female:</strong> 45.5 kg + (2.2 kg × inches over 5 feet)</div>
                       </div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-900">
                         Historic formula providing the foundation for modern weight calculations. Still relevant for 
                         specific medical applications.
                       </p>

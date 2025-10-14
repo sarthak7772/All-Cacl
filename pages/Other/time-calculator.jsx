@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calendar, Clock,  } from 'lucide-react';
 
 const TimeCalculator = () => {
@@ -376,171 +376,172 @@ const TimeCalculator = () => {
 
           {/* Basic Time Calculator */}
           <div className="bg-white rounded-lg shadow-md p-4 lg:p-6 mb-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Basic Time Calculator</h2>
-            
-            <div className="grid grid-cols-4 gap-4 mb-4">
-              <div className="text-center font-medium text-sm lg:text-base">Day</div>
-              <div className="text-center font-medium text-sm lg:text-base">Hour</div>
-              <div className="text-center font-medium text-sm lg:text-base">Minute</div>
-              <div className="text-center font-medium text-sm lg:text-base">Second</div>
-            </div>
+  <h2 className="text-xl font-bold text-gray-900 mb-4">Basic Time Calculator</h2>
+  
+  <div className="grid grid-cols-4 gap-4 mb-4">
+    <div className="text-center font-medium text-sm lg:text-base text-gray-900">Day</div>
+    <div className="text-center font-medium text-sm lg:text-base text-gray-900">Hour</div>
+    <div className="text-center font-medium text-sm lg:text-base text-gray-900">Minute</div>
+    <div className="text-center font-medium text-sm lg:text-base text-gray-900">Second</div>
+  </div>
 
-            {/* First Time Input */}
-            <div className="grid grid-cols-4 gap-4 mb-4">
-              <input
-                type="number"
-                min="0"
-                value={basicCalc.time1.days}
-                onChange={(e) => setBasicCalc(prev => ({
-                  ...prev,
-                  time1: { ...prev.time1, days: e.target.value }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-              <input
-                type="number"
-                min="0"
-                max="23"
-                value={basicCalc.time1.hours}
-                onChange={(e) => setBasicCalc(prev => ({
-                  ...prev,
-                  time1: { ...prev.time1, hours: e.target.value }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-              <input
-                type="number"
-                min="0"
-                max="59"
-                value={basicCalc.time1.minutes}
-                onChange={(e) => setBasicCalc(prev => ({
-                  ...prev,
-                  time1: { ...prev.time1, minutes: e.target.value }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-              <input
-                type="number"
-                min="0"
-                max="59"
-                value={basicCalc.time1.seconds}
-                onChange={(e) => setBasicCalc(prev => ({
-                  ...prev,
-                  time1: { ...prev.time1, seconds: e.target.value }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-            </div>
+  {/* First Time Input */}
+  <div className="grid grid-cols-4 gap-4 mb-4">
+    <input
+      type="number"
+      min="0"
+      value={basicCalc.time1.days}
+      onChange={(e) => setBasicCalc(prev => ({
+        ...prev,
+        time1: { ...prev.time1, days: e.target.value }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+    <input
+      type="number"
+      min="0"
+      max="23"
+      value={basicCalc.time1.hours}
+      onChange={(e) => setBasicCalc(prev => ({
+        ...prev,
+        time1: { ...prev.time1, hours: e.target.value }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+    <input
+      type="number"
+      min="0"
+      max="59"
+      value={basicCalc.time1.minutes}
+      onChange={(e) => setBasicCalc(prev => ({
+        ...prev,
+        time1: { ...prev.time1, minutes: e.target.value }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+    <input
+      type="number"
+      min="0"
+      max="59"
+      value={basicCalc.time1.seconds}
+      onChange={(e) => setBasicCalc(prev => ({
+        ...prev,
+        time1: { ...prev.time1, seconds: e.target.value }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+  </div>
 
-            {/* Operation Selection */}
-            <div className="flex justify-center mb-4">
-              <label className="flex items-center mr-6">
-                <input
-                  type="radio"
-                  name="operation"
-                  value="add"
-                  checked={basicCalc.operation === 'add'}
-                  onChange={(e) => setBasicCalc(prev => ({
-                    ...prev,
-                    operation: e.target.value
-                  }))}
-                  className="mr-2 accent-gray-900"
-                />
-                Add +
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  name="operation"
-                  value="subtract"
-                  checked={basicCalc.operation === 'subtract'}
-                  onChange={(e) => setBasicCalc(prev => ({
-                    ...prev,
-                    operation: e.target.value
-                  }))}
-                  className="mr-2 accent-gray-900"
-                />
-                Subtract –
-              </label>
-            </div>
+  {/* Operation Selection */}
+  <div className="flex justify-center mb-4 text-gray-900">
+    <label className="flex items-center mr-6 text-gray-900">
+      <input
+        type="radio"
+        name="operation"
+        value="add"
+        checked={basicCalc.operation === 'add'}
+        onChange={(e) => setBasicCalc(prev => ({
+          ...prev,
+          operation: e.target.value
+        }))}
+        className="mr-2 accent-gray-900"
+      />
+      Add +
+    </label>
+    <label className="flex items-center text-gray-900">
+      <input
+        type="radio"
+        name="operation"
+        value="subtract"
+        checked={basicCalc.operation === 'subtract'}
+        onChange={(e) => setBasicCalc(prev => ({
+          ...prev,
+          operation: e.target.value
+        }))}
+        className="mr-2 accent-gray-900"
+      />
+      Subtract –
+    </label>
+  </div>
 
-            {/* Second Time Input */}
-            <div className="grid grid-cols-4 gap-4 mb-4">
-              <input
-                type="number"
-                min="0"
-                value={basicCalc.time2.days}
-                onChange={(e) => setBasicCalc(prev => ({
-                  ...prev,
-                  time2: { ...prev.time2, days: e.target.value }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-              <input
-                type="number"
-                min="0"
-                max="23"
-                value={basicCalc.time2.hours}
-                onChange={(e) => setBasicCalc(prev => ({
-                  ...prev,
-                  time2: { ...prev.time2, hours: e.target.value }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-              <input
-                type="number"
-                min="0"
-                max="59"
-                value={basicCalc.time2.minutes}
-                onChange={(e) => setBasicCalc(prev => ({
-                  ...prev,
-                  time2: { ...prev.time2, minutes: e.target.value }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-              <input
-                type="number"
-                min="0"
-                max="59"
-                value={basicCalc.time2.seconds}
-                onChange={(e) => setBasicCalc(prev => ({
-                  ...prev,
-                  time2: { ...prev.time2, seconds: e.target.value }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-            </div>
+  {/* Second Time Input */}
+  <div className="grid grid-cols-4 gap-4 mb-4">
+    <input
+      type="number"
+      min="0"
+      value={basicCalc.time2.days}
+      onChange={(e) => setBasicCalc(prev => ({
+        ...prev,
+        time2: { ...prev.time2, days: e.target.value }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+    <input
+      type="number"
+      min="0"
+      max="23"
+      value={basicCalc.time2.hours}
+      onChange={(e) => setBasicCalc(prev => ({
+        ...prev,
+        time2: { ...prev.time2, hours: e.target.value }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+    <input
+      type="number"
+      min="0"
+      max="59"
+      value={basicCalc.time2.minutes}
+      onChange={(e) => setBasicCalc(prev => ({
+        ...prev,
+        time2: { ...prev.time2, minutes: e.target.value }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+    <input
+      type="number"
+      min="0"
+      max="59"
+      value={basicCalc.time2.seconds}
+      onChange={(e) => setBasicCalc(prev => ({
+        ...prev,
+        time2: { ...prev.time2, seconds: e.target.value }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+  </div>
 
-            {/* Equals Line */}
-            <div className="text-center text-2xl font-bold mb-4">=</div>
+  {/* Equals Line */}
+  <div className="text-center text-2xl font-bold mb-4 text-gray-900">=</div>
 
-            {/* Result */}
-            <div className="grid grid-cols-4 gap-4 mb-6">
-              <input
-                type="text"
-                value={basicCalc.result.days}
-                readOnly
-                className="p-2 border border-gray-300 rounded text-center bg-gray-50"
-              />
-              <input
-                type="text"
-                value={basicCalc.result.hours}
-                readOnly
-                className="p-2 border border-gray-300 rounded text-center bg-gray-50"
-              />
-              <input
-                type="text"
-                value={basicCalc.result.minutes}
-                readOnly
-                className="p-2 border border-gray-300 rounded text-center bg-gray-50"
-              />
-              <input
-                type="text"
-                value={basicCalc.result.seconds}
-                readOnly
-                className="p-2 border border-gray-300 rounded text-center bg-gray-50"
-              />
-            </div>
+  {/* Result */}
+  <div className="grid grid-cols-4 gap-4 mb-6">
+    <input
+      type="text"
+      value={basicCalc.result.days}
+      readOnly
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 bg-gray-50"
+    />
+    <input
+      type="text"
+      value={basicCalc.result.hours}
+      readOnly
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 bg-gray-50"
+    />
+    <input
+      type="text"
+      value={basicCalc.result.minutes}
+      readOnly
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 bg-gray-50"
+    />
+    <input
+      type="text"
+      value={basicCalc.result.seconds}
+      readOnly
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 bg-gray-50"
+    />
+  </div>
+
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -560,195 +561,196 @@ const TimeCalculator = () => {
           </div>
 
           {/* Date & Time Calculator */}
-          <div className="bg-white rounded-lg shadow-md p-4 lg:p-6 mb-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Date & Time Calculator</h2>
-            <p className="text-gray-700 mb-4">
-              Add or subtract time from any given starting date and time. Enter values in days, hours, minutes, and seconds.
-            </p>
+         <div className="bg-white rounded-lg shadow-md p-4 lg:p-6 mb-8">
+  <h2 className="text-xl font-bold text-gray-900 mb-4">Date & Time Calculator</h2>
+  <p className="text-gray-900 mb-4">
+    Add or subtract time from any given starting date and time. Enter values in days, hours, minutes, and seconds.
+  </p>
 
-            {/* Start Date */}
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
-              <div className="grid grid-cols-3 gap-2 mb-4">
-                <select
-                  value={dateTimeCalc.startDate.month}
-                  onChange={(e) => setDateTimeCalc(prev => ({
-                    ...prev,
-                    startDate: { ...prev.startDate, month: e.target.value }
-                  }))}
-                  className="p-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                >
-                  {months.map(month => (
-                    <option key={month} value={month}>{month}</option>
-                  ))}
-                </select>
-                <select
-                  value={dateTimeCalc.startDate.day}
-                  onChange={(e) => setDateTimeCalc(prev => ({
-                    ...prev,
-                    startDate: { ...prev.startDate, day: e.target.value }
-                  }))}
-                  className="p-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                >
-                  {generateDayOptions(dateTimeCalc.startDate.month, dateTimeCalc.startDate.year).map(day => (
-                    <option key={day} value={day}>{day}</option>
-                  ))}
-                </select>
-                <select
-                  value={dateTimeCalc.startDate.year}
-                  onChange={(e) => setDateTimeCalc(prev => ({
-                    ...prev,
-                    startDate: { ...prev.startDate, year: e.target.value }
-                  }))}
-                  className="p-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                >
-                  {generateYearOptions().map(year => (
-                    <option key={year} value={year}>{year}</option>
-                  ))}
-                </select>
-              </div>
+  {/* Start Date */}
+  <div className="mb-4">
+    <label className="block text-sm font-medium text-gray-900 mb-2">Start Date</label>
+    <div className="grid grid-cols-3 gap-2 mb-4">
+      <select
+        value={dateTimeCalc.startDate.month}
+        onChange={(e) => setDateTimeCalc(prev => ({
+          ...prev,
+          startDate: { ...prev.startDate, month: e.target.value }
+        }))}
+        className="p-2 border border-gray-900 rounded text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      >
+        {months.map(month => (
+          <option key={month} value={month}>{month}</option>
+        ))}
+      </select>
+      <select
+        value={dateTimeCalc.startDate.day}
+        onChange={(e) => setDateTimeCalc(prev => ({
+          ...prev,
+          startDate: { ...prev.startDate, day: e.target.value }
+        }))}
+        className="p-2 border border-gray-900 rounded text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      >
+        {generateDayOptions(dateTimeCalc.startDate.month, dateTimeCalc.startDate.year).map(day => (
+          <option key={day} value={day}>{day}</option>
+        ))}
+      </select>
+      <select
+        value={dateTimeCalc.startDate.year}
+        onChange={(e) => setDateTimeCalc(prev => ({
+          ...prev,
+          startDate: { ...prev.startDate, year: e.target.value }
+        }))}
+        className="p-2 border border-gray-900 rounded text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      >
+        {generateYearOptions().map(year => (
+          <option key={year} value={year}>{year}</option>
+        ))}
+      </select>
+    </div>
 
-              {/* Start Time */}
-              <label className="block text-sm font-medium text-gray-700 mb-2">Start Time</label>
-              <div className="grid grid-cols-4 gap-2 mb-2">
-                <input
-                  type="number"
-                  min="1"
-                  max="12"
-                  value={dateTimeCalc.startTime.hour}
-                  onChange={(e) => setDateTimeCalc(prev => ({
-                    ...prev,
-                    startTime: { ...prev.startTime, hour: e.target.value }
-                  }))}
-                  placeholder="Hour"
-                  className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                />
-                <input
-                  type="number"
-                  min="0"
-                  max="59"
-                  value={dateTimeCalc.startTime.minute}
-                  onChange={(e) => setDateTimeCalc(prev => ({
-                    ...prev,
-                    startTime: { ...prev.startTime, minute: e.target.value }
-                  }))}
-                  placeholder="Min"
-                  className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                />
-                <input
-                  type="number"
-                  min="0"
-                  max="59"
-                  value={dateTimeCalc.startTime.second}
-                  onChange={(e) => setDateTimeCalc(prev => ({
-                    ...prev,
-                    startTime: { ...prev.startTime, second: e.target.value }
-                  }))}
-                  placeholder="Sec"
-                  className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                />
-                <select
-                  value={dateTimeCalc.startTime.period}
-                  onChange={(e) => setDateTimeCalc(prev => ({
-                    ...prev,
-                    startTime: { ...prev.startTime, period: e.target.value }
-                  }))}
-                  className="p-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                >
-                  <option value="AM">AM</option>
-                  <option value="PM">PM</option>
-                </select>
-              </div>
-              <button
-                onClick={setCurrentDateTime}
-                className="text-gray-900 hover:text-gray-700 underline text-sm mb-4"
-              >
-                Set to Now
-              </button>
-            </div>
+    {/* Start Time */}
+    <label className="block text-sm font-medium text-gray-900 mb-2">Start Time</label>
+    <div className="grid grid-cols-4 gap-2 mb-2">
+      <input
+        type="number"
+        min="1"
+        max="12"
+        value={dateTimeCalc.startTime.hour}
+        onChange={(e) => setDateTimeCalc(prev => ({
+          ...prev,
+          startTime: { ...prev.startTime, hour: e.target.value }
+        }))}
+        placeholder="Hour"
+        className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      />
+      <input
+        type="number"
+        min="0"
+        max="59"
+        value={dateTimeCalc.startTime.minute}
+        onChange={(e) => setDateTimeCalc(prev => ({
+          ...prev,
+          startTime: { ...prev.startTime, minute: e.target.value }
+        }))}
+        placeholder="Min"
+        className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      />
+      <input
+        type="number"
+        min="0"
+        max="59"
+        value={dateTimeCalc.startTime.second}
+        onChange={(e) => setDateTimeCalc(prev => ({
+          ...prev,
+          startTime: { ...prev.startTime, second: e.target.value }
+        }))}
+        placeholder="Sec"
+        className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      />
+      <select
+        value={dateTimeCalc.startTime.period}
+        onChange={(e) => setDateTimeCalc(prev => ({
+          ...prev,
+          startTime: { ...prev.startTime, period: e.target.value }
+        }))}
+        className="p-2 border border-gray-900 rounded text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      >
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+    </div>
+    <button
+      onClick={setCurrentDateTime}
+      className="text-gray-900 hover:text-gray-700 underline text-sm mb-4"
+    >
+      Set to Now
+    </button>
+  </div>
 
-            {/* Operation Selection */}
-            <div className="flex justify-center mb-4">
-              <label className="flex items-center mr-6">
-                <input
-                  type="radio"
-                  name="dateOperation"
-                  value="add"
-                  checked={dateTimeCalc.operation === 'add'}
-                  onChange={(e) => setDateTimeCalc(prev => ({
-                    ...prev,
-                    operation: e.target.value
-                  }))}
-                  className="mr-2 accent-gray-900"
-                />
-                Add +
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  name="dateOperation"
-                  value="subtract"
-                  checked={dateTimeCalc.operation === 'subtract'}
-                  onChange={(e) => setDateTimeCalc(prev => ({
-                    ...prev,
-                    operation: e.target.value
-                  }))}
-                  className="mr-2 accent-gray-900"
-                />
-                Subtract –
-              </label>
-            </div>
+  {/* Operation Selection */}
+  <div className="flex justify-center mb-4 text-gray-900">
+    <label className="flex items-center mr-6 text-gray-900">
+      <input
+        type="radio"
+        name="dateOperation"
+        value="add"
+        checked={dateTimeCalc.operation === 'add'}
+        onChange={(e) => setDateTimeCalc(prev => ({
+          ...prev,
+          operation: e.target.value
+        }))}
+        className="mr-2 accent-gray-900"
+      />
+      Add +
+    </label>
+    <label className="flex items-center text-gray-900">
+      <input
+        type="radio"
+        name="dateOperation"
+        value="subtract"
+        checked={dateTimeCalc.operation === 'subtract'}
+        onChange={(e) => setDateTimeCalc(prev => ({
+          ...prev,
+          operation: e.target.value
+        }))}
+        className="mr-2 accent-gray-900"
+      />
+      Subtract –
+    </label>
+  </div>
 
-            {/* Time to Add/Subtract */}
-            <div className="grid grid-cols-4 gap-4 mb-2">
-              <div className="text-center text-sm font-medium">Day</div>
-              <div className="text-center text-sm font-medium">Hour</div>
-              <div className="text-center text-sm font-medium">Minute</div>
-              <div className="text-center text-sm font-medium">Second</div>
-            </div>
+  {/* Time to Add/Subtract */}
+  <div className="grid grid-cols-4 gap-4 mb-2 text-gray-900">
+    <div className="text-center text-sm font-medium text-gray-900">Day</div>
+    <div className="text-center text-sm font-medium text-gray-900">Hour</div>
+    <div className="text-center text-sm font-medium text-gray-900">Minute</div>
+    <div className="text-center text-sm font-medium text-gray-900">Second</div>
+  </div>
 
-            <div className="grid grid-cols-4 gap-4 mb-6">
-              <input
-                type="number"
-                min="0"
-                value={dateTimeCalc.timeToAdd.days}
-                onChange={(e) => setDateTimeCalc(prev => ({
-                  ...prev,
-                  timeToAdd: { ...prev.timeToAdd, days: parseInt(e.target.value) || 0 }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-              <input
-                type="number"
-                min="0"
-                value={dateTimeCalc.timeToAdd.hours}
-                onChange={(e) => setDateTimeCalc(prev => ({
-                  ...prev,
-                  timeToAdd: { ...prev.timeToAdd, hours: parseInt(e.target.value) || 0 }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-              <input
-                type="number"
-                min="0"
-                value={dateTimeCalc.timeToAdd.minutes}
-                onChange={(e) => setDateTimeCalc(prev => ({
-                  ...prev,
-                  timeToAdd: { ...prev.timeToAdd, minutes: parseInt(e.target.value) || 0 }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-              <input
-                type="number"
-                min="0"
-                value={dateTimeCalc.timeToAdd.seconds}
-                onChange={(e) => setDateTimeCalc(prev => ({
-                  ...prev,
-                  timeToAdd: { ...prev.timeToAdd, seconds: parseInt(e.target.value) || 0 }
-                }))}
-                className="p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              />
-            </div>
+  <div className="grid grid-cols-4 gap-4 mb-6">
+    <input
+      type="number"
+      min="0"
+      value={dateTimeCalc.timeToAdd.days}
+      onChange={(e) => setDateTimeCalc(prev => ({
+        ...prev,
+        timeToAdd: { ...prev.timeToAdd, days: parseInt(e.target.value) || 0 }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+    <input
+      type="number"
+      min="0"
+      value={dateTimeCalc.timeToAdd.hours}
+      onChange={(e) => setDateTimeCalc(prev => ({
+        ...prev,
+        timeToAdd: { ...prev.timeToAdd, hours: parseInt(e.target.value) || 0 }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+    <input
+      type="number"
+      min="0"
+      value={dateTimeCalc.timeToAdd.minutes}
+      onChange={(e) => setDateTimeCalc(prev => ({
+        ...prev,
+        timeToAdd: { ...prev.timeToAdd, minutes: parseInt(e.target.value) || 0 }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+    <input
+      type="number"
+      min="0"
+      value={dateTimeCalc.timeToAdd.seconds}
+      onChange={(e) => setDateTimeCalc(prev => ({
+        ...prev,
+        timeToAdd: { ...prev.timeToAdd, seconds: parseInt(e.target.value) || 0 }
+      }))}
+      className="p-2 border border-gray-900 rounded text-center text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none"
+    />
+  </div>
+
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -784,21 +786,22 @@ const TimeCalculator = () => {
           </div>
 
           {/* Time Expression Calculator */}
-          <div className="bg-white rounded-lg shadow-md p-4 lg:p-6 mb-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Time Expression Calculator</h2>
-            <p className="text-gray-700 mb-4">
-              Enter multiple time values with units (d = days, h = hours, m = minutes, s = seconds) and use + or – to add or subtract them. Example: "1d 2h + 30m – 45s".
-            </p>
+         <div className="bg-white rounded-lg shadow-md p-4 lg:p-6 mb-8">
+  <h2 className="text-xl font-bold text-gray-900 mb-4">Time Expression Calculator</h2>
+  <p className="text-gray-900 mb-4">
+    Enter multiple time values with units (d = days, h = hours, m = minutes, s = seconds) and use + or – to add or subtract them. Example: "1d 2h + 30m – 45s".
+  </p>
 
-            <textarea
-              value={expressionCalc.expression}
-              onChange={(e) => setExpressionCalc(prev => ({
-                ...prev,
-                expression: e.target.value
-              }))}
-              placeholder="1d 2h 3m 4s + 4h 5s - 2030s + 28h"
-              className="w-full p-3 border border-gray-300 rounded h-24 resize-none focus:ring-2 focus:ring-gray-900 focus:outline-none mb-4"
-            />
+  <textarea
+    value={expressionCalc.expression}
+    onChange={(e) => setExpressionCalc(prev => ({
+      ...prev,
+      expression: e.target.value
+    }))}
+    placeholder="1d 2h 3m 4s + 4h 5s - 2030s + 28h"
+    className="w-full p-3 border border-gray-900 rounded h-24 resize-none text-gray-900 focus:ring-2 focus:ring-gray-900 focus:outline-none mb-4"
+  />
+
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button

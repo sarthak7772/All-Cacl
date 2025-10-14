@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer";
 import {
   TrendingUp,
   DollarSign,
@@ -404,7 +404,7 @@ const InvestmentCalculator = () => {
                             onChange={(e) =>
                               setStartingAmount(Number(e.target.value) || 0)
                             }
-                            className="flex-1 px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
+                            className="flex-1 px-3 text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
                           />
                         </div>
                       </div>
@@ -420,12 +420,12 @@ const InvestmentCalculator = () => {
                             onChange={(e) =>
                               setInvestmentLength(Number(e.target.value) || 0)
                             }
-                            className="px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
+                            className="px-3 text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
                           />
                           <select
                             value={lengthUnit}
                             onChange={(e) => setLengthUnit(e.target.value)}
-                            className="px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none"
+                            className="px-3 text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none"
                           >
                             <option value="years">years</option>
                             <option value="months">months</option>
@@ -445,7 +445,7 @@ const InvestmentCalculator = () => {
                             onChange={(e) =>
                               setReturnRate(Number(e.target.value) || 0)
                             }
-                            className="flex-1 px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
+                            className="flex-1 px-3  text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
                           />
                           <span className="ml-2 text-gray-900">%</span>
                         </div>
@@ -458,7 +458,7 @@ const InvestmentCalculator = () => {
                         <select
                           value={compound}
                           onChange={(e) => setCompound(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none"
+                          className="w-full px-3 text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none"
                         >
                           <option value="annually">Annually</option>
                           <option value="semiannually">Semiannually</option>
@@ -483,7 +483,7 @@ const InvestmentCalculator = () => {
                                 Number(e.target.value) || 0
                               )
                             }
-                            className="flex-1 px-3 md:px-4 py-2 md:py-3 border-2 border-gray-200 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
+                            className="flex-1 px-3 text-gray-900 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:border-red-500 focus:outline-none transition-colors text-base md:text-lg"
                           />
                         </div>
                       </div>
@@ -493,7 +493,7 @@ const InvestmentCalculator = () => {
                           Contribution Frequency
                         </label>
                         <div className="flex space-x-4">
-                          <label className="flex items-center cursor-pointer">
+                          <label className="flex text-gray-900 items-center cursor-pointer">
                             <input
                               type="radio"
                               value="month"
@@ -503,9 +503,9 @@ const InvestmentCalculator = () => {
                               }
                               className="mr-2"
                             />
-                            <span>Monthly</span>
+                            <span text-gray-900>Monthly</span>
                           </label>
-                          <label className="flex items-center cursor-pointer">
+                          <label className="flex text-gray-900 items-center cursor-pointer">
                             <input
                               type="radio"
                               value="year"
@@ -515,7 +515,7 @@ const InvestmentCalculator = () => {
                               }
                               className="mr-2"
                             />
-                            <span>Yearly</span>
+                            <span text-gray-900>Yearly</span>
                           </label>
                         </div>
                       </div>
@@ -525,7 +525,7 @@ const InvestmentCalculator = () => {
                           Contribute at the
                         </label>
                         <div className="flex space-x-4">
-                          <label className="flex items-center cursor-pointer">
+                          <label className="flex text-gray-900 items-center cursor-pointer">
                             <input
                               type="radio"
                               value="beginning"
@@ -537,7 +537,7 @@ const InvestmentCalculator = () => {
                             />
                             <span>Beginning</span>
                           </label>
-                          <label className="flex items-center cursor-pointer">
+                          <label className="flex text-gray-900 items-center cursor-pointer">
                             <input
                               type="radio"
                               value="end"
@@ -559,13 +559,13 @@ const InvestmentCalculator = () => {
                         <button
                           onClick={calculateInvestment}
                           style={{ backgroundColor: "#43A047" }}
-                          className="flex-1 text-white py-2 md:py-3 px-4 md:px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                          className="flex-1 text-gray-900 py-2  md:py-3 px-4 md:px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors"
                         >
                           Calculate
                         </button>
                         <button
                           onClick={clearForm}
-                          className="px-4 md:px-6 py-2 md:py-3 border-2 border-gray-300 text-gray-900 rounded-lg font-semibold hover:border-red-300 hover:text-red-600 transition-colors"
+                          className="px-4 py-3 bg-gray-400 text-white rounded hover:bg-gray-500 transition-colors"
                         >
                           Reset
                         </button>
@@ -601,7 +601,7 @@ const InvestmentCalculator = () => {
                             <span className="font-medium text-gray-900 text-sm md:text-base">
                               Starting Amount:
                             </span>
-                            <span className="font-bold text-sm md:text-base">
+                            <span className="font-bold text-gray-900 text-sm md:text-base">
                               {formatCurrency(startingAmount)}
                             </span>
                           </div>
@@ -609,7 +609,7 @@ const InvestmentCalculator = () => {
                             <span className="font-medium text-gray-900 text-sm md:text-base">
                               Total Contributions:
                             </span>
-                            <span className="font-bold text-sm md:text-base">
+                            <span className="font-bold text-gray-900  text-sm md:text-base">
                               {formatCurrency(totalContributions)}
                             </span>
                           </div>
@@ -625,14 +625,14 @@ const InvestmentCalculator = () => {
                             <span className="font-medium text-gray-900 text-sm md:text-base">
                               Interest Ratio:
                             </span>
-                            <span className="font-bold text-sm md:text-base">
+                            <span className="font-bold text-gray-900  text-sm md:text-base">
                               {((totalInterest / endBalance) * 100).toFixed(1)}%
                             </span>
                           </div>
                         </div>
 
                         <div className="mt-6 md:mt-8">
-                          <h4 className="font-bold text-center mb-4">
+                          <h4 className="font-bold text-gray-900  text-center mb-4">
                             Investment Breakdown
                           </h4>
                           <div className="flex flex-col md:flex-row items-center justify-center">
@@ -689,23 +689,23 @@ const InvestmentCalculator = () => {
                               </svg>
                               <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="text-center">
-                                  <div className="text-sm font-bold">
+                                  <div className="text-sm font-bold text-gray-900">
                                     {Math.round(
                                       (totalInterest / endBalance) * 100
                                     )}
                                     %
                                   </div>
-                                  <div className="text-xs">Interest</div>
+                                  <div className="text-xs text-gray-900">Interest</div>
                                 </div>
                               </div>
                             </div>
                             <div className="ml-0 md:ml-6 mt-4 md:mt-0 space-y-2 text-sm">
                               <div className="flex items-center">
                                 <div
-                                  className="w-4 h-4 rounded mr-2"
+                                  className="w-4 h-4 rounded mr-2 "
                                   style={{ backgroundColor: "#800000" }}
                                 ></div>
-                                <span>
+                                <span className="text-gray-900">
                                   Starting (
                                   {Math.round(
                                     (startingAmount / endBalance) * 100
@@ -715,7 +715,7 @@ const InvestmentCalculator = () => {
                               </div>
                               <div className="flex items-center">
                                 <div className="w-4 h-4 bg-green-600 rounded mr-2"></div>
-                                <span>
+                                <span className="text-xs text-gray-900" >
                                   Contributions (
                                   {Math.round(
                                     (totalContributions / endBalance) * 100
@@ -725,7 +725,7 @@ const InvestmentCalculator = () => {
                               </div>
                               <div className="flex items-center">
                                 <div className="w-4 h-4 bg-red-600 rounded mr-2"></div>
-                                <span>
+                                <span className="text-xs text-gray-900">
                                   Interest (
                                   {Math.round(
                                     (totalInterest / endBalance) * 100
@@ -749,16 +749,16 @@ const InvestmentCalculator = () => {
                           <table className="w-full text-xs md:text-sm">
                             <thead className="bg-gray-50">
                               <tr>
-                                <th className="p-2 md:p-3 text-left font-semibold">
+                                <th className="p-2 md:p-3 text-gray-900 text-left font-semibold">
                                   Year
                                 </th>
-                                <th className="p-2 md:p-3 text-left font-semibold">
+                                <th className="p-2 md:p-3 text-gray-900 text-left font-semibold">
                                   Deposit
                                 </th>
-                                <th className="p-2 md:p-3 text-left font-semibold">
+                                <th className="p-2 md:p-3  text-gray-900 text-left font-semibold">
                                   Interest
                                 </th>
-                                <th className="p-2 md:p-3 text-left font-semibold">
+                                <th className="p-2 md:p-3  text-gray-900 text-left font-semibold">
                                   Balance
                                 </th>
                               </tr>
@@ -772,17 +772,17 @@ const InvestmentCalculator = () => {
                                     className={
                                       index % 2 === 0
                                         ? "bg-white"
-                                        : "bg-gray-50"
+                                        : "bg-gray-90"
                                     }
                                   >
-                                    <td className="p-2 md:p-3">{item.year}</td>
-                                    <td className="p-2 md:p-3">
+                                    <td className="p-2 md:p-3 text-gray-900">{item.year}</td>
+                                    <td className="p-2 md:p-3 text-gray-900">
                                       {formatCurrency(item.deposit)}
                                     </td>
                                     <td className="p-2 md:p-3 text-green-600">
                                       {formatCurrency(item.interest)}
                                     </td>
-                                    <td className="p-2 md:p-3 font-medium">
+                                    <td className="p-2 md:p-3 text-gray-900 font-medium">
                                       {formatCurrency(item.endingBalance)}
                                     </td>
                                   </tr>
@@ -872,48 +872,48 @@ const InvestmentCalculator = () => {
                   </h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 md:mb-8">
-                    <div className="bg-green-50 p-4 rounded border-l-4 border-green-600">
+                    <div className="bg-gray-200 p-4 rounded border-l-4 border-green-600">
                       <div className="text-center mb-3">
-                        <div className="w-12 h-12 bg-green-600 rounded-full mx-auto flex items-center justify-center text-white font-bold text-xl">
+                        <div className="w-12 h-12 bg-green-600 rounded-full mx-auto flex items-center justify-center text-gray-900 font-bold text-xl">
                           📈
                         </div>
                       </div>
-                      <h4 className="font-bold text-center mb-2">
+                      <h4 className="font-bold text-gray-900 text-center mb-2">
                         Growth Tracking
                       </h4>
-                      <p className="text-sm text-center">
+                      <p className="text-sm  text-gray-900 text-center">
                         Schedule regular portfolio reviews, performance
                         evaluations, and strategy adjustments based on your
                         investment milestones and market conditions.
                       </p>
                     </div>
 
-                    <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-600">
+                    <div className="bg-gray-200 p-4 rounded border-l-4 border-blue-600">
                       <div className="text-center mb-3">
                         <div className="w-12 h-12 bg-blue-600 rounded-full mx-auto flex items-center justify-center text-white font-bold text-xl">
                           💰
                         </div>
                       </div>
-                      <h4 className="font-bold text-center mb-2">
+                      <h4 className="font-bold text-gray-900 text-center mb-2">
                         Wealth Building
                       </h4>
-                      <p className="text-sm text-center">
+                      <p className="text-sm text-gray-900 text-center">
                         Monitor compound growth and accumulation milestones
                         throughout each investment phase and market cycle
                         progression.
                       </p>
                     </div>
 
-                    <div className="bg-red-50 p-4 rounded border-l-4 border-red-600">
+                    <div className="bg-gray-200 p-4 rounded border-l-4 border-red-600">
                       <div className="text-center mb-3">
                         <div className="w-12 h-12 bg-red-600 rounded-full mx-auto flex items-center justify-center text-white font-bold text-xl">
                           🎯
                         </div>
                       </div>
-                      <h4 className="font-bold text-center mb-2">
+                      <h4 className="font-bold text-gray-900 text-center mb-2">
                         Goal Achievement
                       </h4>
-                      <p className="text-sm text-center">
+                      <p className="text-sm text-gray-900 text-center">
                         Plan major financial decisions, retirement timing, and
                         wealth preservation strategies around your investment
                         timeline.
@@ -921,8 +921,8 @@ const InvestmentCalculator = () => {
                     </div>
                   </div>
 
-                  <div className="bg-yellow-50 p-4 rounded border-l-4 border-yellow-500">
-                    <p className="text-sm">
+                  <div className="bg-gray-200 p-4 rounded border-l-4 border-yellow-500">
+                    <p className="text-sm text-gray-900">
                       <strong>Important:</strong> Investment calculations
                       provide estimates based on assumed constant returns.
                       Actual results may vary significantly based on market

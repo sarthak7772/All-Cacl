@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Layers, Target, Building, Hammer,  CheckCircle2, Settings } from 'lucide-react';
 
 const ConcreteCalculator = () => {
@@ -170,41 +170,41 @@ const ConcreteCalculator = () => {
           </h4>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             <div className="text-center">
-              <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-2 text-white">
-                <span className="text-sm font-bold">C</span>
+              <div className="w-12 h-12 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-2 text-white">
+                <span className="text-sm font-bold text-gray-900">C</span>
               </div>
-              <p className="text-sm text-gray-600">Cement</p>
-              <p className="font-bold">{result.materials.cement} m³</p>
-              <p className="text-xs text-gray-500">{result.materials.cementBags} bags</p>
+              <p className="text-sm text-gray-900">Cement</p>
+              <p className="font-bold text-gray-900">{result.materials.cement} m³</p>
+              <p className="text-xs text-gray-900">{result.materials.cementBags} bags</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2 text-white">
-                <span className="text-sm font-bold">S</span>
+                <span className="text-sm font-bold text-gray-900">S</span>
               </div>
-              <p className="text-sm text-gray-600">Sand</p>
-              <p className="font-bold">{result.materials.sand} m³</p>
+              <p className="text-sm text-gray-900">Sand</p>
+              <p className="font-bold text-gray-900">{result.materials.sand} m³</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-2 text-white">
-                <span className="text-sm font-bold">A</span>
+              <div className="w-12 h-12 bg-red-900 rounded-full flex items-center justify-center mx-auto mb-2 text-white">
+                <span className="text-sm font-bold text-gray-900">A</span>
               </div>
-              <p className="text-sm text-gray-600">Aggregate</p>
-              <p className="font-bold">{result.materials.aggregate} m³</p>
+              <p className="text-sm text-gray-900">Aggregate</p>
+              <p className="font-bold text-gray-900">{result.materials.aggregate} m³</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2 text-white">
-                <span className="text-sm font-bold">W</span>
+                <span className="text-sm font-bold text-gray-900">W</span>
               </div>
-              <p className="text-sm text-gray-600">Water</p>
-              <p className="font-bold">{result.materials.water} L</p>
+              <p className="text-sm text-gray-900">Water</p>
+              <p className="font-bold text-gray-900">{result.materials.water} L</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-2 text-white">
-                <span className="text-sm font-bold">$</span>
+                <span className="text-sm font-bold text-gray-900">$</span>
               </div>
-              <p className="text-sm text-gray-600">Est. Cost</p>
-              <p className="font-bold">${(result.totalVolume * 85).toFixed(0)}</p>
-              <p className="text-xs text-gray-500">USD approx</p>
+              <p className="text-sm text-gray-900">Est. Cost</p>
+              <p className="font-bold text-gray-900">${(result.totalVolume * 85).toFixed(0)}</p>
+              <p className="text-xs text-gray-900">USD approx</p>
             </div>
           </div>
         </div>
@@ -332,11 +332,11 @@ const ConcreteCalculator = () => {
             
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Concrete Type</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Concrete Type</label>
                 <select
                   value={concreteType}
                   onChange={(e) => setConcreteType(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  className="w-full text-gray-900 px-4 py-3 border border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                 >
                   <option value="standard">Standard Concrete (M20) - General Purpose</option>
                   <option value="high-strength">High Strength (M35) - Heavy Loads</option>
@@ -346,8 +346,8 @@ const ConcreteCalculator = () => {
               </div>
               
               <div className="bg-gray-50 p-4 rounded-lg">
-                <h3 className="font-semibold text-gray-800 mb-2">Current Mix Properties</h3>
-                <div className="space-y-1 text-sm">
+                <h3 className="font-semibold text-gray-900 mb-2">Current Mix Properties</h3>
+                <div className="space-y-1 text-sm text-gray-900">
                   <p><span className="font-medium">Strength Grade:</span> {concreteMixes[concreteType].strength}</p>
                   <p><span className="font-medium">Mix Ratio:</span> {concreteMixes[concreteType].ratio}</p>
                   <p><span className="font-medium">Density:</span> {concreteMixes[concreteType].density} kg/m³</p>
@@ -388,19 +388,19 @@ const ConcreteCalculator = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Length</label>
+                    <label className="block text-sm font-medium text-gray-900 mb-1">Length</label>
                     <div className="flex">
                       <input
                         type="number"
                         value={slabData.length}
                         onChange={(e) => setSlabData(prev => ({...prev, length: parseFloat(e.target.value) || 0}))}
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="flex-1 px-3 py-2 text-gray-900 border border-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
                         step="0.1"
                       />
                       <select
                         value={slabData.lengthUnit}
                         onChange={(e) => setSlabData(prev => ({...prev, lengthUnit: e.target.value}))}
-                        className="px-3 py-2 border border-l-0 border-gray-300 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="px-3 py-2  text-gray-900 border border-l-0 border-gray-900 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
                       >
                         <option value="meters">m</option>
                         <option value="feet">ft</option>
@@ -410,19 +410,19 @@ const ConcreteCalculator = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Width</label>
+                    <label className="block text-sm font-medium text-gray-900 mb-1">Width</label>
                     <div className="flex">
                       <input
                         type="number"
                         value={slabData.width}
                         onChange={(e) => setSlabData(prev => ({...prev, width: parseFloat(e.target.value) || 0}))}
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="flex-1 text-gray-900 px-3 py-2 border border-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
                         step="0.1"
                       />
                       <select
                         value={slabData.widthUnit}
                         onChange={(e) => setSlabData(prev => ({...prev, widthUnit: e.target.value}))}
-                        className="px-3 py-2 border border-l-0 border-gray-300 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="px-3 py-2 text-gray-900 border border-l-0 border-gray-900 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
                       >
                         <option value="meters">m</option>
                         <option value="feet">ft</option>
@@ -432,19 +432,19 @@ const ConcreteCalculator = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Thickness</label>
+                    <label className="block text-sm font-medium text-gray-900 mb-1">Thickness</label>
                     <div className="flex">
                       <input
                         type="number"
                         value={slabData.thickness}
                         onChange={(e) => setSlabData(prev => ({...prev, thickness: parseFloat(e.target.value) || 0}))}
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="flex-1 px-3 text-gray-900 py-2 border border-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
                         step="0.1"
                       />
                       <select
                         value={slabData.thicknessUnit}
                         onChange={(e) => setSlabData(prev => ({...prev, thicknessUnit: e.target.value}))}
-                        className="px-3 py-2 border border-l-0 border-gray-300 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="px-3 py-2 text-gray-900 border border-l-0 border-gray-900 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
                       >
                         <option value="centimeters">cm</option>
                         <option value="meters">m</option>
@@ -454,19 +454,19 @@ const ConcreteCalculator = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
+                    <label className="block text-sm font-medium text-gray-900 mb-1">Quantity</label>
                     <input
                       type="number"
                       value={slabData.quantity}
                       onChange={(e) => setSlabData(prev => ({...prev, quantity: parseInt(e.target.value) || 1}))}
-                      className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
+                      className="w-full  text-gray-900 px-3 py-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
                       min="1"
                     />
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Waste Allowance (%)</label>
+                  <label className="block text-sm font-medium text-gray-900 mb-1">Waste Allowance (%)</label>
                   <input
                     type="range"
                     min="0"
@@ -475,7 +475,7 @@ const ConcreteCalculator = () => {
                     onChange={(e) => setSlabData(prev => ({...prev, wastePercentage: parseInt(e.target.value)}))}
                     className="w-full accent-gray-900"
                   />
-                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  <div className="flex justify-between text-xs text-gray-900 mt-1">
                     <span>0%</span>
                     <span className="font-semibold text-gray-900">{slabData.wastePercentage}%</span>
                     <span>25%</span>
@@ -492,7 +492,7 @@ const ConcreteCalculator = () => {
                   </button>
                   <button
                     onClick={() => clearResults('slab')}
-                    className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors text-lg font-semibold"
+                    className="bg-gray-500 text-white px-6 py-3  rounded-lg hover:bg-gray-600 transition-colors text-lg font-semibold"
                   >
                     Clear
                   </button>
@@ -512,19 +512,19 @@ const ConcreteCalculator = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Diameter</label>
+                    <label className="block text-sm font-medium text-gray-900 mb-1">Diameter</label>
                     <div className="flex">
                       <input
                         type="number"
                         value={cylinderData.diameter}
                         onChange={(e) => setCylinderData(prev => ({...prev, diameter: parseFloat(e.target.value) || 0}))}
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="flex-1  text-gray-900px-3 py-2 border border-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
                         step="0.1"
                       />
                       <select
                         value={cylinderData.diameterUnit}
                         onChange={(e) => setCylinderData(prev => ({...prev, diameterUnit: e.target.value}))}
-                        className="px-3 py-2 border border-l-0 border-gray-300 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="px-3 py-2 text-gray-900 border border-l-0 border-gray-900 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
                       >
                         <option value="meters">m</option>
                         <option value="feet">ft</option>
@@ -534,19 +534,19 @@ const ConcreteCalculator = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Height</label>
+                    <label className="block text-sm font-medium text-gray-900 mb-1">Height</label>
                     <div className="flex">
                       <input
                         type="number"
                         value={cylinderData.height}
                         onChange={(e) => setCylinderData(prev => ({...prev, height: parseFloat(e.target.value) || 0}))}
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="flex-1 text-gray-900 px-3 py-2 border border-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
                         step="0.1"
                       />
                       <select
                         value={cylinderData.heightUnit}
                         onChange={(e) => setCylinderData(prev => ({...prev, heightUnit: e.target.value}))}
-                        className="px-3 py-2 border border-l-0 border-gray-300 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="px-3 py-2 text-gray-900 border border-l-0 border-gray-900 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
                       >
                         <option value="meters">m</option>
                         <option value="feet">ft</option>
@@ -556,19 +556,19 @@ const ConcreteCalculator = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
+                    <label className="block text-sm font-medium text-gray-900 mb-1">Quantity</label>
                     <input
                       type="number"
                       value={cylinderData.quantity}
                       onChange={(e) => setCylinderData(prev => ({...prev, quantity: parseInt(e.target.value) || 1}))}
-                      className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
+                      className="w-full px-3 text-gray-900 py-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
                       min="1"
                     />
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Waste Allowance (%)</label>
+                  <label className="block text-sm font-medium text-gray-900 mb-1">Waste Allowance (%)</label>
                   <input
                     type="range"
                     min="0"
@@ -577,7 +577,7 @@ const ConcreteCalculator = () => {
                     onChange={(e) => setCylinderData(prev => ({...prev, wastePercentage: parseInt(e.target.value)}))}
                     className="w-full accent-gray-900"
                   />
-                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  <div className="flex justify-between text-xs text-gray-900 mt-1">
                     <span>0%</span>
                     <span className="font-semibold text-gray-900">{cylinderData.wastePercentage}%</span>
                     <span>25%</span>

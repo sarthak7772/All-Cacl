@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Activity, Target, TrendingUp, Heart, User, Calendar, Zap } from 'lucide-react';
 
 const DueDateCalculator = () => {
@@ -160,14 +160,14 @@ const DueDateCalculator = () => {
 
                 <div className="flex flex-col lg:flex-row">
                   {/* Input Section */}
-                  <div className="flex-1 p-6 border-b lg:border-b-0 lg:border-r border-gray-200">
+                  <div className="flex-1 p-6 border-b lg:border-b-0 lg:border-r border-gray-900">
                     <div className="space-y-5">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Estimate Based On</label>
+                        <label className="block text-sm font-medium text-gray-900 mb-2">Estimate Based On</label>
                         <select
                           value={estimateMethod}
                           onChange={(e) => setEstimateMethod(e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                          className="w-full px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                         >
                           <option value="lastPeriod">Last Period</option>
                           <option value="ultrasound">Ultrasound</option>
@@ -177,12 +177,12 @@ const DueDateCalculator = () => {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Last Period Date</label>
+                        <label className="block text-sm font-medium text-gray-900 mb-2">Last Period Date</label>
                         <div className="grid grid-cols-3 gap-2">
                           <select
                             value={selectedMonth}
                             onChange={(e) => setSelectedMonth(e.target.value)}
-                            className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                            className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                           >
                             <option value="">Month</option>
                             {months.map((month) => (
@@ -193,7 +193,7 @@ const DueDateCalculator = () => {
                           <select
                             value={selectedDay}
                             onChange={(e) => setSelectedDay(e.target.value)}
-                            className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                            className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                           >
                             <option value="">Day</option>
                             {days.map((day) => (
@@ -204,7 +204,7 @@ const DueDateCalculator = () => {
                           <select
                             value={selectedYear}
                             onChange={(e) => setSelectedYear(e.target.value)}
-                            className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                            className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                           >
                             <option value="">Year</option>
                             {years.map((year) => (
@@ -215,18 +215,17 @@ const DueDateCalculator = () => {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Cycle Length (days)</label>
+                        <label className="block text-sm font-medium text-gray-900 mb-2">Cycle Length (days)</label>
                         <select
                           value={cycleLength}
                           onChange={(e) => setCycleLength(e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                          className="w-full text-gray-900 px-3 py-2 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                         >
                           {cycleLengths.map((cycle) => (
                             <option key={cycle} value={cycle}>{cycle}</option>
                           ))}
                         </select>
                       </div>
-
                       <div className="flex gap-3 pt-2">
                         <button
                           onClick={calculateDueDate}
@@ -358,7 +357,7 @@ const DueDateCalculator = () => {
                 <div className="space-y-5">
                   <div className="border-l-4 border-green-500 pl-4">
                     <h3 className="text-lg font-semibold mb-2 text-gray-800">Last Menstrual Period (LMP) Method</h3>
-                    <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                    <div className="bg-gray-50 p-4 rounded text-gray-600 mb-2 text-sm">
                       <div><strong>Formula:</strong> LMP + 280 days (40 weeks)</div>
                       <div><strong>Naegele's Rule:</strong> LMP + 1 year - 3 months + 7 days</div>
                     </div>
@@ -369,7 +368,7 @@ const DueDateCalculator = () => {
 
                   <div className="border-l-4 border-blue-500 pl-4">
                     <h3 className="text-lg font-semibold mb-2 text-gray-800">Ultrasound Dating</h3>
-                    <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                    <div className="bg-gray-50 p-4  text-gray-600 rounded mb-2 text-sm">
                       <div><strong>First Trimester:</strong> Most accurate (±5-7 days)</div>
                       <div><strong>Second Trimester:</strong> Less accurate (±7-10 days)</div>
                     </div>
@@ -380,7 +379,7 @@ const DueDateCalculator = () => {
 
                   <div className="border-l-4 border-purple-500 pl-4">
                     <h3 className="text-lg font-semibold mb-2 text-gray-800">Conception Date Method</h3>
-                    <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                    <div className="bg-gray-50 p-4 text-gray-600 rounded mb-2 text-sm">
                       <strong>Formula: Conception date + 266 days (38 weeks)</strong>
                     </div>
                     <p className="text-sm text-gray-600">

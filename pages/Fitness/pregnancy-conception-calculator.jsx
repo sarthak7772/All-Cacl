@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Activity, Target, TrendingUp, Heart,  Zap, Calendar, User } from 'lucide-react';
 
 const PregnancyConceptionCalculator = () => {
@@ -204,14 +204,14 @@ const PregnancyConceptionCalculator = () => {
 
             <div className="flex flex-col lg:flex-row">
               {/* Input Section */}
-              <div className="flex-1 p-6 border-r border-gray-200">
+              <div className="flex-1 p-6 border-r border-gray-900">
                 <div className="space-y-5">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Calculate Based On</label>
+                    <label className="block text-sm font-medium text-gray-900 mb-2">Calculate Based On</label>
                     <select
                       value={calculationMethod}
                       onChange={(e) => setCalculationMethod(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                      className="w-full px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                     >
                       <option value="Due Date">Due Date</option>
                       <option value="Last Period">Last Period</option>
@@ -220,7 +220,7 @@ const PregnancyConceptionCalculator = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-900 mb-2">
                       {calculationMethod === 'Due Date' && 'Your Due Date'}
                       {calculationMethod === 'Last Period' && 'First Day of Last Period'}
                       {calculationMethod === 'Ultrasound Date' && 'Ultrasound Date'}
@@ -229,7 +229,7 @@ const PregnancyConceptionCalculator = () => {
                       <select
                         value={month}
                         onChange={(e) => setMonth(e.target.value)}
-                        className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                       >
                         {months.map((m) => (
                           <option key={m} value={m}>{m}</option>
@@ -239,7 +239,7 @@ const PregnancyConceptionCalculator = () => {
                       <select
                         value={day}
                         onChange={(e) => setDay(e.target.value)}
-                        className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                       >
                         {days.map((d) => (
                           <option key={d} value={d}>{d}</option>
@@ -249,7 +249,7 @@ const PregnancyConceptionCalculator = () => {
                       <select
                         value={year}
                         onChange={(e) => setYear(e.target.value)}
-                        className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                       >
                         {years.map((y) => (
                           <option key={y} value={y}>{y}</option>
@@ -401,33 +401,33 @@ const PregnancyConceptionCalculator = () => {
             
             <div className="space-y-5">
               <div className="border-l-4 border-green-500 pl-4">
-                <h3 className="text-lg font-semibold mb-2 text-gray-800">Due Date Back-Calculation (Recommended)</h3>
-                <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">Due Date Back-Calculation (Recommended)</h3>
+                <div className="bg-gray-50 text-gray-900 p-4 rounded mb-2 text-sm">
                   <div><strong>Formula:</strong> Due Date - 266 days = Estimated Conception</div>
                   <div><strong>Range:</strong> ±2-3 days for conception window</div>
                 </div>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-900">
                   Most accurate method when due date is established through early ultrasound dating.
                 </p>
               </div>
 
               <div className="border-l-4 border-blue-500 pl-4">
                 <h3 className="text-lg font-semibold mb-2 text-gray-800">Last Menstrual Period Method</h3>
-                <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                <div className="bg-gray-50  text-gray-900  p-4 rounded mb-2 text-sm">
                   <div><strong>Formula:</strong> LMP + 14 days = Estimated Conception</div>
                   <div><strong>Assumes:</strong> 28-day cycle with day 14 ovulation</div>
                 </div>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-900">
                   Less accurate for women with irregular cycles or different ovulation timing.
                 </p>
               </div>
 
               <div className="border-l-4 border-purple-500 pl-4">
-                <h3 className="text-lg font-semibold mb-2 text-gray-800">Ovulation Tracking Method</h3>
-                <div className="bg-gray-50 p-4 rounded mb-2 text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">Ovulation Tracking Method</h3>
+                <div className="bg-gray-50 text-gray-900  p-4 rounded mb-2 text-sm">
                   <strong>Uses basal body temperature, ovulation predictor kits, or ultrasound monitoring</strong>
                 </div>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-900">
                   Most precise method for determining actual ovulation and conception timing. 
                   Requires active fertility tracking or medical monitoring.
                 </p>

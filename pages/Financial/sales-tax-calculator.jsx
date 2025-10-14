@@ -1,7 +1,7 @@
  import Head from "next/head";
  import React, { useState } from 'react';
  import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, } from 'lucide-react';
 
 const SalesTaxCalculator = () => {
@@ -114,36 +114,36 @@ const SalesTaxCalculator = () => {
                   <div className="space-y-4">
                     {/* Before Tax Price */}
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                      <label className="sm:w-32 text-sm font-medium text-gray-700">Before Tax Price</label>
+                      <label className="sm:w-32 text-sm font-medium text-gray-900">Before Tax Price</label>
                       <div className="flex">
-                        <span className="bg-white border border-gray-300 border-r-0 px-2 py-2 text-sm rounded-l">Before</span>
+                        <span className="bg-white  text-gray-900 border border-gray-900 border-r-0 px-2 py-2 text-sm rounded-l">Before</span>
                         <input type="number" value={beforeTaxPrice}
                           onChange={(e) => setBeforeTaxPrice(parseFloat(e.target.value) || 0)}
-                          className="w-full sm:w-24 px-2 py-2 border border-gray-300 text-sm rounded-r"
+                          className="w-full text-gray-900 sm:w-24 px-2 py-2 border border-gray-900 text-sm rounded-r"
                           step="0.01"/>
                       </div>
                     </div>
 
                     {/* Sales Tax Rate */}
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                      <label className="sm:w-32 text-sm font-medium text-gray-700">Sales Tax Rate</label>
+                      <label className="sm:w-32 text-sm font-medium text-gray-900">Sales Tax Rate</label>
                       <div className="flex">
                         <input type="number" value={salesTaxRate}
                           onChange={(e) => setSalesTaxRate(parseFloat(e.target.value) || 0)}
-                          className="w-20 px-2 py-2 border border-gray-300 text-sm rounded-l"
+                          className="w-20 text-gray-900 px-2 py-2 border border-gray-900 text-sm rounded-l"
                           step="0.001"/>
-                        <span className="bg-white border border-gray-300 border-l-0 px-2 py-2 text-sm rounded-r">%</span>
+                        <span className="bg-white text-gray-900 border border-gray-900 border-l-0 px-2 py-2 text-sm rounded-r">%</span>
                       </div>
                     </div>
 
                     {/* After Tax Price */}
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                      <label className="sm:w-32 text-sm font-medium text-gray-700">After Tax Price</label>
+                      <label className="sm:w-32 text-sm font-medium text-gray-900">After Tax Price</label>
                       <div className="flex">
-                        <span className="bg-white border border-gray-300 border-r-0 px-2 py-2 text-sm rounded-l">After</span>
+                        <span className="bg-white text-gray-900 border border-gray-900 border-r-0 px-2 py-2 text-sm rounded-l">After</span>
                         <input type="number" value={afterTaxPrice}
                           onChange={(e) => setAfterTaxPrice(e.target.value)}
-                          className="w-full sm:w-24 px-2 py-2 border border-gray-300 text-sm rounded-r"
+                          className="w-full text-gray-900 sm:w-24 px-2 py-2 border border-gray-900 text-sm rounded-r"
                           step="0.01"/>
                       </div>
                     </div>

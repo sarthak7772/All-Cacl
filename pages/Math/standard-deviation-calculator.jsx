@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import Head from "next/head";
 import Link from 'next/link';
 import { Calculator, BarChart3, TrendingUp,  RefreshCw } from 'lucide-react';
@@ -256,49 +256,48 @@ const StandardDeviationCalculator = () => {
               </p>
             </div>
 
-            <div className="p-4 md:p-8">
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-3">Calculate Based On</label>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  <select 
-                    value={dataType}
-                    onChange={(e) => setDataType(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                  >
-                    <option value="Population">Population (σ)</option>
-                    <option value="Sample">Sample (s)</option>
-                  </select>
-                  
-                  <select
-                    value={confidenceLevel}
-                    onChange={(e) => setConfidenceLevel(parseFloat(e.target.value))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                  >
-                    <option value={0.90}>90% Confidence Level</option>
-                    <option value={0.95}>95% Confidence Level</option>
-                    <option value={0.99}>99% Confidence Level</option>
-                    <option value={0.999}>99.9% Confidence Level</option>
-                  </select>
-                </div>
-              </div>
+           <div className="p-4 md:p-8">
+  <div className="mb-6">
+    <label className="block text-sm font-medium text-gray-900 mb-3">Calculate Based On</label>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      <select 
+        value={dataType}
+        onChange={(e) => setDataType(e.target.value)}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+      >
+        <option value="Population">Population (σ)</option>
+        <option value="Sample">Sample (s)</option>
+      </select>
+      
+      <select
+        value={confidenceLevel}
+        onChange={(e) => setConfidenceLevel(parseFloat(e.target.value))}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+      >
+        <option value={0.90}>90% Confidence Level</option>
+        <option value={0.95}>95% Confidence Level</option>
+        <option value={0.99}>99% Confidence Level</option>
+        <option value={0.999}>99.9% Confidence Level</option>
+      </select>
+    </div>
+  </div>
 
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-3">Your Data Set</label>
-                <textarea
-                  value={inputData}
-                  onChange={(e) => setInputData(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                  rows="4"
-                  placeholder="Enter numbers separated by commas: 11, 12, 23, 23, 16, 23, 21, 18"
-                />
-                <div className="mt-2 text-sm text-gray-500">
-                  <span className="font-medium">Sample data:</span>
-                  <button onClick={() => generateSampleData('normal')} className="ml-2 text-gray-900 hover:underline">Normal Distribution</button> |
-                  <button onClick={() => generateSampleData('scores')} className="ml-1 text-gray-900 hover:underline">Test Scores</button> |
-                  <button onClick={() => generateSampleData('temperatures')} className="ml-1 text-gray-900 hover:underline">Temperatures</button>
-                </div>
-              </div>
-
+  <div className="mb-6">
+    <label className="block text-sm font-medium text-gray-900 mb-3">Your Data Set</label>
+    <textarea
+      value={inputData}
+      onChange={(e) => setInputData(e.target.value)}
+      className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+      rows="4"
+      placeholder="Enter numbers separated by commas: 11, 12, 23, 23, 16, 23, 21, 18"
+    />
+    <div className="mt-2 text-sm text-gray-500">
+      <span className="font-medium">Sample data:</span>
+      <button onClick={() => generateSampleData('normal')} className="ml-2 text-gray-900 hover:underline">Normal Distribution</button> |
+      <button onClick={() => generateSampleData('scores')} className="ml-1 text-gray-900 hover:underline">Test Scores</button> |
+      <button onClick={() => generateSampleData('temperatures')} className="ml-1 text-gray-900 hover:underline">Temperatures</button>
+    </div>
+  </div>
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <button
                   onClick={calculate}

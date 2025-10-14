@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator,  } from 'lucide-react';
 
 const SalaryCalculator = () => {
@@ -240,19 +240,19 @@ const SalaryCalculator = () => {
                     <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
                       <div className="space-y-4">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                          <label className="block text-sm font-medium text-gray-900 mb-1">
                             Salary amount
                           </label>
                           <div className="flex flex-col sm:flex-row">
                             <span className="bg-white border border-gray-300 sm:border-r-0 px-3 py-2 text-sm rounded-t sm:rounded-l sm:rounded-t-none"></span>
                             <input type="number" value={salaryAmount}
                               onChange={(e) => setSalaryAmount(parseFloat(e.target.value) || 0)}
-                              className="flex-1 px-3 py-2 border border-gray-300 text-sm"
+                              className="flex-1 px-3 py-2 text-gray-900 border border-gray-900 text-sm"
                               step="0.01"/>
-                            <span className="bg-white border border-gray-300 px-2 py-2 text-sm">per</span>
+                            <span className="bg-white border text-gray-900 border-gray-900 px-2 py-2 text-sm">per</span>
                             <select value={payFrequency}
                               onChange={(e) => setPayFrequency(e.target.value)}
-                              className="px-2 py-2 border border-gray-300 sm:border-l-0 text-sm bg-white rounded-b sm:rounded-r sm:rounded-b-none">
+                              className="px-2 py-2  text-gray-900 border border-gray-900 sm:border-l-0 text-sm bg-white rounded-b sm:rounded-r sm:rounded-b-none">
                               <option value="Hour">Hour</option>
                               <option value="Day">Day</option>
                               <option value="Week">Week</option>
@@ -264,41 +264,41 @@ const SalaryCalculator = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                            <label className="block text-sm font-medium text-gray-900 mb-1">
                               Hours per week
                             </label>
                             <input type="number" value={hoursPerWeek}
                               onChange={(e) => setHoursPerWeek(parseInt(e.target.value) || 0)}
-                              className="w-full px-3 py-2 border border-gray-300 text-sm rounded"/>
+                              className="w-full px-3 text-gray-900 py-2 border border-gray-900 text-sm rounded"/>
                           </div>
 
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                            <label className="block text-sm font-medium text-gray-900 mb-1">
                               Days per week
                             </label>
                             <input type="number" value={daysPerWeek}
                               onChange={(e) => setDaysPerWeek(parseInt(e.target.value) || 0)}
-                              className="w-full px-3 py-2 border border-gray-300 text-sm rounded"/>
+                              className="w-full text-gray-900 px-3 py-2 border border-gray-900 text-sm rounded"/>
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                            <label className="block text-sm font-medium text-gray-900 mb-1">
                               Holidays per year
                             </label>
                             <input type="number" value={holidaysPerYear}
                               onChange={(e) => setHolidaysPerYear(parseInt(e.target.value) || 0)}
-                              className="w-full px-3 py-2 border border-gray-300 text-sm rounded"/>
+                              className="w-full px-3 text-gray-900 py-2 border border-gray-900 text-sm rounded"/>
                           </div>
 
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                            <label className="block text-sm font-medium text-gray-900 mb-1">
                               Vacation days per year
                             </label>
                             <input type="number" value={vacationDaysPerYear}
                               onChange={(e) => setVacationDaysPerYear(parseInt(e.target.value) || 0)}
-                              className="w-full px-3 py-2 border border-gray-300 text-sm rounded"/>
+                              className="w-full px-3 py-2 text-gray-900 border border-gray-900 text-sm rounded"/>
                           </div>
                         </div>
 
@@ -324,7 +324,7 @@ const SalaryCalculator = () => {
                     
                     <div className="bg-white border border-gray-200 rounded-b-lg overflow-x-auto">
                       <table className="w-full text-xs md:text-sm">
-                        <thead className="bg-gray-600 text-white">
+                        <thead className="bg-gray-900 text-white">
                           <tr>
                             <th className="text-left p-2 md:p-3 font-medium">Period</th>
                             <th className="text-center p-2 md:p-3 font-medium">Unadjusted</th>
@@ -333,41 +333,42 @@ const SalaryCalculator = () => {
                         </thead>
                         <tbody>
                           <tr className="border-b hover:bg-gray-50">
-                            <td className="p-2 md:p-3 font-medium">Hourly</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.hourly?.unadjusted)}</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.hourly?.adjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900 font-medium">Hourly</td>
+                            <td className="p-2 md:p-3 text-gray-900 text-center">{formatCurrency(results.hourly?.unadjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900 text-center">{formatCurrency(results.hourly?.adjusted)}</td>
                           </tr>
                           <tr className="border-b hover:bg-gray-50">
-                            <td className="p-2 md:p-3 font-medium">Daily</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.daily?.unadjusted)}</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.daily?.adjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900 font-medium">Daily</td>
+                            <td className="p-2 md:p-3 text-gray-900 text-center">{formatCurrency(results.daily?.unadjusted)}</td>
+                            <td className="p-2 md:p-3  text-gray-900 text-center">{formatCurrency(results.daily?.adjusted)}</td>
                           </tr>
                           <tr className="border-b hover:bg-gray-50">
-                            <td className="p-2 md:p-3 font-medium">Weekly</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.weekly?.unadjusted)}</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.weekly?.adjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900 font-medium">Weekly</td>
+                            <td className="p-2 md:p-3 text-gray-900 text-center">{formatCurrency(results.weekly?.unadjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900  text-center">{formatCurrency(results.weekly?.unadjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900 text-center">{formatCurrency(results.weekly?.adjusted)}</td>
                           </tr>
                           <tr className="border-b hover:bg-gray-50">
-                            <td className="p-2 md:p-3 font-medium">Bi-weekly</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.biweekly?.unadjusted)}</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.biweekly?.adjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900 font-medium">Bi-weekly</td>
+                            <td className="p-2 md:p-3 text-gray-900 text-center">{formatCurrency(results.biweekly?.unadjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900 text-center">{formatCurrency(results.biweekly?.adjusted)}</td>
                           </tr>
                           <tr className="border-b hover:bg-gray-50">
-                            <td className="p-2 md:p-3 font-medium">Semi-monthly</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.semimonthly?.unadjusted)}</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.semimonthly?.adjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900 font-medium">Semi-monthly</td>
+                            <td className="p-2 md:p-3 text-gray-900 text-center">{formatCurrency(results.semimonthly?.unadjusted)}</td>
+                            <td className="p-2 md:p-3  text-gray-900 text-center">{formatCurrency(results.semimonthly?.adjusted)}</td>
                           </tr>
                           <tr className="border-b hover:bg-gray-50">
-                            <td className="p-2 md:p-3 font-medium">Monthly</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.monthly?.unadjusted)}</td>
-                            <td className="p-2 md:p-3 text-center">{formatCurrency(results.monthly?.adjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900 font-medium">Monthly</td>
+                            <td className="p-2 md:p-3 text-gray-900 text-center">{formatCurrency(results.monthly?.unadjusted)}</td>
+                            <td className="p-2 md:p-3 text-gray-900 text-center">{formatCurrency(results.monthly?.adjusted)}</td>
                           </tr>
-                          <tr className="border-b hover:bg-gray-50">
+                          <tr className="border-b hover:bg-gray-50 text-gray-900">
                             <td className="p-2 md:p-3 font-medium">Quarterly</td>
                             <td className="p-2 md:p-3 text-center">{formatCurrency(results.quarterly?.unadjusted)}</td>
                             <td className="p-2 md:p-3 text-center">{formatCurrency(results.quarterly?.adjusted)}</td>
                           </tr>
-                          <tr className="hover:bg-gray-50">
+                          <tr className="hover:bg-gray-50 text-gray-900">
                             <td className="p-2 md:p-3 font-medium">Annual</td>
                             <td className="p-2 md:p-3 text-center">{formatCurrency(results.annual?.unadjusted)}</td>
                             <td className="p-2 md:p-3 text-center">{formatCurrency(results.annual?.adjusted)}</td>
@@ -477,11 +478,11 @@ const SalaryCalculator = () => {
                 <div>
                   <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-2">How Calculations Work</h3>
                   <div className="bg-gray-50 p-4 rounded">
-                    <p className="font-mono text-xs md:text-sm mb-2">Using a $30 hourly rate example:</p>
-                    <p className="font-mono text-xs md:text-sm mb-2">$30 × 8 hours × 260 days = $62,400 (unadjusted)</p>
-                    <p className="font-mono text-xs md:text-sm">$30 × 8 hours × (260 - 25) days = $56,400 (adjusted)</p>
+                    <p className="font-mono text-xs md:text-sm text-gray-800 mb-2">Using a $30 hourly rate example:</p>
+                    <p className="font-mono text-xs md:text-sm text-gray-800 mb-2">$30 × 8 hours × 260 days = $62,400 (unadjusted)</p>
+                    <p className="font-mono text-xs md:text-sm text-gray-800">$30 × 8 hours × (260 - 25) days = $56,400 (adjusted)</p>
                   </div>
-                  <p className="text-xs md:text-sm text-gray-600 mt-2">The adjusted calculation subtracts holidays and vacation days from total working days.</p>
+                  <p className="text-xs md:text-sm text-gray-800 mt-2">The adjusted calculation subtracts holidays and vacation days from total working days.</p>
                 </div>
               </div>
             </div>

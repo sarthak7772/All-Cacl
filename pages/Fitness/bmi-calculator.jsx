@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
  import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Activity,  } from 'lucide-react';
 
 const BMICalculator = () => {
@@ -149,49 +149,60 @@ const BMICalculator = () => {
                 <div className="flex-1 p-4 md:p-6">
                   <div className="space-y-4">
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                      <label className="sm:w-16 sm:text-right text-sm font-medium">Age</label>
+                      <label className="sm:w-16 sm:text-right text-sm text-gray-900 font-medium">Age</label>
                       <input type="number" value={age}
                         onChange={(e) => setAge(Number(e.target.value))}
-                        className="w-full sm:w-20 px-2 py-1 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
-                      <span className="text-xs text-gray-500">ages: 15 - 80</span>
+                        className="w-full text-gray-900 sm:w-20 px-2 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
+                      <span className="text-xs text-gray-900">ages: 15 - 80</span>
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                      <label className="sm:w-16 sm:text-right text-sm font-medium">Gender</label>
-                      <div className="flex space-x-4">
-                        <label className="flex items-center text-sm">
-                          <input type="radio" value="male"
-                            checked={gender === 'male'}
-                            onChange={(e) => setGender(e.target.value)}
-                            className="mr-2"/>
-                          Male
-                        </label>
-                        <label className="flex items-center text-sm">
-                          <input type="radio" value="female"
-                            checked={gender === 'female'}
-                            onChange={(e) => setGender(e.target.value)}
-                            className="mr-2"/>
-                          Female
-                        </label>
-                      </div>
-                    </div>
+  <label className="sm:w-16 sm:text-right text-gray-900 text-sm font-medium">
+    Gender
+  </label>
+  <div className="flex space-x-4">
+    <label className="flex items-center text-gray-900 text-sm">
+      <input
+        type="radio"
+        value="male"
+        checked={gender === 'male'}
+        onChange={(e) => setGender(e.target.value)}
+        className="mr-2"
+      />
+      Male
+    </label>
 
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+    <label className="flex items-center text-gray-900 text-sm">
+      <input
+        type="radio"
+        value="female"
+        checked={gender === 'female'}
+        onChange={(e) => setGender(e.target.value)}
+        className="mr-2"
+      />
+      Female
+    </label>
+  </div>
+</div>
+
+                    
+
+                    <div className="flex flex-col sm:flex-row text-gray-900 sm:items-center gap-2 sm:gap-4">
                       <label className="sm:w-16 sm:text-right text-sm font-medium">Height</label>
                       <input type="number" value={height}
                         onChange={(e) => setHeight(Number(e.target.value))}
-                        className="w-full sm:w-20 px-2 py-1 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
-                      <span className="text-xs text-gray-500">
+                        className="w-full sm:w-20 text-gray-900 px-2 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
+                      <span className="text-xs text-gray-900">
                         {units === 'metric' ? 'cm' : 'inches'}
                       </span>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-900 sm:gap-4">
                       <label className="sm:w-16 sm:text-right text-sm font-medium">Weight</label>
                       <input type="number" value={weight}
                         onChange={(e) => setWeight(Number(e.target.value))}
-                        className="w-full sm:w-20 px-2 py-1 border border-gray-300 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
-                      <span className="text-xs text-gray-500">
+                        className="w-full sm:w-20 text-gray-900 px-2 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
+                      <span className="text-xs text-gray-900">
                         {units === 'metric' ? 'kg' : 'lbs'}
                       </span>
                     </div>

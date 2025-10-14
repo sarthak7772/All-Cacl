@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator,  } from 'lucide-react';
 
 const InflationCalculator = () => {
@@ -241,7 +241,7 @@ const InflationCalculator = () => {
           <div className="container mx-auto px-4 py-6">
             <div className="bg-white rounded-lg shadow-sm">
               {/* Header Section */}
-              <div className="bg-gray-800 text-white p-4 md:p-6 rounded-t-lg">
+              <div className="bg-gray-900 text-white p-4 md:p-6 rounded-t-lg">
                 <h1 className="text-xl md:text-2xl font-bold mb-2">Inflation Calculator
 </h1>
                 <p className="text-gray-100 text-xs md:text-sm">
@@ -251,7 +251,7 @@ const InflationCalculator = () => {
 
               {/* CPI Calculator */}
               <div className="p-4 md:p-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-700 mb-4">Inflation Calculator with “Country-wise Inflation Analysis”</h2>
+                <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-4">Inflation Calculator with “Country-wise Inflation Analysis”</h2>
                 <p className="mb-6 text-gray-700 text-xs md:text-sm">
                   Determine the adjusted value of the U.S. dollar from 1913 to 2025, based on historical average Consumer Price Index (CPI) data for all urban consumers nationwide.
                 </p>
@@ -263,13 +263,13 @@ const InflationCalculator = () => {
                       type="number"
                       value={cpiAmount}
                       onChange={(e) => setCpiAmount(Number(e.target.value))}
-                      className="w-16 md:w-20 px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                      className="w-16 text-gray-900 md:w-20 px-2 md:px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-500 text-sm"
                     />
-                    <span>in</span>
+                    <span className="text-xl md:text-2xl text-gray-900">in</span>
                     <select
                       value={cpiFromMonth}
                       onChange={(e) => setCpiFromMonth(e.target.value)}
-                      className="px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                      className="px-2 text-gray-900  md:px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-500 text-sm"
                     >
                       {months.map(month => (
                         <option key={month} value={month}>{month}</option>
@@ -278,19 +278,19 @@ const InflationCalculator = () => {
                     <select
                       value={cpiFromYear}
                       onChange={(e) => setCpiFromYear(Number(e.target.value))}
-                      className="px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                      className="px-2 text-gray-900 md:px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-500 text-sm"
                     >
                       {generateYears().map(year => (
                         <option key={year} value={year}>{year}</option>
                       ))}
                     </select>
-                    <span>=</span>
+                    <span className="text-xl md:text-2xl text-gray-900 "> =</span>
                     <span className="text-xl md:text-2xl text-green-600 font-bold">?</span>
-                    <span>in</span>
+                    <span className=" text-xl md:text-2xl text-gray-900" >in</span>
                     <select
                       value={cpiToMonth}
                       onChange={(e) => setCpiToMonth(e.target.value)}
-                      className="px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                      className="px-2 text-gray-900 md:px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-500 text-sm"
                     >
                       {months.map(month => (
                         <option key={month} value={month}>{month}</option>
@@ -299,7 +299,7 @@ const InflationCalculator = () => {
                     <select
                       value={cpiToYear}
                       onChange={(e) => setCpiToYear(Number(e.target.value))}
-                      className="px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                      className="px-2 text-gray-900 md:px-3 py-2 border border-gray900 rounded focus:ring-2 focus:ring-gray-900 text-sm"
                     >
                       {generateYears().map(year => (
                         <option key={year} value={year}>{year}</option>
@@ -323,10 +323,10 @@ const InflationCalculator = () => {
                   </div>
 
                   {cpiResult > 0 && (
-                    <div className="mt-6 p-4 bg-gray-50 rounded-lg text-center border border-gray-200">
+                    <div className="mt-6 p-4 text-gray-900 bg-gray-300 rounded-lg text-center border border-gray-300">
                       <p className="text-sm md:text-lg">
                         <strong>{formatCurrency(cpiAmount)}</strong> in {cpiFromMonth} {cpiFromYear} is equivalent to 
-                        <strong className="text-gray-600"> {formatCurrency(cpiResult)}</strong> in {cpiToMonth} {cpiToYear}
+                        <strong className="text-gray-900"> {formatCurrency(cpiResult)}</strong> in {cpiToMonth} {cpiToYear}
                       </p>
                     </div>
                   )}
@@ -334,38 +334,38 @@ const InflationCalculator = () => {
 
                 {/* Forward Calculator */}
                 <div className="mt-8">
-                  <h3 className="text-base md:text-lg font-bold text-gray-700 mb-4">Forward Flat Rate Inflation Calculator</h3>
-                  <p className="mb-4 text-gray-700 text-xs md:text-sm">
+                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-4">Forward Flat Rate Inflation Calculator</h3>
+                  <p className="mb-4 text-gray-900 text-xs md:text-sm">
                    Calculates the future value of money based on an average inflation rate over a specified number of years.
                   </p>
 
-                  <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
+                  <div className=" p-4 md:p-6 rounded-lg">
                     <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 flex-wrap text-sm md:text-base">
                       <span></span>
                       <input
                         type="number"
                         value={forwardAmount}
                         onChange={(e) => setForwardAmount(Number(e.target.value))}
-                        className="w-16 md:w-20 px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                        className="w-16  text-gray-900 md:w-20 px-2 md:px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 text-sm"
                       />
-                      <span className="hidden sm:inline">with inflation rate</span>
+                      <span className="hidden sm:inline text-gray-900">with inflation rate</span>
                       <span className="sm:hidden">@</span>
                       <input
                         type="number"
                         step="0.1"
                         value={forwardRate}
                         onChange={(e) => setForwardRate(Number(e.target.value))}
-                        className="w-12 md:w-16 px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                        className="w-12 text-gray-900 md:w-16 px-2 md:px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-500 text-sm"
                       />
-                      <span>% after</span>
+                      <span  className="w-12 text-gray-900">% after</span>
                       <input
                         type="number"
                         value={forwardYears}
                         onChange={(e) => setForwardYears(Number(e.target.value))}
-                        className="w-12 md:w-16 px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                        className="w-12 text-gray-900 md:w-16 px-2 md:px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-500 text-sm"
                       />
-                      <span>years</span>
-                      <span>=</span>
+                      <span  className="w-12 text-gray-900">years</span>
+                      <span className="w-12 text-gray-900">=</span>
                       <span className="text-xl md:text-2xl text-green-600 font-bold">?</span>
                     </div>
 
@@ -385,10 +385,10 @@ const InflationCalculator = () => {
                     </div>
 
                     {forwardResult > 0 && (
-                      <div className="mt-6 p-4 bg-gray-50 rounded-lg text-center border border-gray-200">
+                      <div className="mt-6 p-4 text-gray-900 bg-gray-300 rounded-lg text-center border border-gray-300">
                         <p className="text-sm md:text-lg">
                           <strong>{formatCurrency(forwardAmount)}</strong> with {forwardRate}% inflation for {forwardYears} years will be worth 
-                          <strong className="text-gray-600"> {formatCurrency(forwardResult)}</strong>
+                          <strong className="text-gray-900"> {formatCurrency(forwardResult)}</strong>
                         </p>
                       </div>
                     )}
@@ -397,7 +397,7 @@ const InflationCalculator = () => {
 
                 {/* Backward Calculator */}
                 <div className="mt-8">
-                  <h3 className="text-base md:text-lg font-bold text-gray-700 mb-4">Backward Flat Rate Inflation Calculator</h3>
+                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-4">Backward Flat Rate Inflation Calculator</h3>
                   <p className="mb-4 text-gray-700 text-xs md:text-sm">
                     Calculates the equivalent purchasing power of an amount some years ago based on a certain 
                     average inflation rate.
@@ -410,27 +410,27 @@ const InflationCalculator = () => {
                         type="number"
                         value={backwardAmount}
                         onChange={(e) => setBackwardAmount(Number(e.target.value))}
-                        className="w-16 md:w-20 px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                        className="w-16 text-gray-900 md:w-20 px-2 md:px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-500 text-sm"
                       />
-                      <span className="hidden sm:inline">with inflation rate</span>
-                      <span className="sm:hidden">@</span>
+                      <span className="hidden sm:inline text-gray-900">with inflation rate</span>
+                      <span className="sm:hidden text-gray-900">@</span>
                       <input
                         type="number"
                         step="0.1"
                         value={backwardRate}
                         onChange={(e) => setBackwardRate(Number(e.target.value))}
-                        className="w-12 md:w-16 px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                        className="w-12 md:w-16 text-gray-900 px-2 md:px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-500 text-sm"
                       />
-                      <span>%</span>
-                      <span>=</span>
+                      <span className="text-gray-900" >%</span>
+                      <span className=" text-gray-900">=</span>
                       <span className="text-xl md:text-2xl text-green-600 font-bold">?</span>
                       <input
                         type="number"
                         value={backwardYears}
                         onChange={(e) => setBackwardYears(Number(e.target.value))}
-                        className="w-12 md:w-16 px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
+                        className="w-12 md:w-16 text-gray-900 px-2 md:px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-500 text-sm"
                       />
-                      <span>years ago</span>
+                      <span  className=" text-xl md: text-gray-900">years ago</span>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -449,7 +449,7 @@ const InflationCalculator = () => {
                     </div>
 
                     {backwardResult > 0 && (
-                      <div className="mt-6 p-4 bg-gray-50 rounded-lg text-center border border-gray-200">
+                      <div className="mt-6 p-4 text-gray-900 bg-gray-300 rounded-lg text-center border border-gray-200">
                         <p className="text-sm md:text-lg">
                           <strong>{formatCurrency(backwardAmount)}</strong> today had the purchasing power of 
                           <strong className="text-gray-600"> {formatCurrency(backwardResult)}</strong> {backwardYears} years ago at {backwardRate}% inflation
@@ -462,10 +462,10 @@ const InflationCalculator = () => {
                 {/* Inflation Information */}
                 <div className="mt-8 bg-gray-50 p-4 md:p-6 rounded-lg">
                   <h3 className="text-base md:text-lg font-semibold text-gray-700 mb-3">How to Protect Against Inflation</h3>
-                  <p className="mb-3">
+                  <p className="mb-3 text-gray-900">
                     Inflation most impacts people holding large amounts of cash. Common inflation hedges include:
                   </p>
-                  <ul className="space-y-2 list-disc list-inside">
+                  <ul className="space-y-2 list-disc list-inside text-gray-900">
                     <li><strong>Real Estate</strong> - Property values often increase with inflation</li>
                     <li><strong>Stocks</strong> - Companies can often raise prices with inflation</li>
                     <li><strong>Commodities</strong> - Gold, silver, oil have intrinsic value that tends to rise with inflation</li>

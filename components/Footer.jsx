@@ -41,11 +41,11 @@ export default function Footer() {
               Fitness & Health
             </h3>
             <ul className="space-y-1.5 md:space-y-2">
-              <li><Link href="/Fitness/bmi-calculator">⚖️ BMI Calculator</Link></li>
-              <li><Link href="/Fitness/calorie-calculator">🔥 Calorie Calculator</Link></li>
+              <li><Link href="/Fitness/bmi-calculator">❤️ BMI Calculator</Link></li>
+              <li><Link href="/Fitness/calorie-calculator">🍎Calorie Calculator</Link></li>
               <li><Link href="/Fitness/body-fat-calculator">💪 Body Fat Calculator</Link></li>
               <li><Link href="/Fitness/bmr-calculator">🏋️‍♂️ BMR Calculator</Link></li>
-              <li><Link href="/Fitness/ideal-weight-calculator">📏 Ideal Weight Calculator</Link></li>
+              <li><Link href="/Fitness/ideal-weight-calculator">⚖️ Ideal Weight Calculator</Link></li>
               <li><Link href="/Fitness/pace-calculator">🏃‍♂️ Pace Calculator</Link></li>
               <li><Link href="/Fitness/pregnancy-calculator">🤰 Pregnancy Calculator</Link></li>
               <li><Link href="/Fitness/pregnancy-conception-calculator">👶 Pregnancy Conception Calculator</Link></li>
@@ -59,7 +59,7 @@ export default function Footer() {
               Math Calculators
             </h3>
             <ul className="space-y-1.5 md:space-y-2">
-              <li><Link href="/Math/scientific-calculator">🧮 Scientific Calculator</Link></li>
+              <li><Link href="/Math/scientific-calculator">🔬 Scientific Calculator</Link></li>
               <li><Link href="/Math/fraction-calculator">➗ Fraction Calculator</Link></li>
               <li><Link href="/Math/percentage-calculator">📊 Percentage Calculator</Link></li>
               <li><Link href="/Math/random-number-generator">🎲 Random Number Generator</Link></li>

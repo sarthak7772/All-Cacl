@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Plus, Trash2, Book, GraduationCap, TrendingUp,  } from 'lucide-react';
 
 const GPACalculator = () => {
@@ -218,80 +218,82 @@ const GPACalculator = () => {
           </div>
 
           {/* Main Calculator Card */}
-          <div className="bg-white rounded-lg shadow-md border p-4 lg:p-6 mb-6">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Calculate Based On</label>
-                <select 
-                  value={calculationType}
-                  onChange={(e) => setCalculationType(e.target.value)}
-                  className="border border-gray-300 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                >
-                  <option value="semester">Semester GPA</option>
-                  <option value="cumulative">Cumulative GPA</option>
-                  <option value="quarter">Quarter GPA</option>
-                </select>
-              </div>
-            </div>
+         <div className="bg-white rounded-lg shadow-md border p-4 lg:p-6 mb-6">
+  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-4">
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Calculate Based On</label>
+      <select 
+        value={calculationType}
+        onChange={(e) => setCalculationType(e.target.value)}
+        className="border border-gray-900 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-gray-900 focus:outline-none text-gray-900"
+      >
+        <option value="semester">Semester GPA</option>
+        <option value="cumulative">Cumulative GPA</option>
+        <option value="quarter">Quarter GPA</option>
+      </select>
+    </div>
+  </div>
 
-            {/* Course Input Section */}
-            <div className="space-y-4 mb-6">
-              {courses.map((course, index) => (
-                <div key={index} className="grid grid-cols-1 md:grid-cols-5 gap-4 p-4 bg-gray-50 rounded-lg">
-                  <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">Course Name</label>
-                    <input
-                      type="text"
-                      value={course.course}
-                      onChange={(e) => updateCourse(index, 'course', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                      placeholder="Enter course"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">Credit Hours</label>
-                    <input
-                      type="number"
-                      value={course.credits || ''}
-                      onChange={(e) => updateCourse(index, 'credits', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                      placeholder="0"
-                      min="0"
-                      max="6"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">Letter Grade</label>
-                    <select
-                      value={course.grade}
-                      onChange={(e) => updateCourse(index, 'grade', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                    >
-                      <option value="">Select Grade</option>
-                      {gradeOptions.map(grade => (
-                        <option key={grade} value={grade}>{grade}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">Grade Points</label>
-                    <div className="px-3 py-2 bg-gray-100 border rounded text-sm text-gray-700">
-                      {course.grade && course.credits ? 
-                        (gradePoints[course.grade] * course.credits).toFixed(1) : '0.0'}
-                    </div>
-                  </div>
-                  <div className="flex items-end">
-                    <button
-                      onClick={() => removeCourse(index)}
-                      className="text-red-600 hover:text-red-800 p-2 rounded disabled:opacity-50"
-                      disabled={courses.length === 1}
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+  {/* Course Input Section */}
+  <div className="space-y-4 mb-6">
+    {courses.map((course, index) => (
+      <div key={index} className="grid grid-cols-1 md:grid-cols-5 gap-4 p-4 bg-gray-50 rounded-lg">
+        <div>
+          <label className="block text-xs font-medium text-gray-900 mb-1">Course Name</label>
+          <input
+            type="text"
+            value={course.course}
+            onChange={(e) => updateCourse(index, 'course', e.target.value)}
+            className="w-full px-3 py-2 border border-gray-900 rounded text-sm focus:ring-2 focus:ring-gray-900 focus:outline-none text-gray-900"
+            placeholder="Enter course"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-gray-900 mb-1">Credit Hours</label>
+          <input
+            type="number"
+            value={course.credits || ''}
+            onChange={(e) => updateCourse(index, 'credits', e.target.value)}
+            className="w-full px-3 py-2 border border-gray-900 rounded text-sm focus:ring-2 focus:ring-gray-900 focus:outline-none text-gray-900"
+            placeholder="0"
+            min="0"
+            max="6"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-gray-900 mb-1">Letter Grade</label>
+          <select
+            value={course.grade}
+            onChange={(e) => updateCourse(index, 'grade', e.target.value)}
+            className="w-full px-3 py-2 border border-gray-900 rounded text-sm focus:ring-2 focus:ring-gray-900 focus:outline-none text-gray-900"
+          >
+            <option value="">Select Grade</option>
+            {gradeOptions.map(grade => (
+              <option key={grade} value={grade}>{grade}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-gray-900 mb-1">Grade Points</label>
+          <div className="px-3 py-2 bg-gray-100 border border-gray-900 rounded text-sm text-gray-900">
+            {course.grade && course.credits ? 
+              (gradePoints[course.grade] * course.credits).toFixed(1) : '0.0'}
+          </div>
+        </div>
+        <div className="flex items-end">
+          <button
+            onClick={() => removeCourse(index)}
+            className="text-red-600 hover:text-red-800 p-2 rounded disabled:opacity-50"
+            disabled={courses.length === 1}
+          >
+            <Trash2 className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+
+
 
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-3 mb-6">
@@ -316,84 +318,87 @@ const GPACalculator = () => {
             </div>
 
             {/* Result Display */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gray-100 border border-gray-300 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Your GPA</h3>
-                <div className="text-4xl font-bold text-gray-900 mb-1">{calculatedGPA}</div>
-                <div className={`text-sm font-medium ${interpretation.color}`}>
-                  {interpretation.text}
-                </div>
-              </div>
-              <div className="bg-gray-50 border rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Summary</h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Total Credits:</span>
-                    <span className="font-medium">{totalCredits}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Courses:</span>
-                    <span className="font-medium">{courses.filter(c => c.grade && c.credits > 0).length}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Scale:</span>
-                    <span className="font-medium">4.0 Scale</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+           <div className="grid md:grid-cols-2 gap-6">
+  <div className="bg-gray-100 border border-gray-900 rounded-lg p-6">
+    <h3 className="text-lg font-semibold text-gray-900 mb-2">Your GPA</h3>
+    <div className="text-4xl font-bold text-gray-900 mb-1">{calculatedGPA}</div>
+    <div className={`text-sm font-medium ${interpretation.color}`}>
+      {interpretation.text}
+    </div>
+  </div>
+  <div className="bg-gray-50 border border-gray-900 rounded-lg p-6">
+    <h3 className="text-lg font-semibold text-gray-900 mb-4">Summary</h3>
+    <div className="space-y-2 text-sm">
+      <div className="flex justify-between">
+        <span className="text-gray-900">Total Credits:</span>
+        <span className="font-medium text-gray-900">{totalCredits}</span>
+      </div>
+      <div className="flex justify-between">
+        <span className="text-gray-900">Courses:</span>
+        <span className="font-medium text-gray-900">{courses.filter(c => c.grade && c.credits > 0).length}</span>
+      </div>
+      <div className="flex justify-between">
+        <span className="text-gray-900">Scale:</span>
+        <span className="font-medium text-gray-900">4.0 Scale</span>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
 
           {/* Academic Planner */}
-          <div className="bg-white rounded-lg shadow-md border p-4 lg:p-6 mb-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Academic Goal Planner</h3>
-            <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Current GPA</label>
-                <input
-                  type="number"
-                  step="0.01"
-                  min="0"
-                  max="4.3"
-                  value={plannerData.currentGPA || ''}
-                  onChange={(e) => updatePlannerData('currentGPA', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Target GPA</label>
-                <input
-                  type="number"
-                  step="0.01"
-                  min="0"
-                  max="4.3"
-                  value={plannerData.targetGPA || ''}
-                  onChange={(e) => updatePlannerData('targetGPA', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Current Credits</label>
-                <input
-                  type="number"
-                  min="0"
-                  value={plannerData.currentCredits || ''}
-                  onChange={(e) => updatePlannerData('currentCredits', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Additional Credits</label>
-                <input
-                  type="number"
-                  min="0"
-                  value={plannerData.additionalCredits || ''}
-                  onChange={(e) => updatePlannerData('additionalCredits', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
-                />
-              </div>
-            </div>
-            
+         <div className="bg-white rounded-lg shadow-md border border-gray-900 p-4 lg:p-6 mb-6">
+  <h3 className="text-xl font-bold text-gray-900 mb-4">Academic Goal Planner</h3>
+  <div className="grid md:grid-cols-2 gap-4 mb-4">
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-1">Current GPA</label>
+      <input
+        type="number"
+        step="0.01"
+        min="0"
+        max="4.3"
+        value={plannerData.currentGPA || ''}
+        onChange={(e) => updatePlannerData('currentGPA', e.target.value)}
+        className="w-full px-3 text-gray-900 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-1">Target GPA</label>
+      <input
+        type="number"
+        step="0.01"
+        min="0"
+        max="4.3"
+        value={plannerData.targetGPA || ''}
+        onChange={(e) => updatePlannerData('targetGPA', e.target.value)}
+        className="w-full  text-gray-900 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-1">Current Credits</label>
+      <input
+        type="number"
+        min="0"
+        value={plannerData.currentCredits || ''}
+        onChange={(e) => updatePlannerData('currentCredits', e.target.value)}
+        className="w-full text-gray-900 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-1">Additional Credits</label>
+      <input
+        type="number"
+        min="0"
+        value={plannerData.additionalCredits || ''}
+        onChange={(e) => updatePlannerData('additionalCredits', e.target.value)}
+        className="w-full text-gray-900 px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
+      />
+    </div>
+  </div>
+
+
             <div className="flex flex-wrap gap-3 mb-4">
               <button
                 onClick={calculateRequiredGPA}
@@ -437,11 +442,11 @@ const GPACalculator = () => {
           {/* Grade Scale Reference */}
           <div className="bg-white rounded-lg shadow-md border p-4 lg:p-6 mb-6">
             <h4 className="font-semibold text-gray-900 mb-3 text-lg">Grade Scale Reference</h4>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
+            <div className="grid grid-cols-2 text-gray-900 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
               {Object.entries(gradePoints).map(([grade, points]) => (
                 <div key={grade} className="flex justify-between p-2 bg-gray-50 rounded">
-                  <span className="font-medium">{grade}</span>
-                  <span className="text-gray-600">{points}</span>
+                  <span className="font-medium text-gray-900">{grade}</span>
+                  <span className="text-gray-900">{points}</span>
                 </div>
               ))}
             </div>

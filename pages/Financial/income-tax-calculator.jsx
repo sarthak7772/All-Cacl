@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, FileText,   } from 'lucide-react';
 
 const IncomeTaxCalculator = () => {
@@ -295,11 +295,11 @@ const IncomeTaxCalculator = () => {
                 
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Filing Status</label>
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">Filing Status</label>
                     <select
                       value={filingStatus}
                       onChange={(e) => setFilingStatus(e.target.value)}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm md:text-base"
+                      className="w-full text-gray-900  px-3 md:px-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:"
                     >
                       <option value="single">Single</option>
                       <option value="marriedJointly">Married Filing Jointly</option>
@@ -317,7 +317,7 @@ const IncomeTaxCalculator = () => {
                           type="number"
                           value={wages}
                           onChange={(e) => setWages(Number(e.target.value) || 0)}
-                          className="w-full pl-7 md:pl-8 pr-3 md:pr-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm md:text-base"
+                          className="w-full  text-gray-900 pl-7 md:pl-8 pr-3 md:pr-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 "
                         />
                       </div>
                     </div>
@@ -330,14 +330,14 @@ const IncomeTaxCalculator = () => {
                           type="number"
                           value={federalTaxWithheld}
                           onChange={(e) => setFederalTaxWithheld(Number(e.target.value) || 0)}
-                          className="w-full pl-7 md:pl-8 pr-3 md:pr-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm md:text-base"
+                          className="w-full text-gray-900  pl-7 md:pl-8 pr-3 md:pr-4 py-2 md:py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 "
                         />
                       </div>
                     </div>
                   </div>
 
                   <div className="bg-gray-50 p-4 md:p-6 rounded-lg border">
-                    <h4 className="font-bold text-gray-800 mb-4 text-sm md:text-base">Additional Income & Deductions</h4>
+                    <h4 className="font-bold text-gray-900 mb-4 text-sm md:text-base">Additional Income & Deductions</h4>
                     
                     <div className="space-y-4">
                       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
@@ -348,7 +348,7 @@ const IncomeTaxCalculator = () => {
                             type="number"
                             value={interestIncome}
                             onChange={(e) => setInterestIncome(Number(e.target.value) || 0)}
-                            className="w-full sm:w-32 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm"
+                            className="w-full text-gray-900  sm:w-32 px-3 py-2 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 "
                           />
                         </div>
                       </div>
@@ -361,7 +361,7 @@ const IncomeTaxCalculator = () => {
                             type="number"
                             value={iraContributions}
                             onChange={(e) => setIraContributions(Number(e.target.value) || 0)}
-                            className="w-full sm:w-32 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm"
+                            className="w-full text-gray-900  sm:w-32 px-3 py-2 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 "
                           />
                         </div>
                       </div>
@@ -374,7 +374,7 @@ const IncomeTaxCalculator = () => {
                             type="number"
                             value={mortgageInterest}
                             onChange={(e) => setMortgageInterest(Number(e.target.value) || 0)}
-                            className="w-full sm:w-32 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm"
+                            className="w-full text-gray-900  sm:w-32 px-3 py-2 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 "
                           />
                         </div>
                       </div>
@@ -387,7 +387,7 @@ const IncomeTaxCalculator = () => {
                             type="number"
                             value={charitableDonations}
                             onChange={(e) => setCharitableDonations(Number(e.target.value) || 0)}
-                            className="w-full sm:w-32 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm"
+                            className="w-full sm:w-32  text-gray-900  px-3 py-2 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 "
                           />
                         </div>
                       </div>
@@ -400,7 +400,7 @@ const IncomeTaxCalculator = () => {
                             type="number"
                             value={studentLoanInterest}
                             onChange={(e) => setStudentLoanInterest(Number(e.target.value) || 0)}
-                            className="w-full sm:w-32 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm"
+                            className="w-full sm:w-32  text-gray-900 px-3 py-2 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2"
                           />
                         </div>
                       </div>
@@ -432,38 +432,38 @@ const IncomeTaxCalculator = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                       <div className="bg-white rounded-lg p-3 md:p-4 space-y-3">
                         <div className="flex justify-between text-xs md:text-sm">
-                          <span className="text-gray-600">Adjusted Gross Income</span>
-                          <span className="font-bold">{formatCurrency(taxResults.adjustedGrossIncome)}</span>
+                          <span className="text-gray-900">Adjusted Gross Income</span>
+                          <span className="font-bold text-gray-900">{formatCurrency(taxResults.adjustedGrossIncome)}</span>
                         </div>
                         <div className="flex justify-between text-xs md:text-sm">
-                          <span className="text-gray-600">Deduction Used</span>
-                          <span className="font-bold">{formatCurrency(taxResults.deductionUsed)}</span>
+                          <span className="text-gray-900">Deduction Used</span>
+                          <span className="font-bold text-gray-900">{formatCurrency(taxResults.deductionUsed)}</span>
                         </div>
                         <div className="flex justify-between text-xs md:text-sm">
-                          <span className="text-gray-600">Taxable Income</span>
+                          <span className="text-gray-900">Taxable Income</span>
                           <span className="font-bold text-gray-900">{formatCurrency(taxResults.taxableIncome)}</span>
                         </div>
                       </div>
 
                       <div className="bg-white rounded-lg p-3 md:p-4 space-y-3">
                         <div className="flex justify-between text-xs md:text-sm">
-                          <span className="text-gray-600">Federal Tax</span>
+                          <span className="text-gray-900">Federal Tax</span>
                           <span className="font-bold text-gray-900">{formatCurrency(taxResults.federalTax)}</span>
                         </div>
                         <div className="flex justify-between text-xs md:text-sm">
-                          <span className="text-gray-600">Marginal Rate</span>
-                          <span className="font-bold">{taxResults.marginalTaxRate.toFixed(1)}%</span>
+                          <span className="text-gray-900">Marginal Rate</span>
+                          <span className="font-bold text-gray-900">{taxResults.marginalTaxRate.toFixed(1)}%</span>
                         </div>
                         <div className="flex justify-between text-xs md:text-sm">
-                          <span className="text-gray-600">Effective Rate</span>
-                          <span className="font-bold">{taxResults.effectiveTaxRate.toFixed(1)}%</span>
+                          <span className="text-gray-900">Effective Rate</span>
+                          <span className="font-bold text-gray-900">{taxResults.effectiveTaxRate.toFixed(1)}%</span>
                         </div>
                       </div>
                     </div>
 
                     <div className="bg-white rounded-lg p-3 md:p-4">
                       <div className="flex justify-between items-center">
-                        <span className="text-base md:text-lg font-bold">
+                        <span className="text-base md:text-lg text-gray-900 font-bold ">
                           {taxResults.refundOrOwed >= 0 ? 'Expected Refund:' : 'Amount Owed:'}
                         </span>
                         <span className={`text-xl md:text-2xl font-bold ${taxResults.refundOrOwed >= 0 ? 'text-green-600' : 'text-red-600'}`}>

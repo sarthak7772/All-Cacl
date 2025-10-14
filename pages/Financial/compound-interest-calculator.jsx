@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator } from 'lucide-react';
 
 const CompoundInterestCalculator = () => {
@@ -142,7 +142,7 @@ const CompoundInterestCalculator = () => {
                   <div className="hidden md:block overflow-x-auto">
                     <table className="w-full">
                       <thead>
-                        <tr className="text-sm text-gray-700">
+                        <tr className="text-sm text-gray-900">
                           <th className="text-left pb-4 font-medium">Input Interest</th>
                           <th className="text-left pb-4 font-medium">Compound</th>
                           <th className="text-center pb-4 font-medium"></th>
@@ -158,17 +158,17 @@ const CompoundInterestCalculator = () => {
                                 type="number"
                                 value={inputRate}
                                 onChange={(e) => setInputRate(parseFloat(e.target.value) || 0)}
-                                className="w-16 px-2 py-2 border border-gray-300 text-right text-sm rounded-l"
+                                className="w-16 text-gray-900 px-2 py-2 border border-gray-900 text-right text-sm rounded-l"
                                 step="0.01"
                               />
-                              <span className="bg-white border border-gray-300 border-l-0 px-2 py-2 text-sm rounded-r">%</span>
+                              <span className="bg-white border border-gray-900 border-l-0 px-2 py-2 text-sm  text-gray-900 rounded-r">%</span>
                             </div>
                           </td>
                           <td className="pr-4">
                             <select
                               value={compoundFrequency}
                               onChange={(e) => setCompoundFrequency(e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 text-sm bg-white rounded"
+                              className="w-full px-3 py-2 border border-gray-900 text-sm text-gray-900 bg-white rounded"
                             >
                               <option value="Daily">Daily</option>
                               <option value="Weekly">Weekly</option>
@@ -191,16 +191,16 @@ const CompoundInterestCalculator = () => {
                                 type="text"
                                 value={outputRate}
                                 readOnly
-                                className="w-20 px-2 py-2 border border-gray-300 text-right text-sm font-bold text-green-600 rounded-l bg-gray-50"
+                                className="w-20 px-2 py-2 border  border-gray-900 text-right text-sm font-bold text-green-600 rounded-l bg-gray-50"
                               />
-                              <span className="bg-white border border-gray-300 border-l-0 px-2 py-2 text-sm rounded-r">%</span>
+                              <span className="bg-white border border-gray-900 border-l-0 px-2 py-2 text-gray-900 text-sm rounded-r">%</span>
                             </div>
                           </td>
                           <td>
                             <select
                               value={outputFrequency}
                               onChange={(e) => setOutputFrequency(e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 text-sm bg-white rounded"
+                              className="w-full px-3 py-2  text-gray-900 border border-gray-900 text-sm bg-white rounded"
                             >
                               <option value="Daily">Daily</option>
                               <option value="Weekly">Weekly</option>
@@ -361,12 +361,12 @@ const CompoundInterestCalculator = () => {
 
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2 text-sm md:text-base">Example:</h4>
-                <p className="text-xs md:text-sm text-gray-700 mb-2">$100 at 10% simple interest for 2 years:</p>
-                <div className="font-mono text-xs md:text-sm bg-white p-2 rounded text-center">
+                <p className="text-xs md:text-sm text-gray-800 mb-2">$100 at 10% simple interest for 2 years:</p>
+                <div className="font-mono text-gray-800 text-xs md:text-sm bg-white p-2 rounded text-center">
                   $100 × 10% × 2 years = $20
                 </div>
-                <p className="text-xs md:text-sm text-gray-700 mt-3 mb-2">$100 at 10% compound interest for 2 years:</p>
-                <div className="font-mono text-xs md:text-sm bg-white p-2 rounded text-center">
+                <p className="text-xs md:text-sm text-gray-800 mt-3 mb-2">$100 at 10% compound interest for 2 years:</p>
+                <div className="font-mono text-xs  text-gray-800 md:text-sm bg-white p-2 rounded text-center">
                   Year 1: $100 × 10% = $10<br/>
                   Year 2: ($100 + $10) × 10% = $11<br/>
                   Total: $10 + $11 = $21
@@ -376,16 +376,16 @@ const CompoundInterestCalculator = () => {
 
             {/* Compound Interest Formulas */}
             <div className="mt-6 md:mt-8 bg-white rounded-lg shadow-sm p-4 md:p-6">
-              <h2 className="text-lg md:text-xl font-bold text-gray-700 mb-4">Compound Interest Formulas</h2>
+              <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-4">Compound Interest Formulas</h2>
               
               <div className="space-y-6">
                 <div>
                   <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-2">Basic Compound Interest Formula</h3>
                   <div className="bg-gray-50 p-4 rounded-lg">
-                    <div className="text-center font-mono text-base md:text-lg mb-4">
+                    <div className="text-center text-gray-800 font-mono text-base md:text-lg mb-4">
                       A<sub>t</sub> = A<sub>0</sub>(1 + r)<sup>n</sup>
                     </div>
-                    <div className="text-xs md:text-sm text-gray-700 space-y-1">
+                    <div className="text-xs md:text-sm text-gray-900 space-y-1">
                       <p><strong>Where:</strong></p>
                       <p>A₀ = principal amount (initial investment)</p>
                       <p>A<sub>t</sub> = amount after time t</p>
@@ -398,10 +398,10 @@ const CompoundInterestCalculator = () => {
                 <div>
                   <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-2">Compound Interest with Different Frequencies</h3>
                   <div className="bg-gray-50 p-4 rounded-lg">
-                    <div className="text-center font-mono text-base md:text-lg mb-4">
+                    <div className="text-center  text-gray-900 font-mono text-base md:text-lg mb-4">
                       A<sub>t</sub> = A<sub>0</sub> × (1 + r/n)<sup>nt</sup>
                     </div>
-                    <div className="text-xs md:text-sm text-gray-700 space-y-1">
+                    <div className="text-xs md:text-sm text-gray-800 space-y-1">
                       <p><strong>Where:</strong></p>
                       <p>A₀ = principal amount</p>
                       <p>A<sub>t</sub> = amount after time t</p>
@@ -415,10 +415,10 @@ const CompoundInterestCalculator = () => {
                 <div>
                   <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-2">Continuous Compounding</h3>
                   <div className="bg-gray-50 p-4 rounded-lg">
-                    <div className="text-center font-mono text-base md:text-lg mb-4">
+                    <div className="text-center text-gray-900 font-mono text-base md:text-lg mb-4">
                       A<sub>t</sub> = A<sub>0</sub>e<sup>rt</sup>
                     </div>
-                    <div className="text-xs md:text-sm text-gray-700 space-y-1">
+                    <div className="text-xs text-gray-900 md:text-sm  space-y-1">
                       <p><strong>Where:</strong></p>
                       <p>A₀ = principal amount</p>
                       <p>A<sub>t</sub> = amount after time t</p>

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer";
 import { Calculator, Home,  } from "lucide-react";
 
 const LoanCalculator = () => {
@@ -438,56 +438,56 @@ const LoanCalculator = () => {
       <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <label className="font-medium text-sm">Loan Amount</label>
+            <label className="font-medium text-gray-900 text-sm">Loan Amount</label>
             <div className="flex items-center">
               <span className="mr-1"></span>
               <input
                 type="number"
                 value={loanAmount}
                 onChange={(e) => setLoanAmount(Number(e.target.value))}
-                className="w-full sm:w-32 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-500"
+                className="w-full text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
               />
             </div>
           </div>
           <div className="space-y-2">
-            <label className="font-medium text-sm">Loan Term</label>
+            <label className="font-medium  text-gray-900 text-sm">Loan Term</label>
             <div className="flex items-center space-x-2">
               <input
                 type="number"
                 value={loanTermYears}
                 onChange={(e) => setLoanTermYears(Number(e.target.value))}
-                className="w-16 p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-red-500"
+                className="w-16 p-2  text-gray-900 border border-gray-900 rounded text-center focus:ring-2 focus:ring-red-500"
               />
-              <span className="text-sm">years</span>
+              <span className="text-sm  text-gray-900 ">years</span>
               <input
                 type="number"
                 value={loanTermMonths}
                 onChange={(e) => setLoanTermMonths(Number(e.target.value))}
-                className="w-16 p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-red-500"
+                className="w-16 text-gray-900 p-2 border border-gray-900 rounded text-center focus:ring-2 focus:ring-red-500"
                 max="11"
               />
-              <span className="text-sm">months</span>
+              <span className="text-sm text-gray-900">months</span>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <label className="font-medium text-sm">Interest Rate</label>
+            <label className="font-medium  text-gray-900 text-sm">Interest Rate</label>
             <div className="flex items-center space-x-2">
               <input
                 type="number"
                 value={interestRate}
                 onChange={(e) => setInterestRate(Number(e.target.value))}
-                className="w-20 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-500"
+                className="w-20 text-gray-900 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
                 step="0.1"
               />
-              <span className="text-sm">%</span>
+              <span className="text-sm text-gray-900">%</span>
             </div>
           </div>
           <div className="space-y-2">
-            <label className="font-medium text-sm">Compound</label>
+            <label className="font-medium text-sm text-gray-900">Compound</label>
             <select
               value={compoundFrequency}
               onChange={(e) => setCompoundFrequency(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-500"
+              className="w-full text-gray-900 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-500"
             >
               {compoundOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -497,11 +497,11 @@ const LoanCalculator = () => {
             </select>
           </div>
           <div className="space-y-2">
-            <label className="font-medium text-sm">Pay Back</label>
+            <label className="font-medium  text-gray-900 text-sm">Pay Back</label>
             <select
               value={paybackFrequency}
               onChange={(e) => setPaybackFrequency(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-800"
+              className="w-full text-gray-900 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-800"
             >
               {paybackOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -628,39 +628,39 @@ const LoanCalculator = () => {
       <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <label className="font-medium text-sm">Loan Amount</label>
+            <label className="font-medium text-sm text-gray-900">Loan Amount</label>
             <div className="flex items-center">
               <span className="mr-1"></span>
               <input
                 type="number"
                 value={deferredLoanAmount}
                 onChange={(e) => setDeferredLoanAmount(Number(e.target.value))}
-                className="w-full sm:w-32 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-500"
+                className="w-full text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
               />
             </div>
           </div>
           <div className="space-y-2">
-            <label className="font-medium text-sm">Loan Term</label>
+            <label className="font-medium text-sm text-gray-900">Loan Term</label>
             <div className="flex items-center space-x-2">
               <input
                 type="number"
                 value={deferredTermYears}
                 onChange={(e) => setDeferredTermYears(Number(e.target.value))}
-                className="w-16 p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-red-500"
+                className="w-16 text-gray-900 p-2 border border-gray-900 rounded text-center focus:ring-2 focus:ring-red-500"
               />
-              <span className="text-sm">years</span>
+              <span className="text-sm text-gray-900">years</span>
               <input
                 type="number"
                 value={deferredTermMonths}
                 onChange={(e) => setDeferredTermMonths(Number(e.target.value))}
-                className="w-16 p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-red-500"
+                className="w-16 p-2 text-gray-900 border border-gray-900 rounded text-center focus:ring-2 focus:ring-red-500"
                 max="11"
               />
-              <span className="text-sm">months</span>
+              <span className="text-sm text-gray-900">months</span>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <label className="font-medium text-sm">Interest Rate</label>
+            <label className="font-medium text-sm text-gray-900">Interest Rate</label>
             <div className="flex items-center space-x-2">
               <input
                 type="number"
@@ -668,18 +668,18 @@ const LoanCalculator = () => {
                 onChange={(e) =>
                   setDeferredInterestRate(Number(e.target.value))
                 }
-                className="w-20 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-500"
+                className="w-20 text-gray-900 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
                 step="0.1"
               />
-              <span className="text-sm">%</span>
+              <span className="text-sm text-gray-900">%</span>
             </div>
           </div>
           <div className="space-y-2">
-            <label className="font-medium text-sm">Compound</label>
+            <label className="font-medium text-sm text-gray-900">Compound</label>
             <select
               value={deferredCompound}
               onChange={(e) => setDeferredCompound(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-800"
+              className="w-full text-gray-900 p-2 border border-gray-900 rounded focus:ring-2 focus:ring-red-800"
             >
               {compoundOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -743,7 +743,7 @@ const LoanCalculator = () => {
       <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <label className="font-medium text-sm">
+            <label className="font-medium text-sm text-gray-900">
               Predetermined Due Amount
             </label>
             <div className="flex items-center">
@@ -752,49 +752,49 @@ const LoanCalculator = () => {
                 type="number"
                 value={predeterminedAmount}
                 onChange={(e) => setPredeterminedAmount(Number(e.target.value))}
-                className="w-full sm:w-32 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-800"
+                className="w-full text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-800"
               />
             </div>
           </div>
           <div className="space-y-2">
-            <label className="font-medium text-sm">Loan Term</label>
+            <label className="font-medium text-gray-900 text-sm">Loan Term</label>
             <div className="flex items-center space-x-2">
               <input
                 type="number"
                 value={bondTermYears}
                 onChange={(e) => setBondTermYears(Number(e.target.value))}
-                className="w-16 p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-red-800"
+                className="w-16 p-2  text-gray-900 border border-gray-900 rounded text-center focus:ring-2 focus:ring-red-800"
               />
-              <span className="text-sm">years</span>
+              <span className="text-sm text-gray-900">years</span>
               <input
                 type="number"
                 value={bondTermMonths}
                 onChange={(e) => setBondTermMonths(Number(e.target.value))}
-                className="w-16 p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-red-800"
+                className="w-16 p-2 text-gray-900 border border-gray-900 rounded text-center focus:ring-2 focus:ring-red-800"
                 max="11"
               />
-              <span className="text-sm">months</span>
+              <span className="text-sm text-gray-900">months</span>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <label className="font-medium text-sm">Interest Rate</label>
+            <label className="font-medium text-sm text-gray-900">Interest Rate</label>
             <div className="flex items-center space-x-2">
               <input
                 type="number"
                 value={bondInterestRate}
                 onChange={(e) => setBondInterestRate(Number(e.target.value))}
-                className="w-20 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-800"
+                className="w-20 text-gray-900 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-800"
                 step="0.1"
               />
-              <span className="text-sm">%</span>
+              <span className="text-sm text-gray-900">%</span>
             </div>
           </div>
           <div className="space-y-2">
-            <label className="font-medium text-sm">Compound</label>
+            <label className="font-medium text-sm text-gray-900">Compound</label>
             <select
               value={bondCompound}
               onChange={(e) => setBondCompound(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-800"
+              className="w-full text-gray-900 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-800"
             >
               {compoundOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -964,17 +964,17 @@ const LoanCalculator = () => {
                     </button>
                     <button
                       onClick={() => setCalculatorType("deferred")}
-                      className={`px-4 md:px-6 py-2 md:py-3 rounded font-medium transition-colors text-sm md:text-base ${
+                      className={`px-4 text-gray-900 md:px-6 py-2 md:py-3 rounded font-medium transition-colors text-sm md:text-base ${
                         calculatorType === "deferred"
                           ? "bg-gray-900 text-white"
-                          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          : "bg-gray-300 text-gray-700 hover:bg-gray-300"
                       }`}
                     >
                       Deferred Payment
                     </button>
                     <button
                       onClick={() => setCalculatorType("bond")}
-                      className={`px-4 md:px-6 py-2 md:py-3 rounded font-medium transition-colors text-sm md:text-base ${
+                      className={`px-4  md:px-6 py-2 md:py-3 rounded font-medium transition-colors text-sm md:text-base ${
                         calculatorType === "bond"
                           ? "bg-gray-900 text-white"
                           : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -991,7 +991,7 @@ const LoanCalculator = () => {
                       <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-4">
                         Amortized Loan: Paying Back a Fixed Amount Periodically
                       </h2>
-                      <p className="text-gray-700 text-xs md:text-sm mb-6">
+                      <p className="text-gray-900 text-xs md:text-sm mb-6">
                         Use this calculator for basic calculations of common
                         loan types such as mortgages, auto loans, student loans,
                         or personal loans.
@@ -1006,7 +1006,7 @@ const LoanCalculator = () => {
                         Deferred Payment Loan: Paying Back a Lump Sum Due at
                         Maturity
                       </h2>
-                      <p className="text-gray-700 text-xs md:text-sm mb-6">
+                      <p className="text-gray-900 text-xs md:text-sm mb-6">
                         Calculate loans where the entire principal and interest
                         is paid in a single payment at the end of the loan term.
                       </p>
@@ -1020,7 +1020,7 @@ const LoanCalculator = () => {
                         Bond: Paying Back a Predetermined Amount Due at Loan
                         Maturity
                       </h2>
-                      <p className="text-gray-700 text-xs md:text-sm mb-6">
+                      <p className="text-gray-900 text-xs md:text-sm mb-6">
                         Use this calculator to compute the initial value of a
                         bond/loan based on a predetermined face value to be paid
                         back at bond/loan maturity.
@@ -1029,11 +1029,11 @@ const LoanCalculator = () => {
                     </div>
                   )}
 
-                  <div className="mt-6 md:mt-8 bg-gray-50 p-4 md:p-6 rounded-lg">
-                    <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-4">
+                  <div className="mt-6 md:mt-8 bg-gray-900 p-4 md:p-6 rounded-lg">
+                    <h3 className="text-base md:text-lg font-semibold text-White mb-4">
                       Loan Information
                     </h3>
-                    <ul className="space-y-2 text-xs md:text-sm text-gray-700">
+                    <ul className="space-y-2 text-xs md:text-sm text-gray-300">
                       <li>
                         • Interest rate is the percentage of a loan paid by
                         borrowers to lenders
@@ -1118,7 +1118,7 @@ const LoanCalculator = () => {
                       Key Loan Terms
                     </h3>
                     <div className="grid md:grid-cols-2 gap-4 text-xs md:text-sm">
-                      <div className="space-y-2">
+                      <div className="space-y-2 text-gray-600">
                         <p>
                           <strong>Interest Rate:</strong> The percentage charged
                           on the loan amount

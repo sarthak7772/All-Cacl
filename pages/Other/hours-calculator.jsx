@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Clock, Menu, X } from 'lucide-react';
 
 const HoursCalculator = () => {
@@ -284,10 +284,11 @@ const HoursCalculator = () => {
           </a>
           <a href="/Other/hours-calculator">
             <div className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 transition-colors">
-              <span className="text-xl">🕐</span>
+              <span className="text-xl">⏱️</span>
               <span className="text-gray-900 font-medium">Hours Calculator</span>
             </div>
           </a>
+          
           <a href="/Other/gpa-calculator">
             <div className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 transition-colors">
               <span className="text-xl">📚</span>
@@ -346,191 +347,192 @@ const HoursCalculator = () => {
             </div>
 
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Calculate Based On
-              </label>
-              <select 
-                value={activeTab}
-                onChange={(e) => {
-                  setActiveTab(e.target.value);
-                }}
-                className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-gray-900"
-              >
-                <option value="time-calc">Time Duration (Same Day)</option>
-                <option value="date-calc">Date Range (Multiple Days)</option>
-              </select>
-            </div>
+  <label className="block text-sm font-medium text-gray-900 mb-2">
+    Calculate Based On
+  </label>
+  <select 
+    value={activeTab}
+    onChange={(e) => {
+      setActiveTab(e.target.value);
+    }}
+    className="w-full p-3 border border-gray-900 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900"
+  >
+    <option value="time-calc">Time Duration (Same Day)</option>
+    <option value="date-calc">Date Range (Multiple Days)</option>
+  </select>
+</div>
 
-            {activeTab === 'time-calc' ? (
-              <>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Start Time
-                    </label>
-                    <div className="flex gap-2">
-                      <input
-                        type="time"
-                        value={timeCalc.startTime}
-                        onChange={(e) => setTimeCalc(prev => ({ ...prev, startTime: e.target.value }))}
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      />
-                      <select
-                        value={timeCalc.startPeriod}
-                        onChange={(e) => setTimeCalc(prev => ({ ...prev, startPeriod: e.target.value }))}
-                        className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      >
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      End Time
-                    </label>
-                    <div className="flex gap-2">
-                      <input
-                        type="time"
-                        value={timeCalc.endTime}
-                        onChange={(e) => setTimeCalc(prev => ({ ...prev, endTime: e.target.value }))}
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      />
-                      <select
-                        value={timeCalc.endPeriod}
-                        onChange={(e) => setTimeCalc(prev => ({ ...prev, endPeriod: e.target.value }))}
-                        className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      >
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Start Date & Time
-                  </label>
-                  <div className="grid grid-cols-3 gap-2 mb-3">
-                    <select
-                      value={dateCalc.startDate.month}
-                      onChange={(e) => setDateCalc(prev => ({
-                        ...prev,
-                        startDate: { ...prev.startDate, month: e.target.value }
-                      }))}
-                      className="px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
-                    >
-                      {months.map(month => (
-                        <option key={month} value={month}>{month}</option>
-                      ))}
-                    </select>
-                    <select
-                      value={dateCalc.startDate.day}
-                      onChange={(e) => setDateCalc(prev => ({
-                        ...prev,
-                        startDate: { ...prev.startDate, day: e.target.value }
-                      }))}
-                      className="px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
-                    >
-                      {generateDayOptions(dateCalc.startDate.month, dateCalc.startDate.year).map(day => (
-                        <option key={day} value={day}>{day}</option>
-                      ))}
-                    </select>
-                    <select
-                      value={dateCalc.startDate.year}
-                      onChange={(e) => setDateCalc(prev => ({
-                        ...prev,
-                        startDate: { ...prev.startDate, year: e.target.value }
-                      }))}
-                      className="px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
-                    >
-                      {generateYearOptions().map(year => (
-                        <option key={year} value={year}>{year}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="flex gap-2">
-                    <input
-                      type="time"
-                      value={dateCalc.startTime}
-                      onChange={(e) => setDateCalc(prev => ({ ...prev, startTime: e.target.value }))}
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
-                    />
-                    <select
-                      value={dateCalc.startPeriod}
-                      onChange={(e) => setDateCalc(prev => ({ ...prev, startPeriod: e.target.value }))}
-                      className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
-                    >
-                      <option value="AM">AM</option>
-                      <option value="PM">PM</option>
-                    </select>
-                  </div>
-                </div>
+{activeTab === 'time-calc' ? (
+  <>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div>
+        <label className="block text-sm font-medium text-gray-900 mb-2">
+          Start Time
+        </label>
+        <div className="flex gap-2">
+          <input
+            type="time"
+            value={timeCalc.startTime}
+            onChange={(e) => setTimeCalc(prev => ({ ...prev, startTime: e.target.value }))}
+            className="flex-1 px-3 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
+          />
+          <select
+            value={timeCalc.startPeriod}
+            onChange={(e) => setTimeCalc(prev => ({ ...prev, startPeriod: e.target.value }))}
+            className="px-3 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
+          >
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-900 mb-2">
+          End Time
+        </label>
+        <div className="flex gap-2">
+          <input
+            type="time"
+            value={timeCalc.endTime}
+            onChange={(e) => setTimeCalc(prev => ({ ...prev, endTime: e.target.value }))}
+            className="flex-1 px-3 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
+          />
+          <select
+            value={timeCalc.endPeriod}
+            onChange={(e) => setTimeCalc(prev => ({ ...prev, endPeriod: e.target.value }))}
+            className="px-3 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
+          >
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </>
+) : (
+  <>
+    <div className="mb-6">
+      <label className="block text-sm font-medium text-gray-900 mb-3">
+        Start Date & Time
+      </label>
+      <div className="grid grid-cols-3 gap-2 mb-3">
+        <select
+          value={dateCalc.startDate.month}
+          onChange={(e) => setDateCalc(prev => ({
+            ...prev,
+            startDate: { ...prev.startDate, month: e.target.value }
+          }))}
+          className="px-2 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
+        >
+          {months.map(month => (
+            <option key={month} value={month}>{month}</option>
+          ))}
+        </select>
+        <select
+          value={dateCalc.startDate.day}
+          onChange={(e) => setDateCalc(prev => ({
+            ...prev,
+            startDate: { ...prev.startDate, day: e.target.value }
+          }))}
+          className="px-2 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
+        >
+          {generateDayOptions(dateCalc.startDate.month, dateCalc.startDate.year).map(day => (
+            <option key={day} value={day}>{day}</option>
+          ))}
+        </select>
+        <select
+          value={dateCalc.startDate.year}
+          onChange={(e) => setDateCalc(prev => ({
+            ...prev,
+            startDate: { ...prev.startDate, year: e.target.value }
+          }))}
+          className="px-2 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
+        >
+          {generateYearOptions().map(year => (
+            <option key={year} value={year}>{year}</option>
+          ))}
+        </select>
+      </div>
+      <div className="flex gap-2">
+        <input
+          type="time"
+          value={dateCalc.startTime}
+          onChange={(e) => setDateCalc(prev => ({ ...prev, startTime: e.target.value }))}
+          className="flex-1 px-3 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
+        />
+        <select
+          value={dateCalc.startPeriod}
+          onChange={(e) => setDateCalc(prev => ({ ...prev, startPeriod: e.target.value }))}
+          className="px-3 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
+        >
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+    </div>
 
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
-                    End Date & Time
-                  </label>
-                  <div className="grid grid-cols-3 gap-2 mb-3">
-                    <select
-                      value={dateCalc.endDate.month}
-                      onChange={(e) => setDateCalc(prev => ({
-                        ...prev,
-                        endDate: { ...prev.endDate, month: e.target.value }
-                      }))}
-                      className="px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
-                    >
-                      {months.map(month => (
-                        <option key={month} value={month}>{month}</option>
-                      ))}
-                    </select>
-                    <select
-                      value={dateCalc.endDate.day}
-                      onChange={(e) => setDateCalc(prev => ({
-                        ...prev,
-                        endDate: { ...prev.endDate, day: e.target.value }
-                      }))}
-                      className="px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
-                    >
-                      {generateDayOptions(dateCalc.endDate.month, dateCalc.endDate.year).map(day => (
-                        <option key={day} value={day}>{day}</option>
-                      ))}
-                    </select>
-                    <select
-                      value={dateCalc.endDate.year}
-                      onChange={(e) => setDateCalc(prev => ({
-                        ...prev,
-                        endDate: { ...prev.endDate, year: e.target.value }
-                      }))}
-                      className="px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
-                    >
-                      {generateYearOptions().map(year => (
-                        <option key={year} value={year}>{year}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="flex gap-2">
-                    <input
-                      type="time"
-                      value={dateCalc.endTime}
-                      onChange={(e) => setDateCalc(prev => ({ ...prev, endTime: e.target.value }))}
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
-                    />
-                    <select
-                      value={dateCalc.endPeriod}
-                      onChange={(e) => setDateCalc(prev => ({ ...prev, endPeriod: e.target.value }))}
-                      className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
-                    >
-                      <option value="AM">AM</option>
-                      <option value="PM">PM</option>
-                    </select>
-                  </div>
-                </div>
-              </>
-            )}
+    <div className="mb-6">
+      <label className="block text-sm font-medium text-gray-900 mb-3">
+        End Date & Time
+      </label>
+      <div className="grid grid-cols-3 gap-2 mb-3">
+        <select
+          value={dateCalc.endDate.month}
+          onChange={(e) => setDateCalc(prev => ({
+            ...prev,
+            endDate: { ...prev.endDate, month: e.target.value }
+          }))}
+          className="px-2 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
+        >
+          {months.map(month => (
+            <option key={month} value={month}>{month}</option>
+          ))}
+        </select>
+        <select
+          value={dateCalc.endDate.day}
+          onChange={(e) => setDateCalc(prev => ({
+            ...prev,
+            endDate: { ...prev.endDate, day: e.target.value }
+          }))}
+          className="px-2 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
+        >
+          {generateDayOptions(dateCalc.endDate.month, dateCalc.endDate.year).map(day => (
+            <option key={day} value={day}>{day}</option>
+          ))}
+        </select>
+        <select
+          value={dateCalc.endDate.year}
+          onChange={(e) => setDateCalc(prev => ({
+            ...prev,
+            endDate: { ...prev.endDate, year: e.target.value }
+          }))}
+          className="px-2 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm lg:text-base"
+        >
+          {generateYearOptions().map(year => (
+            <option key={year} value={year}>{year}</option>
+          ))}
+        </select>
+      </div>
+      <div className="flex gap-2">
+        <input
+          type="time"
+          value={dateCalc.endTime}
+          onChange={(e) => setDateCalc(prev => ({ ...prev, endTime: e.target.value }))}
+          className="flex-1 px-3 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
+        />
+        <select
+          value={dateCalc.endPeriod}
+          onChange={(e) => setDateCalc(prev => ({ ...prev, endPeriod: e.target.value }))}
+          className="px-3 py-2 border border-gray-900 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
+        >
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+    </div>
+  </>
+)}
+
 
             <div className="flex flex-col sm:flex-row gap-3">
               <button

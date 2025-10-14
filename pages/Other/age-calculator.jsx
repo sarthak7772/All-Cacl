@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calendar,  } from 'lucide-react';
 
 const AgeCalculator = () => {
@@ -277,90 +277,91 @@ const AgeCalculator = () => {
             differences between people.
           </p>
 
-          {/* Calculator Form */}
-          <div className="bg-gray-50 p-4 lg:p-6 rounded-lg mb-6 lg:mb-8 shadow">
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Calculate Based On
-              </label>
-              <select className="w-full p-3 border border-gray-300 rounded-lg bg-white">
-                <option>Birth Date</option>
-              </select>
-            </div>
+          {/* Calculator Form */}<div className="bg-gray-50 p-4 lg:p-6 rounded-lg mb-6 lg:mb-8 shadow">
+  <div className="mb-6">
+    <label className="block text-sm font-medium text-gray-900 mb-2">
+      Calculate Based On
+    </label>
+    <select className="w-full p-3 border border-gray-900 rounded-lg bg-white text-gray-900">
+      <option>Birth Date</option>
+    </select>
+  </div>
 
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-3">
-                Your Birth Date
-              </label>
-              <div className="grid grid-cols-3 gap-2 lg:gap-4">
-                <select
-                  value={birthDate.month}
-                  onChange={(e) => handleDateChange('birth', 'month', e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg bg-white text-sm lg:text-base"
-                >
-                  {months.map(month => (
-                    <option key={month} value={month}>{month}</option>
-                  ))}
-                </select>
-                
-                <select
-                  value={birthDate.day}
-                  onChange={(e) => handleDateChange('birth', 'day', e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg bg-white text-sm lg:text-base"
-                >
-                  {generateDayOptions(birthDate.month, birthDate.year).map(day => (
-                    <option key={day} value={day}>{day}</option>
-                  ))}
-                </select>
-                
-                <select
-                  value={birthDate.year}
-                  onChange={(e) => handleDateChange('birth', 'year', e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg bg-white text-sm lg:text-base"
-                >
-                  {generateYearOptions().map(year => (
-                    <option key={year} value={year}>{year}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
+  <div className="mb-6">
+    <label className="block text-sm font-medium text-gray-900 mb-3">
+      Your Birth Date
+    </label>
+    <div className="grid grid-cols-3 gap-2 lg:gap-4">
+      <select
+        value={birthDate.month}
+        onChange={(e) => handleDateChange('birth', 'month', e.target.value)}
+        className="w-full p-3 border border-gray-900 rounded-lg bg-white text-gray-900 text-sm lg:text-base"
+      >
+        {months.map(month => (
+          <option key={month} value={month}>{month}</option>
+        ))}
+      </select>
 
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-3">
-                Age at Date
-              </label>
-              <div className="grid grid-cols-3 gap-2 lg:gap-4">
-                <select
-                  value={ageAtDate.month}
-                  onChange={(e) => handleDateChange('ageAt', 'month', e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg bg-white text-sm lg:text-base"
-                >
-                  {months.map(month => (
-                    <option key={month} value={month}>{month}</option>
-                  ))}
-                </select>
-                
-                <select
-                  value={ageAtDate.day}
-                  onChange={(e) => handleDateChange('ageAt', 'day', e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg bg-white text-sm lg:text-base"
-                >
-                  {generateDayOptions(ageAtDate.month, ageAtDate.year).map(day => (
-                    <option key={day} value={day}>{day}</option>
-                  ))}
-                </select>
-                
-                <select
-                  value={ageAtDate.year}
-                  onChange={(e) => handleDateChange('ageAt', 'year', e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg bg-white text-sm lg:text-base"
-                >
-                  {generateYearOptions().map(year => (
-                    <option key={year} value={year}>{year}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
+      <select
+        value={birthDate.day}
+        onChange={(e) => handleDateChange('birth', 'day', e.target.value)}
+        className="w-full p-3 border border-gray-900 rounded-lg bg-white text-gray-900 text-sm lg:text-base"
+      >
+        {generateDayOptions(birthDate.month, birthDate.year).map(day => (
+          <option key={day} value={day}>{day}</option>
+        ))}
+      </select>
+
+      <select
+        value={birthDate.year}
+        onChange={(e) => handleDateChange('birth', 'year', e.target.value)}
+        className="w-full p-3 border border-gray-900 rounded-lg bg-white text-gray-900 text-sm lg:text-base"
+      >
+        {generateYearOptions().map(year => (
+          <option key={year} value={year}>{year}</option>
+        ))}
+      </select>
+    </div>
+  </div>
+
+  <div className="mb-6">
+    <label className="block text-sm font-medium text-gray-900 mb-3">
+      Age at Date
+    </label>
+    <div className="grid grid-cols-3 gap-2 lg:gap-4">
+      <select
+        value={ageAtDate.month}
+        onChange={(e) => handleDateChange('ageAt', 'month', e.target.value)}
+        className="w-full p-3 border border-gray-900 rounded-lg bg-white text-gray-900 text-sm lg:text-base"
+      >
+        {months.map(month => (
+          <option key={month} value={month}>{month}</option>
+        ))}
+      </select>
+
+      <select
+        value={ageAtDate.day}
+        onChange={(e) => handleDateChange('ageAt', 'day', e.target.value)}
+        className="w-full p-3 border border-gray-900 rounded-lg bg-white text-gray-900 text-sm lg:text-base"
+      >
+        {generateDayOptions(ageAtDate.month, ageAtDate.year).map(day => (
+          <option key={day} value={day}>{day}</option>
+        ))}
+      </select>
+
+      <select
+        value={ageAtDate.year}
+        onChange={(e) => handleDateChange('ageAt', 'year', e.target.value)}
+        className="w-full p-3 border border-gray-900 rounded-lg bg-white text-gray-900 text-sm lg:text-base"
+      >
+        {generateYearOptions().map(year => (
+          <option key={year} value={year}>{year}</option>
+        ))}
+      </select>
+    </div>
+  </div>
+
+
 
             <div className="flex flex-col sm:flex-row gap-3">
               <button

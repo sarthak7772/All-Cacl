@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Head from "next/head"
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Shuffle, Download, Copy, RefreshCw, Dice6, Target, BarChart3,  } from 'lucide-react';
 
 const RandomNumberGenerator = () => {
@@ -297,33 +297,33 @@ const RandomNumberGenerator = () => {
             <div className="p-4 md:p-8">
               {/* Basic Random Number Generator */}
               <div className="mb-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <Target className="w-6 h-6 text-gray-900" />
-                  <h3 className="text-xl font-bold text-gray-800">Quick Random Generator</h3>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Lower Limit</label>
-                    <input
-                      type="number"
-                      value={basicGenerator.lowerLimit}
-                      onChange={(e) => setBasicGenerator(prev => ({...prev, lowerLimit: parseInt(e.target.value) || 0}))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Enter lower limit"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Upper Limit</label>
-                    <input
-                      type="number"
-                      value={basicGenerator.upperLimit}
-                      onChange={(e) => setBasicGenerator(prev => ({...prev, upperLimit: parseInt(e.target.value) || 0}))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Enter upper limit"
-                    />
-                  </div>
-                </div>
+  <div className="flex items-center gap-3 mb-4">
+    <Target className="w-6 h-6 text-gray-900" />
+    <h3 className="text-xl font-bold text-gray-900">Quick Random Generator</h3>
+  </div>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Lower Limit</label>
+      <input
+        type="number"
+        value={basicGenerator.lowerLimit}
+        onChange={(e) => setBasicGenerator(prev => ({...prev, lowerLimit: parseInt(e.target.value) || 0}))}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+        placeholder="Enter lower limit"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Upper Limit</label>
+      <input
+        type="number"
+        value={basicGenerator.upperLimit}
+        onChange={(e) => setBasicGenerator(prev => ({...prev, upperLimit: parseInt(e.target.value) || 0}))}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2 text-base md:text-lg"
+        placeholder="Enter upper limit"
+      />
+    </div>
+  </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 mb-6">
                   <button
@@ -363,78 +363,77 @@ const RandomNumberGenerator = () => {
 
               {/* Comprehensive Generator */}
               <div className="mb-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <BarChart3 className="w-6 h-6 text-gray-900" />
-                  <h3 className="text-xl font-bold text-gray-800">Advanced Generator</h3>
-                </div>
+  <div className="flex items-center gap-3 mb-4">
+    <BarChart3 className="w-6 h-6 text-gray-900" />
+    <h3 className="text-xl font-bold text-gray-900">Advanced Generator</h3>
+  </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Lower Limit</label>
-                    <input
-                      type="number"
-                      step="0.01"
-                      value={comprehensiveGenerator.lowerLimit}
-                      onChange={(e) => setComprehensiveGenerator(prev => ({...prev, lowerLimit: parseFloat(e.target.value) || 0}))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Enter lower limit"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Upper Limit</label>
-                    <input
-                      type="number"
-                      step="0.01"
-                      value={comprehensiveGenerator.upperLimit}
-                      onChange={(e) => setComprehensiveGenerator(prev => ({...prev, upperLimit: parseFloat(e.target.value) || 0}))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Enter upper limit"
-                    />
-                  </div>
-                </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Lower Limit</label>
+      <input
+        type="number"
+        step="0.01"
+        value={comprehensiveGenerator.lowerLimit}
+        onChange={(e) => setComprehensiveGenerator(prev => ({...prev, lowerLimit: parseFloat(e.target.value) || 0}))}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none   text-base md:text-lg"
+        placeholder="Enter lower limit"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Upper Limit</label>
+      <input
+        type="number"
+        step="0.01"
+        value={comprehensiveGenerator.upperLimit}
+        onChange={(e) => setComprehensiveGenerator(prev => ({...prev, upperLimit: parseFloat(e.target.value) || 0}))}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+        placeholder="Enter upper limit"
+      />
+    </div>
+  </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Number Count</label>
-                    <input
-                      type="number"
-                      min="1"
-                      max="10000"
-                      value={comprehensiveGenerator.count}
-                      onChange={(e) => setComprehensiveGenerator(prev => ({...prev, count: parseInt(e.target.value) || 0}))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Count"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Number Type</label>
-                    <select
-                      value={comprehensiveGenerator.type}
-                      onChange={(e) => setComprehensiveGenerator(prev => ({...prev, type: e.target.value}))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                    >
-                      <option value="Integer">Integer</option>
-                      <option value="Decimal">Decimal</option>
-                    </select>
-                  </div>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Number Count</label>
+      <input
+        type="number"
+        min="1"
+        max="10000"
+        value={comprehensiveGenerator.count}
+        onChange={(e) => setComprehensiveGenerator(prev => ({...prev, count: parseInt(e.target.value) || 0}))}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2 text-base md:text-lg"
+        placeholder="Count"
+      />
+    </div>
+    
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Number Type</label>
+      <select
+        value={comprehensiveGenerator.type}
+        onChange={(e) => setComprehensiveGenerator(prev => ({...prev, type: e.target.value}))}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+      >
+        <option value="Integer">Integer</option>
+        <option value="Decimal">Decimal</option>
+      </select>
+    </div>
 
-                  {comprehensiveGenerator.type === 'Decimal' && (
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Decimal Places</label>
-                      <input
-                        type="number"
-                        min="1"
-                        max="10"
-                        value={comprehensiveGenerator.precision}
-                        onChange={(e) => setComprehensiveGenerator(prev => ({...prev, precision: parseInt(e.target.value) || 1}))}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                        placeholder="Precision"
-                      />
-                    </div>
-                  )}
-                </div>
-
+    {comprehensiveGenerator.type === 'Decimal' && (
+      <div>
+        <label className="block text-sm font-medium text-gray-900 mb-2">Decimal Places</label>
+        <input
+          type="number"
+          min="1"
+          max="10"
+          value={comprehensiveGenerator.precision}
+          onChange={(e) => setComprehensiveGenerator(prev => ({...prev, precision: parseInt(e.target.value) || 1}))}
+          className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2 text-base md:text-lg"
+          placeholder="Precision"
+        />
+      </div>
+    )}
+  </div>
                 <div className="flex flex-col sm:flex-row gap-3 mb-6">
                   <button
                     onClick={generateComprehensiveRandom}
@@ -518,83 +517,82 @@ const RandomNumberGenerator = () => {
 
               {/* Advanced Distribution Generator */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Distribution-Based Generator</h3>
+  <h3 className="text-xl font-bold text-gray-900 mb-4">Distribution-Based Generator</h3>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Distribution Type</label>
-                    <select
-                      value={advancedGenerator.distributionType}
-                      onChange={(e) => setAdvancedGenerator(prev => ({...prev, distributionType: e.target.value}))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                    >
-                      <option value="uniform">Uniform Distribution</option>
-                      <option value="normal">Normal Distribution</option>
-                      <option value="exponential">Exponential Distribution</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Number Count</label>
-                    <input
-                      type="number"
-                      min="1"
-                      max="1000"
-                      value={advancedGenerator.count}
-                      onChange={(e) => setAdvancedGenerator(prev => ({...prev, count: parseInt(e.target.value) || 0}))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                      placeholder="Count"
-                    />
-                  </div>
-                </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Distribution Type</label>
+      <select
+        value={advancedGenerator.distributionType}
+        onChange={(e) => setAdvancedGenerator(prev => ({...prev, distributionType: e.target.value}))}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+      >
+        <option value="uniform">Uniform Distribution</option>
+        <option value="normal">Normal Distribution</option>
+        <option value="exponential">Exponential Distribution</option>
+      </select>
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-900 mb-2">Number Count</label>
+      <input
+        type="number"
+        min="1"
+        max="1000"
+        value={advancedGenerator.count}
+        onChange={(e) => setAdvancedGenerator(prev => ({...prev, count: parseInt(e.target.value) || 0}))}
+        className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+        placeholder="Count"
+      />
+    </div>
+  </div>
 
-                {advancedGenerator.distributionType === 'normal' && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Mean</label>
-                      <input
-                        type="number"
-                        value={advancedGenerator.mean}
-                        onChange={(e) => setAdvancedGenerator(prev => ({...prev, mean: parseFloat(e.target.value) || 0}))}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                        placeholder="Mean"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Standard Deviation</label>
-                      <input
-                        type="number"
-                        value={advancedGenerator.standardDeviation}
-                        onChange={(e) => setAdvancedGenerator(prev => ({...prev, standardDeviation: parseFloat(e.target.value) || 0}))}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg"
-                        placeholder="Std Dev"
-                      />
-                    </div>
-                  </div>
-                )}
+  {advancedGenerator.distributionType === 'normal' && (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+      <div>
+        <label className="block text-sm font-medium text-gray-900 mb-2">Mean</label>
+        <input
+          type="number"
+          value={advancedGenerator.mean}
+          onChange={(e) => setAdvancedGenerator(prev => ({...prev, mean: parseFloat(e.target.value) || 0}))}
+          className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+          placeholder="Mean"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-900 mb-2">Standard Deviation</label>
+        <input
+          type="number"
+          value={advancedGenerator.standardDeviation}
+          onChange={(e) => setAdvancedGenerator(prev => ({...prev, standardDeviation: parseFloat(e.target.value) || 0}))}
+          className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg"
+          placeholder="Std Dev"
+        />
+      </div>
+    </div>
+  )}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div className="flex items-center">
-                    <input
-                      type="checkbox"
-                      id="allowDuplicates"
-                      checked={advancedGenerator.allowDuplicates}
-                      onChange={(e) => setAdvancedGenerator(prev => ({...prev, allowDuplicates: e.target.checked}))}
-                      className="mr-3 w-4 h-4 gray-900 focus:ring-red-500"
-                    />
-                    <label htmlFor="allowDuplicates" className="text-sm font-medium text-gray-700">Allow Duplicate Numbers</label>
-                  </div>
-                  <div className="flex items-center">
-                    <input
-                      type="checkbox"
-                      id="sortResults"
-                      checked={advancedGenerator.sortResults}
-                      onChange={(e) => setAdvancedGenerator(prev => ({...prev, sortResults: e.target.checked}))}
-                      className="mr-3 w-4 h-4 text-gray-900 focus:ring-red-500"
-                    />
-                    <label htmlFor="sortResults" className="text-sm font-medium text-gray-700">Sort Results Ascending</label>
-                  </div>
-                </div>
-
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <div className="flex items-center">
+      <input
+        type="checkbox"
+        id="allowDuplicates"
+        checked={advancedGenerator.allowDuplicates}
+        onChange={(e) => setAdvancedGenerator(prev => ({...prev, allowDuplicates: e.target.checked}))}
+        className="mr-3 w-4 h-4 text-gray-900 "
+      />
+      <label htmlFor="allowDuplicates" className="text-sm font-medium text-gray-900">Allow Duplicate Numbers</label>
+    </div>
+    <div className="flex items-center">
+      <input
+        type="checkbox"
+        id="sortResults"
+        checked={advancedGenerator.sortResults}
+        onChange={(e) => setAdvancedGenerator(prev => ({...prev, sortResults: e.target.checked}))}
+        className="mr-3 w-4 h-4 text-gray-900 "
+      />
+      <label htmlFor="sortResults" className="text-sm font-medium text-gray-900">Sort Results Ascending</label>
+    </div>
+  </div>
                 <div className="flex flex-col sm:flex-row gap-3 mb-6">
                   <button
                     onClick={generateAdvancedRandom}

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator } from 'lucide-react';
 
 const AmortizationCalculator = () => {
@@ -182,7 +182,7 @@ Use our free Amortization Calculator to calculate monthly loan payments, interes
 
        <div className="flex pt-14">
         {/* Left Sidebar */}
-        <div className="hidden lg:block fixed top-14 left-0 h-[calc(100vh-3.5rem)] w-64 bg-white shadow-lg overflow-y-auto border-r border-gray-200 z-40">
+        <div className="hidden lg:block fixed top-14 left-0 h-[calc(100vh-3.5rem)] w-64 bg-white shadow-lg overflow-y-auto border-r border-gray-900 z-40">
           <div className="bg-gray-900 text-white p-3">
             <h3 className="font-bold">Financial Tools</h3>
           </div>
@@ -242,13 +242,13 @@ Use our free Amortization Calculator to calculate monthly loan payments, interes
           <div className="max-w-6xl mx-auto">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Amortization Calculator 
 </h1>
-            <p className="text-sm md:text-base text-gray-600 mb-6 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-900 mb-6 leading-relaxed">
              An amortization calculator helps determine how loan payments are divided between principal and interest over time.
             </p>
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               {/* Header */}
-              <div className="bg-gray-800 text-white px-4 py-2 text-sm font-medium text-right">
+              <div className="bg-gray-900 text-gray-900 px-4 py-2 text-sm font-medium text-right">
                 Result
               </div>
 
@@ -257,54 +257,54 @@ Use our free Amortization Calculator to calculate monthly loan payments, interes
                 <div className="flex-1 p-4 md:p-6">
                   <div className="space-y-4">
                     <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                      <label className="sm:w-32 text-sm font-medium">Loan Amount</label>
+                      <label className="sm:w-32 text-sm text-gray-900 font-medium">Loan Amount</label>
                       <div className="flex items-center space-x-1">
                         <span className="text-sm"></span>
                         <input
                           type="number"
                           value={loanAmount}
                           onChange={(e) => setLoanAmount(Number(e.target.value))}
-                          className="w-full sm:w-32 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                          className="w-full text-gray-900 sm:w-32 px-3 py-2 border border-gray-900 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                         />
                       </div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                      <label className="sm:w-32 text-sm font-medium">Loan Term</label>
+                      <label className="sm:w-32 text-sm  text-gray-900 font-medium">Loan Term</label>
                       <div className="flex flex-wrap gap-2">
                         <input
                           type="number"
                           value={loanTermYears}
                           onChange={(e) => setLoanTermYears(Number(e.target.value))}
-                          className="w-20 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                          className="w-20 text-gray-900 px-3 py-2 border border-gray-900 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                         />
-                        <span className="text-xs text-gray-500 self-center">years</span>
+                        <span className="text-xs text-gray-900 self-center">years</span>
                         <input
                           type="number"
                           value={loanTermMonths}
                           onChange={(e) => setLoanTermMonths(Number(e.target.value))}
-                          className="w-20 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                          className="w-20 text-gray-900 px-3 py-2 border border-gray-900 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                         />
-                        <span className="text-xs text-gray-500 self-center">months</span>
+                        <span className="text-xs text-gray-900 self-center">months</span>
                       </div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                      <label className="sm:w-32 text-sm font-medium">Interest Rate</label>
+                      <label className="sm:w-32 text-sm text-gray-900 font-medium">Interest Rate</label>
                       <div className="flex items-center space-x-1">
                         <input
                           type="number"
                           step="0.01"
                           value={interestRate}
                           onChange={(e) => setInterestRate(Number(e.target.value))}
-                          className="w-24 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                          className="w-24  text-gray-900 px-3 py-2 border border-gray-900 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                         />
-                        <span className="text-sm">%</span>
+                        <span className="text-sm text-gray-900">%</span>
                       </div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                      <label className="sm:w-32 text-sm font-medium">Extra Payment</label>
+                      <label className="sm:w-32 text-sm  text-gray-900 font-medium">Extra Payment</label>
                       <div className="flex items-center space-x-2">
                         <input
                           type="checkbox"
@@ -319,7 +319,7 @@ Use our free Amortization Calculator to calculate monthly loan payments, interes
                               type="number"
                               value={extraPayment}
                               onChange={(e) => setExtraPayment(Number(e.target.value))}
-                              className="w-24 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+                              className="w-24 text-gray-900 px-3 py-2 border border-gray-900 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
                             />
                           </div>
                         )}
@@ -335,7 +335,7 @@ Use our free Amortization Calculator to calculate monthly loan payments, interes
                       </button>
                       <button
                         onClick={resetForm}
-                        className="bg-gray-400 text-white px-6 py-2 rounded text-sm font-medium hover:bg-gray-500 transition-colors"
+                        className="bg-gray-900 text-white px-6 py-2 rounded text-sm font-medium hover:bg-gray-900 transition-colors"
                       >
                         Reset
                       </button>
@@ -354,50 +354,50 @@ Use our free Amortization Calculator to calculate monthly loan payments, interes
                         <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                           {formatCurrency(results.monthlyPayment)}
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-gray-700">
                           Monthly Payment
                         </div>
                       </div>
 
                       <div className="space-y-3 text-sm">
                         <div className="flex justify-between items-center border-b border-gray-100 pb-2">
-                          <span className="text-gray-600">Total of Payments</span>
+                          <span className="text-gray-700">Total of Payments</span>
                           <span className="font-semibold text-blue-600">{formatCurrency(results.totalPayments)}</span>
                         </div>
 
                         <div className="flex justify-between items-center border-b border-gray-100 pb-2">
-                          <span className="text-gray-600">Total Interest</span>
+                          <span className="text-gray-700">Total Interest</span>
                           <span className="font-semibold text-green-600">{formatCurrency(results.totalInterest)}</span>
                         </div>
 
                         <div className="flex justify-between items-center border-b border-gray-100 pb-2">
-                          <span className="text-gray-600">Principal %</span>
+                          <span className="text-gray-700">Principal %</span>
                           <span className="font-semibold text-orange-500">{results.principalPercentage}%</span>
                         </div>
 
                         <div className="flex justify-between items-center border-b border-gray-100 pb-2">
-                          <span className="text-gray-600">Interest %</span>
+                          <span className="text-gray-700">Interest %</span>
                           <span className="font-semibold text-red-500">{results.interestPercentage}%</span>
                         </div>
 
                         <div className="flex justify-between items-center border-b border-gray-100 pb-2">
-                          <span className="text-gray-600">Payoff Time</span>
-                          <span className="font-semibold text-gray-600">{results.payoffTime} years</span>
+                          <span className="text-gray-700">Payoff Time</span>
+                          <span className="font-semibold text-gray-700">{results.payoffTime} years</span>
                         </div>
 
                         <div className="flex justify-between items-center">
-                          <span className="text-gray-600">Loan Amount</span>
+                          <span className="text-gray-700">Loan Amount</span>
                           <span className="font-semibold text-purple-500">{formatCurrency(loanAmount)}</span>
                         </div>
                       </div>
 
-                      <div className="mt-4 p-3 bg-gray-100 rounded text-xs text-gray-600">
+                      <div className="mt-4 p-3 bg-gray-100 rounded text-xs text-gray-700">
                         <strong>Note:</strong> Amortization calculations are estimates based on fixed rates. 
                         Actual payments may vary with adjustable rates or additional fees.
                       </div>
                     </div>
                   ) : (
-                    <div className="text-center text-gray-500 text-sm py-8">
+                    <div className="text-center text-gray-700 text-sm py-8">
                       Enter loan details and click "Calculate Amortization" to see results
                     </div>
                   )}
@@ -463,39 +463,39 @@ Use our free Amortization Calculator to calculate monthly loan payments, interes
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Amortization Calculation Methods</h2>
               
               <div className="mb-6">
-                <h3 className="text-base md:text-lg font-semibold mb-3 bg-gray-50 p-3 rounded">Standard Amortization Formula (Recommended)</h3>
+                <h3 className="text-base md:text-lg font-semibold mb-3 text-gray-900 bg-gray-50 p-3 rounded">Standard Amortization Formula (Recommended)</h3>
                 <div className="bg-gray-50 p-4 rounded mb-2 overflow-x-auto">
-                  <div className="text-xs md:text-sm">
+                  <div className="text-xs text-gray-900 md:text-sm">
                     <div><strong>Payment:</strong> P[r(1+r)^n]/[(1+r)^n-1]</div>
                     <div><strong>Where:</strong> P = Principal, r = Monthly rate, n = Number of payments</div>
                   </div>
                 </div>
-                <p className="text-xs md:text-sm text-gray-600">
+                <p className="text-xs md:text-sm text-gray-900">
                   Standard formula used by most lenders for fixed-rate loans with equal monthly payments.
                 </p>
               </div>
 
               <div className="mb-6">
-                <h3 className="text-base md:text-lg font-semibold mb-3 bg-gray-50 p-3 rounded">Interest-Only Method</h3>
+                <h3 className="text-base md:text-lg font-semibold mb-3 text-gray-900 bg-gray-50 p-3 rounded">Interest-Only Method</h3>
                 <div className="bg-gray-50 p-4 rounded mb-2">
-                  <div className="text-xs md:text-sm">
+                  <div className="text-xs text-gray-900 md:text-sm">
                     <div><strong>Initial Period:</strong> Payment = Principal × Monthly Interest Rate</div>
                     <div><strong>Amortization Period:</strong> Higher payments to cover principal</div>
                   </div>
                 </div>
-                <p className="text-xs md:text-sm text-gray-600">
+                <p className="text-xs md:text-sm text-gray-900 text-gray900">
                   Lower initial payments but higher overall interest costs. Common in adjustable-rate mortgages.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-base md:text-lg font-semibold mb-3 bg-gray-50 p-3 rounded">Accelerated Payment Method</h3>
+                <h3 className="text-base md:text-lg font-semibold mb-3 text-gray-900 bg-gray-50 p-3 rounded">Accelerated Payment Method</h3>
                 <div className="bg-gray-50 p-4 rounded mb-2">
-                  <div className="text-xs md:text-sm">
+                  <div className="text-xs text-gray-900 md:text-sm">
                     <strong>Extra principal payments reduce total interest and loan term</strong>
                   </div>
                 </div>
-                <p className="text-xs md:text-sm text-gray-600">
+                <p className="text-xs md:text-sm text-gray-900">
                   Additional payments toward principal significantly reduce total interest paid and shorten loan duration.
                 </p>
               </div>

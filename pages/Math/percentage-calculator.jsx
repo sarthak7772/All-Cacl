@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, BarChart3, TrendingUp, Info, RefreshCw,  } from 'lucide-react';
 
 const PercentageCalculator = () => {
@@ -203,99 +203,99 @@ const PercentageCalculator = () => {
                 </p>
               </div>
 
-              <div className="p-4 md:p-8">
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-[#1a2433] mb-3">Select Calculation Method</label>
-                  <select value={calculationMethod} onChange={(e) => setCalculationMethod(e.target.value)} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg">
-                    <option value="basic">Basic Percentage (X% of Y)</option>
-                    <option value="phrase1">What is X% of Y?</option>
-                    <option value="phrase2">X is what % of Y?</option>
-                    <option value="phrase3">X is Y% of what?</option>
-                    <option value="difference">Percentage Difference</option>
-                    <option value="change">Percentage Increase/Decrease</option>
-                  </select>
-                </div>
+                                                           <div className="p-4 md:p-8">
+  <div className="mb-6">
+    <label className="block text-sm font-medium text-gray-900 mb-3">Select Calculation Method</label>
+    <select value={calculationMethod} onChange={(e) => setCalculationMethod(e.target.value)} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2 text-base md:text-lg">
+      <option value="basic">Basic Percentage (X% of Y)</option>
+      <option value="phrase1">What is X% of Y?</option>
+      <option value="phrase2">X is what % of Y?</option>
+      <option value="phrase3">X is Y% of what?</option>
+      <option value="difference">Percentage Difference</option>
+      <option value="change">Percentage Increase/Decrease</option>
+    </select>
+  </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-                  {calculationMethod === 'basic' && (
-                    <>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">Percentage (%)</label>
-                        <input type="number" value={basicCalc.percentage} onChange={(e) => setBasicCalc(prev => ({...prev, percentage: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter percentage" />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">Value</label>
-                        <input type="number" value={basicCalc.value} onChange={(e) => setBasicCalc(prev => ({...prev, value: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter value" />
-                      </div>
-                    </>
-                  )}
-                  {calculationMethod === 'phrase1' && (
-                    <>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">Percentage (%)</label>
-                        <input type="number" value={phraseCalc1.percentage} onChange={(e) => setPhraseCalc1(prev => ({...prev, percentage: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter percentage" />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">Of Value</label>
-                        <input type="number" value={phraseCalc1.value} onChange={(e) => setPhraseCalc1(prev => ({...prev, value: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter value" />
-                      </div>
-                    </>
-                  )}
-                  {calculationMethod === 'phrase2' && (
-                    <>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-[#1a2433] mb-2">Part Value</label>
-                        <input type="number" value={phraseCalc2.value} onChange={(e) => setPhraseCalc2(prev => ({...prev, value: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter part value" />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">Total Value</label>
-                        <input type="number" value={phraseCalc2.total} onChange={(e) => setPhraseCalc2(prev => ({...prev, total: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter total value" />
-                      </div>
-                    </>
-                  )}
-                  {calculationMethod === 'phrase3' && (
-                    <>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">Known Value</label>
-                        <input type="number" value={phraseCalc3.value} onChange={(e) => setPhraseCalc3(prev => ({...prev, value: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter known value" />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">Percentage (%)</label>
-                        <input type="number" value={phraseCalc3.percentage} onChange={(e) => setPhraseCalc3(prev => ({...prev, percentage: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter percentage" />
-                      </div>
-                    </>
-                  )}
-                  {calculationMethod === 'difference' && (
-                    <>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">First Value</label>
-                        <input type="number" value={diffCalc.value1} onChange={(e) => setDiffCalc(prev => ({...prev, value1: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter first value" />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">Second Value</label>
-                        <input type="number" value={diffCalc.value2} onChange={(e) => setDiffCalc(prev => ({...prev, value2: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter second value" />
-                      </div>
-                    </>
-                  )}
-                  {calculationMethod === 'change' && (
-                    <>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">Original Value</label>
-                        <input type="number" value={changeCalc.value} onChange={(e) => setChangeCalc(prev => ({...prev, value: e.target.value}))} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter original value" />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-[#1a2433] mb-2">Percentage Change (%)</label>
-                        <div className="flex gap-2">
-                          <select value={changeCalc.operation} onChange={(e) => setChangeCalc(prev => ({...prev, operation: e.target.value}))} className="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-sm">
-                            <option value="increase">Increase</option>
-                            <option value="decrease">Decrease</option>
-                          </select>
-                          <input type="number" value={changeCalc.percentage} onChange={(e) => setChangeCalc(prev => ({...prev, percentage: e.target.value}))} className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-base md:text-lg" placeholder="Enter %" />
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+    {calculationMethod === 'basic' && (
+      <>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Percentage (%)</label>
+          <input type="number" value={basicCalc.percentage} onChange={(e) => setBasicCalc(prev => ({...prev, percentage: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg" placeholder="Enter percentage" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Value</label>
+          <input type="number" value={basicCalc.value} onChange={(e) => setBasicCalc(prev => ({...prev, value: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2 text-base md:text-lg" placeholder="Enter value" />
+        </div>
+      </>
+    )}
+    {calculationMethod === 'phrase1' && (
+      <>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Percentage (%)</label>
+          <input type="number" value={phraseCalc1.percentage} onChange={(e) => setPhraseCalc1(prev => ({...prev, percentage: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  text-base md:text-lg" placeholder="Enter percentage" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Of Value</label>
+          <input type="number" value={phraseCalc1.value} onChange={(e) => setPhraseCalc1(prev => ({...prev, value: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2 text-base md:text-lg" placeholder="Enter value" />
+        </div>
+      </>
+    )}
+    {calculationMethod === 'phrase2' && (
+      <>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Part Value</label>
+          <input type="number" value={phraseCalc2.value} onChange={(e) => setPhraseCalc2(prev => ({...prev, value: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2 text-base md:text-lg" placeholder="Enter part value" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Total Value</label>
+          <input type="number" value={phraseCalc2.total} onChange={(e) => setPhraseCalc2(prev => ({...prev, total: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2  md:text-lg" placeholder="Enter total value" />
+        </div>
+      </>
+    )}
+    {calculationMethod === 'phrase3' && (
+      <>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Known Value</label>
+          <input type="number" value={phraseCalc3.value} onChange={(e) => setPhraseCalc3(prev => ({...prev, value: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2 text-base md:text-lg" placeholder="Enter known value" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Percentage (%)</label>
+          <input type="number" value={phraseCalc3.percentage} onChange={(e) => setPhraseCalc3(prev => ({...prev, percentage: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus: text-base md:text-lg" placeholder="Enter percentage" />
+        </div>
+      </>
+    )}
+    {calculationMethod === 'difference' && (
+      <>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">First Value</label>
+          <input type="number" value={diffCalc.value1} onChange={(e) => setDiffCalc(prev => ({...prev, value1: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none  md:text-lg" placeholder="Enter first value" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Second Value</label>
+          <input type="number" value={diffCalc.value2} onChange={(e) => setDiffCalc(prev => ({...prev, value2: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none focus:ring-2 " placeholder="Enter second value" />
+        </div>
+      </>
+    )}
+    {calculationMethod === 'change' && (
+      <>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Original Value</label>
+          <input type="number" value={changeCalc.value} onChange={(e) => setChangeCalc(prev => ({...prev, value: e.target.value}))} className="w-full px-4 py-3 border border-gray-900 text-gray-900 rounded-lg " placeholder="Enter original value" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-900 mb-2">Percentage Change (%)</label>
+          <div className="flex gap-2">
+            <select value={changeCalc.operation} onChange={(e) => setChangeCalc(prev => ({...prev, operation: e.target.value}))} className="px-3 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none   text-sm">
+              <option value="increase">Increase</option>
+              <option value="decrease">Decrease</option>
+            </select>
+            <input type="number" value={changeCalc.percentage} onChange={(e) => setChangeCalc(prev => ({...prev, percentage: e.target.value}))} className="flex-1 px-4 py-3 border border-gray-900 text-gray-900 rounded-lg focus:outline-none f text-base md:text-lg" placeholder="Enter %" />
+          </div>
+        </div>
+      </>
+    )}
+  </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 mb-6">
                   <button onClick={executeCalculation} className="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2 text-base font-semibold shadow-lg">

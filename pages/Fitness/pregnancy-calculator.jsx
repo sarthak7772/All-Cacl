@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Activity, Baby,  Calendar, Clock, Heart, TrendingUp, User, Zap } from 'lucide-react';
 
 const PregnancyCalculator = () => {
@@ -203,13 +203,13 @@ const PregnancyCalculator = () => {
 
               <div className="flex flex-col lg:flex-row">
                 {/* Input Section */}
-                <div className="flex-1 p-4 md:p-6 border-b lg:border-b-0 lg:border-r border-gray-200">
+               <div className="flex-1 p-4 md:p-6 border-b lg:border-b-0 lg:border-r border-gray-900">
                   <div className="space-y-5">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Calculate Based On</label>
+                      <label className="block text-sm font-medium text-gray-900 mb-2">Calculate Based On</label>
                       <select value={calculationMethod}
                         onChange={(e) => setCalculationMethod(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
+                        className="w-full  text-gray-900 px-3 py-2 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
                         <option value="Due Date">Due Date</option>
                         <option value="Last Period">Last Period</option>
                         <option value="Ultrasound Date">Ultrasound Date</option>
@@ -219,7 +219,7 @@ const PregnancyCalculator = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-900 mb-2">
                         {calculationMethod === 'Due Date' && 'Your Due Date'}
                         {calculationMethod === 'Last Period' && 'First Day of Last Period'}
                         {calculationMethod === 'Conception Date' && 'Conception Date'}
@@ -228,28 +228,27 @@ const PregnancyCalculator = () => {
                       </label>
                       <div className="grid grid-cols-3 gap-2">
                         <select value={month} onChange={(e) => setMonth(e.target.value)}
-                          className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
+                          className="px-3 py-2 text-gray-900  border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
                           {months.map((m) => (
                             <option key={m} value={m}>{m}</option>
                           ))}
                         </select>
                         
                         <select value={day} onChange={(e) => setDay(e.target.value)}
-                          className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
+                          className="px-3 py-2 text-gray-900  border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
                           {days.map((d) => (
                             <option key={d} value={d}>{d}</option>
                           ))}
                         </select>
                         
                         <select value={year} onChange={(e) => setYear(e.target.value)}
-                          className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
+                          className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
                           {years.map((y) => (
                             <option key={y} value={y}>{y}</option>
                           ))}
                         </select>
                       </div>
                     </div>
-
                     <div className="flex flex-col sm:flex-row gap-2 pt-2">
                       <button onClick={calculatePregnancy}
                         className="flex-1 bg-green-600 text-white px-6 py-2.5 rounded-md text-sm font-medium hover:bg-green-700 transition-colors flex items-center justify-center gap-2">

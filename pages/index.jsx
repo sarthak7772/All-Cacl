@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Link from "next/link";
  import Navbar from '../components/Navbar';
- import Footer from '../components/Footer';
+ import Footer from '../components/footer';
 import { Calculator, Search, ChevronLeft, ChevronRight, Menu } from 'lucide-react';
 
 const calculatorCategories = [
@@ -10,7 +10,7 @@ const calculatorCategories = [
     id: "daily",
     calculators: [
       { name: "Scientific Calculator", icon: "🔬", href: "/Math/scientific-calculator" },
-      { name: "Salary Calculator", icon: "💰", href: "/Financial/salary-calculator" },
+      { name: "Salary Calculator", icon: "💵", href: "/Financial/salary-calculator" },
       { name: "Loan Calculator", icon: "💰", href: "/Financial/loan-calculator" },
       { name: "Payment Calculator", icon: "💳", href: "/Financial/payment-calculator" },
       { name: "BMI Calculator", icon: "❤️", href: "/Fitness/bmi-calculator" },
@@ -28,17 +28,17 @@ const calculatorCategories = [
       { name: "Mortgage Calculator", icon: "🏠", href: "/Financial/mortgage-calculator" },
       { name: "Loan Calculator", icon: "💰", href: "/Financial/loan-calculator" },
       { name: "Auto Loan Calculator", icon: "🚗", href: "/Financial/auto-loan-calculator" },
-      { name: "Interest Calculator", icon: "💵", href: "/Financial/interest-calculator" },
+      { name: "Interest Calculator", icon: "📊", href: "/Financial/interest-calculator" },
       { name: "Payment Calculator", icon: "💳", href: "/Financial/payment-calculator" },
-      { name: "Retirement Calculator", icon: "🏖️", href: "/Financial/retirement-calculator" },
-      { name: "Amortization Calculator", icon: "🧮", href: "/Financial/amortization-calculator" },
-      { name: "Investment Calculator", icon: "📈", href: "/Financial/investment-calculator" },
-      { name: "Inflation Calculator", icon: "📊", href: "/Financial/inflation-calculator" },
+      { name: "Retirement Calculator", icon: "👴", href: "/Financial/retirement-calculator" },
+      { name: "Amortization Calculator", icon: "📈", href: "/Financial/amortization-calculator" },
+      { name: "Investment Calculator", icon: "📉", href: "/Financial/investment-calculator" },
+      { name: "Inflation Calculator", icon: "📆", href: "/Financial/inflation-calculator" },
       { name: "Finance Calculator", icon: "💼", href: "/Financial/finance-calculator" },
-      { name: "Income Tax Calculator", icon: "📄", href: "/Financial/income-tax-calculator" },
-      { name: "Compound Interest Calculator", icon: "📉", href: "/Financial/compound-interest-calculator" },
-      { name: "Salary Calculator", icon: "💰", href: "/Financial/salary-calculator" },
-      { name: "Interest Rate Calculator", icon: "📊", href: "/Financial/interest-rate-calculator" },
+      { name: "Income Tax Calculator", icon: "🧾", href: "/Financial/income-tax-calculator" },
+      { name: "Compound Interest Calculator", icon: "💲", href: "/Financial/compound-interest-calculator" },
+      { name: "Salary Calculator", icon: "💵", href: "/Financial/salary-calculator" },
+      { name: "Interest Rate Calculator", icon: "📉", href: "/Financial/interest-rate-calculator" },
       { name: "Sales Tax Calculator", icon: "🧾", href: "/Financial/sales-tax-calculator" },
     ],
   },
@@ -49,7 +49,7 @@ const calculatorCategories = [
       { name: "BMI Calculator", icon: "❤️", href: "/Fitness/bmi-calculator" },
       { name: "Calorie Calculator", icon: "🍎", href: "/Fitness/calorie-calculator" },
       { name: "Body Fat Calculator", icon: "💪", href: "/Fitness/body-fat-calculator" },
-      { name: "BMR Calculator", icon: "🔥", href: "/Fitness/bmr-calculator" },
+      { name: "BMR Calculator", icon: "🏋️‍♂️", href: "/Fitness/bmr-calculator" },
       { name: "Ideal Weight Calculator", icon: "⚖️", href: "/Fitness/ideal-weight-calculator" },
       { name: "Pace Calculator", icon: "🏃", href: "/Fitness/pace-calculator" },
       { name: "Pregnancy Calculator", icon: "🤰", href: "/Fitness/pregnancy-calculator" },
@@ -62,11 +62,11 @@ const calculatorCategories = [
     id: "math",
     calculators: [
       { name: "Scientific Calculator", icon: "🔬", href: "/Math/scientific-calculator" },
-      { name: "Fraction Calculator", icon: "🔢", href: "/Math/fraction-calculator" },
+      { name: "Fraction Calculator", icon: "➗", href: "/Math/fraction-calculator" },
       { name: "Percentage Calculator", icon: "📐", href: "/Math/percentage-calculator" },
       { name: "Random Number Generator", icon: "🎲", href: "/Math/random-number-generator" },
-      { name: "Triangle Calculator", icon: "📐", href: "/Math/triangle-calculator" },
-      { name: "Standard Deviation Calculator", icon: "📊", href: "/Math/standard-deviation-calculator" },
+      { name: "Triangle Calculator", icon: "🔺", href: "/Math/triangle-calculator" },
+      { name: "Standard Deviation Calculator", icon: "📏", href: "/Math/standard-deviation-calculator" },
     ],
   },
   {

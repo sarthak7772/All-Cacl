@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Copy, RefreshCw, Check, Shield, Lock, Eye, EyeOff,  } from 'lucide-react';
 
 const PasswordGenerator = () => {
@@ -279,7 +279,7 @@ const PasswordGenerator = () => {
               <div className="mb-8">
                 <label className="block text-lg font-semibold text-gray-800 mb-3">Generated Password</label>
                 <div className="relative">
-                  <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 font-mono text-base lg:text-lg break-all min-h-[60px] flex items-center pr-12">
+                  <div className="bg-gray-50 border-2 border-gray-900 rounded-lg p-4  text-gray-900 font-mono text-base lg:text-lg break-all min-h-[60px] flex items-center pr-12">
                     {showPassword ? (password || 'Click Generate to create password') : '••••••••••••••••'}
                   </div>
                   <button
@@ -304,7 +304,7 @@ const PasswordGenerator = () => {
                         {strength.level}
                       </span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
+                    <div className="w-full  bg-gray-900 rounded-full h-3 mb-2">
                       <div 
                         className={`h-3 rounded-full transition-all duration-300 ${getStrengthColor(strength.level)}`}
                         style={{ width: getStrengthWidth(strength.level) }}
@@ -343,11 +343,11 @@ const PasswordGenerator = () => {
 
               {/* Settings Panel */}
               <div className="bg-gray-50 rounded-lg p-4 lg:p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Password Settings</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Password Settings</h3>
                 
                 {/* Password Length */}
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                  <label className="block text-sm font-medium text-gray-900 mb-3">
                     Password Length: {settings.length} characters
                   </label>
                   <div className="flex items-center gap-4">
@@ -365,7 +365,7 @@ const PasswordGenerator = () => {
                       max="64"
                       value={settings.length}
                       onChange={(e) => handleSettingChange('length', Math.max(4, Math.min(64, parseInt(e.target.value) || 4)))}
-                      className="w-20 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
+                      className="w-20 px-3 text-gray-900 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
                     />
                   </div>
                 </div>

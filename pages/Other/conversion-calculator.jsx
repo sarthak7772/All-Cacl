@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import {  ArrowRightLeft } from 'lucide-react';
 
 const UnitConverter = () => {
@@ -259,13 +259,13 @@ const UnitConverter = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-900 mb-2">
                   Convert From
                 </label>
                 <select
                   value={fromUnit}
                   onChange={(e) => setFromUnit(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  className="w-full p-3 text-gray-900 border border-gray-900 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-gray-900"
                 >
                   {conversionData[activeTab].units.map((unit) => (
                     <option key={unit} value={unit}>
@@ -276,26 +276,26 @@ const UnitConverter = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-900 mb-2">
                   Input Value
                 </label>
                 <input
                   type="number"
                   value={fromValue}
                   onChange={(e) => setFromValue(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  className="w-full p-3 text-gray-900 border border-gray-900 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-gray-900"
                   placeholder="Enter value to convert"
                 />
               </div>
 
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-900 mb-2">
                   Convert To
                 </label>
                 <select
                   value={toUnit}
                   onChange={(e) => setToUnit(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  className="w-full p-3 text-gray-900 border border-gray-900 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-gray-900"
                 >
                   {conversionData[activeTab].units.map((unit) => (
                     <option key={unit} value={unit}>

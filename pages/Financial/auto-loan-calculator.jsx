@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Car, Home, } from 'lucide-react';
 
 const AutoLoanCalculator = () => {
@@ -223,94 +223,94 @@ const AutoLoanCalculator = () => {
                     
                     <div className="space-y-4">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-sm">Auto Price</label>
+                        <label className="font-medium  text-gray-900 text-sm">Auto Price</label>
                         <div className="flex items-center">
                           <span className="mr-1"></span>
                           <input
                             type="number"
                             value={autoPrice}
                             onChange={(e) => setAutoPrice(Number(e.target.value))}
-                            className="w-full sm:w-32 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-500"
+                            className="w-full text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
                           />
                         </div>
                       </div>
 
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-sm">Loan Term</label>
+                        <label className="font-medium text-gray-900 text-sm">Loan Term</label>
                         <div className="flex items-center space-x-2">
                           <input
                             type="number"
                             value={loanTerm}
                             onChange={(e) => setLoanTerm(Number(e.target.value))}
-                            className="w-20 p-2 border border-gray-300 rounded text-center focus:ring-2 focus:ring-red-500"
+                            className="w-20 text-gray-900 p-2 border border-gray-900 rounded text-center focus:ring-2 focus:ring-red-500"
                           />
-                          <span className="text-sm">months</span>
+                          <span className="text-sm text-gray-900 ">months</span>
                         </div>
                       </div>
 
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-sm">Interest Rate</label>
+                        <label className="font-medium  text-gray-900 text-sm">Interest Rate</label>
                         <div className="flex items-center space-x-2">
                           <input
                             type="number"
                             step="0.1"
                             value={interestRate}
                             onChange={(e) => setInterestRate(Number(e.target.value))}
-                            className="w-20 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-500"
+                            className="w-20 text-gray-900 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
                           />
-                          <span className="text-sm">%</span>
+                          <span className="text-sm text-gray-900">%</span>
                         </div>
                       </div>
 
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-sm">Down Payment</label>
+                        <label className="font-medium  text-gray-900 text-sm">Down Payment</label>
                         <div className="flex items-center">
                           <span className="mr-1"></span>
                           <input
                             type="number"
                             value={downPayment}
                             onChange={(e) => setDownPayment(Number(e.target.value))}
-                            className="w-full sm:w-32 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-500"
+                            className="w-full text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
                           />
                         </div>
                       </div>
 
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-sm">Trade-in Value</label>
+                        <label className="font-medium text-gray-900 text-sm">Trade-in Value</label>
                         <div className="flex items-center">
                           <span className="mr-1"></span>
                           <input
                             type="number"
                             value={tradeInValue}
                             onChange={(e) => setTradeInValue(Number(e.target.value))}
-                            className="w-full sm:w-32 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-500"
+                            className="w-full  text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
                           />
                         </div>
                       </div>
 
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-sm">Sales Tax</label>
+                        <label className="font-medium text-gray-900 text-sm">Sales Tax</label>
                         <div className="flex items-center space-x-2">
                           <input
                             type="number"
                             step="0.1"
                             value={salesTax}
                             onChange={(e) => setSalesTax(Number(e.target.value))}
-                            className="w-20 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-500"
+                            className="w-20 text-gray-900 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
                           />
                           <span className="text-sm">%</span>
                         </div>
                       </div>
 
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-sm">Title & Fees</label>
+                        <label className="font-medium text-gray-900 text-sm">Title & Fees</label>
                         <div className="flex items-center">
                           <span className="mr-1"></span>
                           <input
                             type="number"
                             value={titleFees}
                             onChange={(e) => setTitleFees(Number(e.target.value))}
-                            className="w-full sm:w-32 p-2 border border-gray-300 rounded text-right focus:ring-2 focus:ring-red-500"
+                            className="w-full text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
                           />
                         </div>
                       </div>
@@ -322,7 +322,7 @@ const AutoLoanCalculator = () => {
                           onChange={(e) => setIncludeTaxesInLoan(e.target.checked)}
                           className="rounded"
                         />
-                        <label className="text-sm text-gray-700">Include taxes & fees in loan</label>
+                        <label className="text-sm text-gray-900">Include taxes & fees in loan</label>
                       </div>
 
                       <div className="flex space-x-2 pt-4">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import { Calculator, Plus, Trash2,  Award, Target } from 'lucide-react';
 
 const GradeCalculator = () => {
@@ -298,61 +298,62 @@ const GradeCalculator = () => {
                 </div>
 
                 {/* Assignment Table */}
-                <div className="overflow-x-auto mb-6">
-                  <table className="w-full border-collapse border border-gray-300">
-                    <thead>
-                      <tr className="bg-gray-900 text-white">
-                        <th className="border border-gray-300 px-4 py-3 text-left text-sm">Assignment</th>
-                        <th className="border border-gray-300 px-4 py-3 text-left text-sm">Grade</th>
-                        <th className="border border-gray-300 px-4 py-3 text-left text-sm">Weight (%)</th>
-                        <th className="border border-gray-300 px-4 py-3 text-left text-sm">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {assignments.map((assignment, index) => (
-                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                          <td className="border border-gray-300 p-2">
-                            <input
-                              type="text"
-                              value={assignment.name}
-                              onChange={(e) => updateAssignment(index, 'name', e.target.value)}
-                              className="w-full px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm"
-                              placeholder="Assignment name"
-                            />
-                          </td>
-                          <td className="border border-gray-300 p-2">
-                            <input
-                              type="text"
-                              value={assignment.grade}
-                              onChange={(e) => updateAssignment(index, 'grade', e.target.value)}
-                              className="w-full px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm"
-                              placeholder="90 or B+"
-                            />
-                          </td>
-                          <td className="border border-gray-300 p-2">
-                            <input
-                              type="number"
-                              value={assignment.weight}
-                              onChange={(e) => updateAssignment(index, 'weight', e.target.value)}
-                              className="w-full px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm"
-                              min="0"
-                              max="100"
-                            />
-                          </td>
-                          <td className="border border-gray-300 p-2 text-center">
-                            <button
-                              onClick={() => removeAssignment(index)}
-                              className="text-red-600 hover:text-red-800 p-1 rounded transition-colors"
-                              disabled={assignments.length === 1}
-                            >
-                              <Trash2 className="w-4 h-4" />
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+               <div className="overflow-x-auto mb-6">
+  <table className="w-full border-collapse border border-gray-900">
+    <thead>
+      <tr className="bg-gray-900 text-white">
+        <th className="border border-gray-900 px-4 py-3 text-left text-sm">Assignment</th>
+        <th className="border border-gray-900 px-4 py-3 text-left text-sm">Grade</th>
+        <th className="border border-gray-900 px-4 py-3 text-left text-sm">Weight (%)</th>
+        <th className="border border-gray-900 px-4 py-3 text-left text-sm">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {assignments.map((assignment, index) => (
+        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+          <td className="border border-gray-900 p-2">
+            <input
+              type="text"
+              value={assignment.name}
+              onChange={(e) => updateAssignment(index, 'name', e.target.value)}
+              className="w-full text-gray-900 px-2 py-1 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm"
+              placeholder="Assignment name"
+            />
+          </td>
+          <td className="border border-gray-900 p-2">
+            <input
+              type="text"
+              value={assignment.grade}
+              onChange={(e) => updateAssignment(index, 'grade', e.target.value)}
+              className="w-full text-gray-900  px-2 py-1 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm"
+              placeholder="90 or B+"
+            />
+          </td>
+          <td className="border border-gray-900 p-2">
+            <input
+              type="number"
+              value={assignment.weight}
+              onChange={(e) => updateAssignment(index, 'weight', e.target.value)}
+              className="w-full px-2  text-gray-900  py-1 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900 text-sm"
+              min="0"
+              max="100"
+            />
+          </td>
+          <td className="border border-gray-900 p-2 text-center">
+            <button
+              onClick={() => removeAssignment(index)}
+              className="text-red-600 hover:text-red-800 p-1 rounded transition-colors"
+              disabled={assignments.length === 1}
+            >
+              <Trash2 className="w-4 h-4" />
+            </button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
 
                 <button
                   onClick={addAssignment}
@@ -370,14 +371,14 @@ const GradeCalculator = () => {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-900 mb-2">
                         Target Grade
                       </label>
                       <input
                         type="text"
                         value={finalGradeGoal}
                         onChange={(e) => setFinalGradeGoal(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="w-full text-gray-900 px-3 py-2 border border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                         placeholder="85 or B+"
                       />
                     </div>
@@ -389,7 +390,7 @@ const GradeCalculator = () => {
                         type="number"
                         value={remainingWeight}
                         onChange={(e) => setRemainingWeight(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+                        className="w-full text-gray-900 px-3 py-2 border border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                         min="0"
                         max="100"
                       />
@@ -573,10 +574,10 @@ const GradeCalculator = () => {
                     ['F', '0-62%', '0.0', 'Failing']
                   ].map(([letter, percentage, gpa, description], index) => (
                     <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                      <td className="border border-gray-300 px-4 py-2 font-bold text-center">{letter}</td>
-                      <td className="border border-gray-300 px-4 py-2 text-center">{percentage}</td>
-                      <td className="border border-gray-300 px-4 py-2 text-center">{gpa}</td>
-                      <td className="border border-gray-300 px-4 py-2">{description}</td>
+                      <td className="border border-gray-300 text-gray-900 px-4 py-2 font-bold text-center">{letter}</td>
+                      <td className="border border-gray-300  text-gray-900 px-4 py-2 text-center">{percentage}</td>
+                      <td className="border border-gray-300  text-gray-900 px-4 py-2 text-center">{gpa}</td>
+                      <td className="border border-gray-300 text-gray-900 px-4 py-2">{description}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -596,7 +597,7 @@ const GradeCalculator = () => {
 
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-4">
               <h4 className="font-semibold text-gray-800 mb-2">Weighted Grade Formula:</h4>
-              <div className="bg-white p-3 rounded font-mono text-sm text-center">
+              <div className="bg-white p-3 rounded font-mono text-gray-900 text-sm text-center">
                 Final Grade = (Grade₁ × Weight₁ + Grade₂ × Weight₂ + ...) ÷ Total Weight
               </div>
             </div>
