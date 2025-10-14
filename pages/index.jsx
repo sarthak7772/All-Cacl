@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Link from "next/link";
  import Navbar from '../components/Navbar';
- import Footer from '../components/footer';
+ import Footer from '../components/Footer';
 import { Calculator, Search, ChevronLeft, ChevronRight, Menu } from 'lucide-react';
 
 const calculatorCategories = [

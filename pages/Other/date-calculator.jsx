@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import { Calendar, Plus,  Clock } from 'lucide-react';
 
 const DateCalculator = () => {

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import { Calculator, Clock, DollarSign, PiggyBank, Target } from 'lucide-react';
 
 const RetirementCalculator = () => {

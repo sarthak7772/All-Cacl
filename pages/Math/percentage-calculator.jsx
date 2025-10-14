@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Head from "next/head";
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import { Calculator, BarChart3, TrendingUp, Info, RefreshCw,  } from 'lucide-react';
 
 const PercentageCalculator = () => {

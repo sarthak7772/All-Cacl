@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import Head from "next/head";
 import Link from 'next/link';
 import { Calculator, BarChart3, TrendingUp,  RefreshCw } from 'lucide-react';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import { Calculator, Layers, Target, Building, Hammer,  CheckCircle2, Settings } from 'lucide-react';
 
 const ConcreteCalculator = () => {

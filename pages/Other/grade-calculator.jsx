@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import { Calculator, Plus, Trash2,  Award, Target } from 'lucide-react';
 
 const GradeCalculator = () => {

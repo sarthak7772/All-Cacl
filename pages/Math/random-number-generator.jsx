@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Head from "next/head"
 import Header from '../../components/Navbar'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import { Calculator, Shuffle, Download, Copy, RefreshCw, Dice6, Target, BarChart3,  } from 'lucide-react';
 
 const RandomNumberGenerator = () => {

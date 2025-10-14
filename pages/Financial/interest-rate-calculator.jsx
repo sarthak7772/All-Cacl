@@ -2,7 +2,7 @@
                       import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import { TrendingUp, Percent, Calculator,  } from 'lucide-react';
 
 const InterestRateCalculator = () => {

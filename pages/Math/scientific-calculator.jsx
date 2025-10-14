@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import Header from '../../components/Navbar'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import { Calculator,  } from 'lucide-react';
 
 import React, { useState, useEffect } from "react";
