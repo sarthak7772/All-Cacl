@@ -280,7 +280,7 @@ const InterestRateCalculator = () => {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1 lg:ml-54 px-4 md:px-6 py-6 md:py-8 -mt-15">
+          <div className="flex-1 lg:ml-64 px-4 md:px-6 py-6 md:py-8 -mt-15">
             <div className="max-w-7xl mx-auto">
               <div className="mb-6 md:mb-8 text-center">
                 <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4" style={{color: '#111827'}}>

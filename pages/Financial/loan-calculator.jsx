@@ -917,7 +917,7 @@ const LoanCalculator = () => {
             </div>
           </div>
 
-          <div className="w-full lg:ml-54 p-4 md:p-6 -mt-15">
+          <div className="w-full lg:ml-64 p-4 md:p-6 -mt-15">
             <div className="max-w-6xl mx-auto">
               <div className="bg-white rounded-lg shadow-sm">
                 <div className="bg-gray-900 text-white p-4 md:p-6 rounded-t-lg">

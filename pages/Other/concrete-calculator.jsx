@@ -311,7 +311,7 @@ const ConcreteCalculator = () => {
 
       {/* Main Content */}
       <div className="lg:ml-64 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-8 pt-16 lg:pt-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-8 pt-16 lg:pt-8 -mt-5">
           {/* Title */}
           <div className="flex items-center gap-3 mb-4">
             <Hammer className="w-8 h-8 text-gray-900" />
@@ -378,232 +378,321 @@ const ConcreteCalculator = () => {
               ))}
             </div>
 
-            {/* Slab Calculator */}
-            {activeTab === 'slab' && (
-              <div className="p-4 lg:p-8">
-                <div className="flex items-center mb-6">
-                  <Layers className="w-6 h-6 mr-3 text-gray-900" />
-                  <h3 className="text-xl font-bold text-gray-900">Slabs, Walls & Rectangular Footings</h3>
-                </div>
+          {/* Slab Calculator */}
+{activeTab === 'slab' && (
+  <div className="p-4 sm:p-6 lg:p-8">
+    <div className="flex flex-col sm:flex-row sm:items-center mb-6">
+      <Layers className="w-6 h-6 mr-0 sm:mr-3 text-gray-900 mb-2 sm:mb-0" />
+      <h3 className="text-lg sm:text-xl font-bold text-gray-900 text-center sm:text-left">
+        Slabs, Walls & Rectangular Footings
+      </h3>
+    </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-1">Length</label>
-                    <div className="flex">
-                      <input
-                        type="number"
-                        value={slabData.length}
-                        onChange={(e) => setSlabData(prev => ({...prev, length: parseFloat(e.target.value) || 0}))}
-                        className="flex-1 px-3 py-2 text-gray-900 border border-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
-                        step="0.1"
-                      />
-                      <select
-                        value={slabData.lengthUnit}
-                        onChange={(e) => setSlabData(prev => ({...prev, lengthUnit: e.target.value}))}
-                        className="px-3 py-2  text-gray-900 border border-l-0 border-gray-900 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      >
-                        <option value="meters">m</option>
-                        <option value="feet">ft</option>
-                        <option value="centimeters">cm</option>
-                      </select>
-                    </div>
-                  </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6">
+      {/* Length */}
+      <div className="w-full">
+        <label className="block text-sm font-medium text-gray-900 mb-2">Length</label>
+        <div className="flex">
+          <input
+            type="number"
+            value={slabData.length}
+            onChange={(e) =>
+              setSlabData((prev) => ({
+                ...prev,
+                length: parseFloat(e.target.value) || 0,
+              }))
+            }
+            className="w-full px-3 py-2.5 text-gray-900 border border-gray-900 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+            step="0.1"
+          />
+          <select
+            value={slabData.lengthUnit}
+            onChange={(e) =>
+              setSlabData((prev) => ({ ...prev, lengthUnit: e.target.value }))
+            }
+            className="px-3 py-2.5 text-gray-900 border border-l-0 border-gray-900 rounded-r-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+          >
+            <option value="meters">m</option>
+            <option value="feet">ft</option>
+            <option value="centimeters">cm</option>
+          </select>
+        </div>
+      </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-1">Width</label>
-                    <div className="flex">
-                      <input
-                        type="number"
-                        value={slabData.width}
-                        onChange={(e) => setSlabData(prev => ({...prev, width: parseFloat(e.target.value) || 0}))}
-                        className="flex-1 text-gray-900 px-3 py-2 border border-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
-                        step="0.1"
-                      />
-                      <select
-                        value={slabData.widthUnit}
-                        onChange={(e) => setSlabData(prev => ({...prev, widthUnit: e.target.value}))}
-                        className="px-3 py-2 text-gray-900 border border-l-0 border-gray-900 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      >
-                        <option value="meters">m</option>
-                        <option value="feet">ft</option>
-                        <option value="centimeters">cm</option>
-                      </select>
-                    </div>
-                  </div>
+      {/* Width */}
+      <div className="w-full">
+        <label className="block text-sm font-medium text-gray-900 mb-2">Width</label>
+        <div className="flex">
+          <input
+            type="number"
+            value={slabData.width}
+            onChange={(e) =>
+              setSlabData((prev) => ({
+                ...prev,
+                width: parseFloat(e.target.value) || 0,
+              }))
+            }
+            className="w-full px-3 py-2.5 text-gray-900 border border-gray-900 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+            step="0.1"
+          />
+          <select
+            value={slabData.widthUnit}
+            onChange={(e) =>
+              setSlabData((prev) => ({ ...prev, widthUnit: e.target.value }))
+            }
+            className="px-3 py-2.5 text-gray-900 border border-l-0 border-gray-900 rounded-r-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+          >
+            <option value="meters">m</option>
+            <option value="feet">ft</option>
+            <option value="centimeters">cm</option>
+          </select>
+        </div>
+      </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-1">Thickness</label>
-                    <div className="flex">
-                      <input
-                        type="number"
-                        value={slabData.thickness}
-                        onChange={(e) => setSlabData(prev => ({...prev, thickness: parseFloat(e.target.value) || 0}))}
-                        className="flex-1 px-3 text-gray-900 py-2 border border-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
-                        step="0.1"
-                      />
-                      <select
-                        value={slabData.thicknessUnit}
-                        onChange={(e) => setSlabData(prev => ({...prev, thicknessUnit: e.target.value}))}
-                        className="px-3 py-2 text-gray-900 border border-l-0 border-gray-900 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      >
-                        <option value="centimeters">cm</option>
-                        <option value="meters">m</option>
-                        <option value="inches">in</option>
-                      </select>
-                    </div>
-                  </div>
+      {/* Thickness */}
+      <div className="w-full">
+        <label className="block text-sm font-medium text-gray-900 mb-2">Thickness</label>
+        <div className="flex">
+          <input
+            type="number"
+            value={slabData.thickness}
+            onChange={(e) =>
+              setSlabData((prev) => ({
+                ...prev,
+                thickness: parseFloat(e.target.value) || 0,
+              }))
+            }
+            className="w-full px-3 py-2.5 text-gray-900 border border-gray-900 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+            step="0.1"
+          />
+          <select
+            value={slabData.thicknessUnit}
+            onChange={(e) =>
+              setSlabData((prev) => ({
+                ...prev,
+                thicknessUnit: e.target.value,
+              }))
+            }
+            className="px-3 py-2.5 text-gray-900 border border-l-0 border-gray-900 rounded-r-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+          >
+            <option value="centimeters">cm</option>
+            <option value="meters">m</option>
+            <option value="inches">in</option>
+          </select>
+        </div>
+      </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-1">Quantity</label>
-                    <input
-                      type="number"
-                      value={slabData.quantity}
-                      onChange={(e) => setSlabData(prev => ({...prev, quantity: parseInt(e.target.value) || 1}))}
-                      className="w-full  text-gray-900 px-3 py-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      min="1"
-                    />
-                  </div>
-                </div>
+      {/* Quantity */}
+      <div className="w-full">
+        <label className="block text-sm font-medium text-gray-900 mb-2">Quantity</label>
+        <input
+          type="number"
+          value={slabData.quantity}
+          onChange={(e) =>
+            setSlabData((prev) => ({
+              ...prev,
+              quantity: parseInt(e.target.value) || 1,
+            }))
+          }
+          className="w-full px-3 py-2.5 text-gray-900 border border-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+          min="1"
+        />
+      </div>
+    </div>
+  
 
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-900 mb-1">Waste Allowance (%)</label>
-                  <input
-                    type="range"
-                    min="0"
-                    max="25"
-                    value={slabData.wastePercentage}
-                    onChange={(e) => setSlabData(prev => ({...prev, wastePercentage: parseInt(e.target.value)}))}
-                    className="w-full accent-gray-900"
-                  />
-                  <div className="flex justify-between text-xs text-gray-900 mt-1">
-                    <span>0%</span>
-                    <span className="font-semibold text-gray-900">{slabData.wastePercentage}%</span>
-                    <span>25%</span>
-                  </div>
-                </div>
 
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <button
-                    onClick={calculateSlab}
-                    className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-lg transition-colors flex items-center justify-center text-lg font-semibold"
-                  >
-                    <Calculator className="w-5 h-5 mr-2" />
-                    Calculate Slab
-                  </button>
-                  <button
-                    onClick={() => clearResults('slab')}
-                    className="bg-gray-500 text-white px-6 py-3  rounded-lg hover:bg-gray-600 transition-colors text-lg font-semibold"
-                  >
-                    Clear
-                  </button>
-                </div>
+    {/* Waste */}
+    <div className="mb-6">
+      <label className="block text-sm font-medium text-gray-900 mb-1">
+        Waste Allowance (%)
+      </label>
+      <input
+        type="range"
+        min="0"
+        max="25"
+        value={slabData.wastePercentage}
+        onChange={(e) =>
+          setSlabData((prev) => ({
+            ...prev,
+            wastePercentage: parseInt(e.target.value),
+          }))
+        }
+        className="w-full accent-gray-900"
+      />
+      <div className="flex justify-between text-xs text-gray-900 mt-1">
+        <span>0%</span>
+        <span className="font-semibold text-gray-900">
+          {slabData.wastePercentage}%
+        </span>
+        <span>25%</span>
+      </div>
+    </div>
 
-                <ResultsDisplay result={results.slab} type="slab" title="Slab" />
-              </div>
-            )}
+    {/* Buttons */}
+    <div className="flex flex-col sm:flex-row gap-3">
+      <button
+        onClick={calculateSlab}
+        className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-lg transition-colors flex items-center justify-center text-lg font-semibold"
+      >
+        <Calculator className="w-5 h-5 mr-2" />
+        Calculate Slab
+      </button>
+      <button
+        onClick={() => clearResults('slab')}
+        className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors text-lg font-semibold"
+      >
+        Clear
+      </button>
+    </div>
+
+    <ResultsDisplay result={results.slab} type="slab" title="Slab" />
+  </div>
+)}
 
             {/* Cylinder Calculator */}
             {activeTab === 'cylinder' && (
-              <div className="p-4 lg:p-8">
-                <div className="flex items-center mb-6">
-                  <Target className="w-6 h-6 mr-3 text-gray-900" />
-                  <h3 className="text-xl font-bold text-gray-900">Columns & Cylinders</h3>
-                </div>
+  <div className="p-4 sm:p-6 lg:p-8">
+    <div className="flex flex-col sm:flex-row sm:items-center mb-6">
+      <Target className="w-6 h-6 mr-0 sm:mr-3 text-gray-900 mb-2 sm:mb-0" />
+      <h3 className="text-lg sm:text-xl font-bold text-gray-900 text-center sm:text-left">
+        Columns & Cylinders
+      </h3>
+    </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-1">Diameter</label>
-                    <div className="flex">
-                      <input
-                        type="number"
-                        value={cylinderData.diameter}
-                        onChange={(e) => setCylinderData(prev => ({...prev, diameter: parseFloat(e.target.value) || 0}))}
-                        className="flex-1  text-gray-900px-3 py-2 border border-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
-                        step="0.1"
-                      />
-                      <select
-                        value={cylinderData.diameterUnit}
-                        onChange={(e) => setCylinderData(prev => ({...prev, diameterUnit: e.target.value}))}
-                        className="px-3 py-2 text-gray-900 border border-l-0 border-gray-900 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      >
-                        <option value="meters">m</option>
-                        <option value="feet">ft</option>
-                        <option value="centimeters">cm</option>
-                      </select>
-                    </div>
-                  </div>
+    {/* Inputs Section */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6">
+      {/* Diameter */}
+      <div className="w-full">
+        <label className="block text-sm font-medium text-gray-900 mb-2">Diameter</label>
+        <div className="flex">
+          <input
+            type="number"
+            value={cylinderData.diameter}
+            onChange={(e) =>
+              setCylinderData((prev) => ({
+                ...prev,
+                diameter: parseFloat(e.target.value) || 0,
+              }))
+            }
+            className="w-full px-3 py-2.5 text-gray-900 border border-gray-900 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+            step="0.1"
+          />
+          <select
+            value={cylinderData.diameterUnit}
+            onChange={(e) =>
+              setCylinderData((prev) => ({
+                ...prev,
+                diameterUnit: e.target.value,
+              }))
+            }
+            className="px-3 py-2.5 text-gray-900 border border-l-0 border-gray-900 rounded-r-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+          >
+            <option value="meters">m</option>
+            <option value="feet">ft</option>
+            <option value="centimeters">cm</option>
+          </select>
+        </div>
+      </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-1">Height</label>
-                    <div className="flex">
-                      <input
-                        type="number"
-                        value={cylinderData.height}
-                        onChange={(e) => setCylinderData(prev => ({...prev, height: parseFloat(e.target.value) || 0}))}
-                        className="flex-1 text-gray-900 px-3 py-2 border border-gray-900 rounded-l focus:outline-none focus:ring-2 focus:ring-gray-900"
-                        step="0.1"
-                      />
-                      <select
-                        value={cylinderData.heightUnit}
-                        onChange={(e) => setCylinderData(prev => ({...prev, heightUnit: e.target.value}))}
-                        className="px-3 py-2 text-gray-900 border border-l-0 border-gray-900 rounded-r focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      >
-                        <option value="meters">m</option>
-                        <option value="feet">ft</option>
-                        <option value="centimeters">cm</option>
-                      </select>
-                    </div>
-                  </div>
+      {/* Height */}
+      <div className="w-full">
+        <label className="block text-sm font-medium text-gray-900 mb-2">Height</label>
+        <div className="flex">
+          <input
+            type="number"
+            value={cylinderData.height}
+            onChange={(e) =>
+              setCylinderData((prev) => ({
+                ...prev,
+                height: parseFloat(e.target.value) || 0,
+              }))
+            }
+            className="w-full px-3 py-2.5 text-gray-900 border border-gray-900 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+            step="0.1"
+          />
+          <select
+            value={cylinderData.heightUnit}
+            onChange={(e) =>
+              setCylinderData((prev) => ({
+                ...prev,
+                heightUnit: e.target.value,
+              }))
+            }
+            className="px-3 py-2.5 text-gray-900 border border-l-0 border-gray-900 rounded-r-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+          >
+            <option value="meters">m</option>
+            <option value="feet">ft</option>
+            <option value="centimeters">cm</option>
+          </select>
+        </div>
+      </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-1">Quantity</label>
-                    <input
-                      type="number"
-                      value={cylinderData.quantity}
-                      onChange={(e) => setCylinderData(prev => ({...prev, quantity: parseInt(e.target.value) || 1}))}
-                      className="w-full px-3 text-gray-900 py-2 border border-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-gray-900"
-                      min="1"
-                    />
-                  </div>
-                </div>
+      {/* Quantity */}
+      <div className="w-full">
+        <label className="block text-sm font-medium text-gray-900 mb-2">Quantity</label>
+        <input
+          type="number"
+          value={cylinderData.quantity}
+          onChange={(e) =>
+            setCylinderData((prev) => ({
+              ...prev,
+              quantity: parseInt(e.target.value) || 1,
+            }))
+          }
+          className="w-full px-3 py-2.5 text-gray-900 border border-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900"
+          min="1"
+        />
+      </div>
+    </div>
 
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-900 mb-1">Waste Allowance (%)</label>
-                  <input
-                    type="range"
-                    min="0"
-                    max="25"
-                    value={cylinderData.wastePercentage}
-                    onChange={(e) => setCylinderData(prev => ({...prev, wastePercentage: parseInt(e.target.value)}))}
-                    className="w-full accent-gray-900"
-                  />
-                  <div className="flex justify-between text-xs text-gray-900 mt-1">
-                    <span>0%</span>
-                    <span className="font-semibold text-gray-900">{cylinderData.wastePercentage}%</span>
-                    <span>25%</span>
-                  </div>
-                </div>
+    {/* Waste Allowance */}
+    <div className="mb-6">
+      <label className="block text-sm font-medium text-gray-900 mb-2">Waste Allowance (%)</label>
+      <input
+        type="range"
+        min="0"
+        max="25"
+        value={cylinderData.wastePercentage}
+        onChange={(e) =>
+          setCylinderData((prev) => ({
+            ...prev,
+            wastePercentage: parseInt(e.target.value),
+          }))
+        }
+        className="w-full accent-gray-900"
+      />
+      <div className="flex justify-between text-xs text-gray-900 mt-1">
+        <span>0%</span>
+        <span className="font-semibold text-gray-900">{cylinderData.wastePercentage}%</span>
+        <span>25%</span>
+      </div>
+    </div>
 
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <button
-                    onClick={calculateCylinder}
-                    className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-lg transition-colors flex items-center justify-center text-lg font-semibold"
-                  >
-                    <Calculator className="w-5 h-5 mr-2" />
-                    Calculate Cylinder
-                  </button>
-                  <button
-                    onClick={() => clearResults('cylinder')}
-                    className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors text-lg font-semibold"
-                  >
-                    Clear
-                  </button>
-                </div>
+    {/* Buttons */}
+    <div className="flex flex-col sm:flex-row gap-3">
+      <button
+        onClick={calculateCylinder}
+        className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-lg transition-colors flex items-center justify-center text-base sm:text-lg font-semibold"
+      >
+        <Calculator className="w-5 h-5 mr-2" />
+        Calculate Cylinder
+      </button>
+      <button
+        onClick={() => clearResults('cylinder')}
+        className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors text-base sm:text-lg font-semibold"
+      >
+        Clear
+      </button>
+    </div>
 
-                <ResultsDisplay result={results.cylinder} type="cylinder" title="Cylinder" />
-              </div>
+    {/* Results */}
+    <ResultsDisplay result={results.cylinder} type="cylinder" title="Cylinder" />
+  </div>
             )}
-          </div>
+  </div>
+  
+
 
           {/* Construction Tips */}
           <div className="bg-white rounded-lg shadow-md border p-4 lg:p-6 mb-6">

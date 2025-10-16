@@ -323,7 +323,7 @@ const CalorieCalculator = () => {
                                 value={bodyFatPercentage}
                                 onChange={(e) => setBodyFatPercentage(e.target.value)}
                                 placeholder="e.g., 15"
-                                className="w-full px-4 py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-12"
+                                className="w-full text-gray-900 px-4 py-3 border-2 border-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 pr-12"
                                 step="0.1"
                               />
                               <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-900 font-medium">%</span>

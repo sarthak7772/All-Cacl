@@ -233,7 +233,7 @@ const FinanceCalculator = () => {
         </div>
 
         {/* Main Content */}
-        <div className="w-full lg:ml-54 p-4 md:p-6 -mt-15">
+        <div className="w-full lg:ml-64 p-4 md:p-6 -mt-15">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Finance Calculator 
 </h1>

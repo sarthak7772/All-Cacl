@@ -224,7 +224,7 @@ const UnitConverter = () => {
           </div>
 
           {/* Main Content */}
-          <main className="flex-1 bg-white p-4 lg:p-8 overflow-y-auto lg:ml-44">
+          <main className="flex-1 bg-white p-4 lg:p-8 overflow-y-auto lg:ml-64">
             <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Unit Conversion Calculator</h1>
             
             <p className="text-gray-600 mb-6 lg:mb-8 leading-relaxed text-sm lg:text-base">

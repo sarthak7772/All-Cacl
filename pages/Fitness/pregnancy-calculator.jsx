@@ -209,7 +209,7 @@ const PregnancyCalculator = () => {
                       <label className="block text-sm font-medium text-gray-900 mb-2">Calculate Based On</label>
                       <select value={calculationMethod}
                         onChange={(e) => setCalculationMethod(e.target.value)}
-                        className="w-full  text-gray-900 px-3 py-2 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
+                        className="w-full  text-gray-900 px-3 py-2 border border-gray-900 rounded-md text-sm focus:outline-none ">
                         <option value="Due Date">Due Date</option>
                         <option value="Last Period">Last Period</option>
                         <option value="Ultrasound Date">Ultrasound Date</option>
@@ -228,21 +228,21 @@ const PregnancyCalculator = () => {
                       </label>
                       <div className="grid grid-cols-3 gap-2">
                         <select value={month} onChange={(e) => setMonth(e.target.value)}
-                          className="px-3 py-2 text-gray-900  border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
+                          className="px-3 py-2 text-gray-900  border border-gray-900 rounded-md text-sm focus:outline-none ">
                           {months.map((m) => (
                             <option key={m} value={m}>{m}</option>
                           ))}
                         </select>
                         
                         <select value={day} onChange={(e) => setDay(e.target.value)}
-                          className="px-3 py-2 text-gray-900  border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
+                          className="px-3 py-2 text-gray-900  border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2">
                           {days.map((d) => (
                             <option key={d} value={d}>{d}</option>
                           ))}
                         </select>
                         
                         <select value={year} onChange={(e) => setYear(e.target.value)}
-                          className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-800">
+                          className="px-3 py-2 text-gray-900 border border-gray-900 rounded-md text-sm focus:outline-none focus:ring-2 ">
                           {years.map((y) => (
                             <option key={y} value={y}>{y}</option>
                           ))}
@@ -325,7 +325,7 @@ const PregnancyCalculator = () => {
                     </div>
                   ) : (
                     <div className="text-center text-gray-500 py-8">
-                      <Baby className="h-10 h-10 md:h-12 md:w-12 mx-auto mb-3 opacity-50" />
+                      <Baby className=" h-10 md:h-12 md:w-12 mx-auto mb-3 opacity-50" />
                       <p className="text-xs md:text-sm">Enter your due date and click Calculate to see your pregnancy timeline</p>
                     </div>
                   )}

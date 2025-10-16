@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Link from "next/link";
- import Navbar from '../components/Navbar';
- import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { Calculator, Search, ChevronLeft, ChevronRight, Menu } from 'lucide-react';
 
 const calculatorCategories = [
@@ -181,22 +181,44 @@ const CategoryCarousel = ({ category }) => {
 const CalculatorHomepage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredCalculators, setFilteredCalculators] = useState([]);
+  const searchContainerRef = useRef(null);
 
-  const handleSearch = () => {
-    if (!searchQuery.trim()) {
+  const handleSearch = (query) => {
+    const searchText = query || searchQuery;
+    if (!searchText.trim()) {
       setFilteredCalculators([]);
       return;
     }
 
     const results = [];
+    const seen = new Set();
+    const searchLower = searchText.toLowerCase();
+    
     calculatorCategories.forEach(category => {
       category.calculators.forEach(calc => {
-        if (calc.name.toLowerCase().includes(searchQuery.toLowerCase())) {
-          results.push(calc);
+        const calcNameLower = calc.name.toLowerCase();
+        // Check if calculator name matches and hasn't been added before
+        if (calcNameLower.includes(searchLower) && !seen.has(calc.name)) {
+          seen.add(calc.name);
+          // Calculate match score - prefer matches at the start
+          const index = calcNameLower.indexOf(searchLower);
+          results.push({
+            ...calc,
+            matchScore: index === 0 ? 0 : index
+          });
         }
       });
     });
+    
+    // Sort by match score (lower score = better match)
+    results.sort((a, b) => a.matchScore - b.matchScore);
     setFilteredCalculators(results);
+  };
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+    handleSearch(value);
   };
 
   const handleKeyPress = (e) => {
@@ -205,52 +227,59 @@ const CalculatorHomepage = () => {
     }
   };
 
+  // Close search results when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
+        setFilteredCalculators([]);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar Component */}
       <Navbar />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-12 md:py-20">
+      <section className="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-12 md:py-20 -mt-5">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="w-full lg:w-1/2">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 leading-tight">All-in-One Free Online Calculators</h2>
               <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8">Finance, Health, Math, and Daily Life Tools - Simplify Every Calculation</p>
               
-              <div className="relative">
-                <Search className="absolute left-3 md:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 md:w-5 md:h-5" />
+              <div ref={searchContainerRef} className="relative max-w-xl">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
-                  placeholder="Start Calculating Now"
-                  className="w-full pl-10 md:pl-12 pr-20 md:pr-32 py-3 md:py-4 rounded-lg bg-white text-gray-800 text-base md:text-lg focus:outline-none focus:ring-2"
+                  placeholder="Search for calculator..."
+                  className="w-full pl-12 pr-4 py-3 rounded-lg bg-white text-gray-800 text-base focus:outline-none focus:ring-2"
                   style={{focusRingColor: '#800000'}}
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={handleInputChange}
                   onKeyPress={handleKeyPress}
                 />
-                <button 
-                  onClick={handleSearch}
-                  style={{backgroundColor: '#800000'}}
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-red-900 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-md transition-colors text-sm md:text-base"
-                >
-                  Search
-                </button>
+              
+                {/* Search Results */}
+                {filteredCalculators.length > 0 && (
+                  <div className="absolute mt-2 bg-white rounded-lg p-4 text-gray-800 max-h-60 overflow-y-auto w-full shadow-lg z-10">
+                    <h3 className="font-bold mb-2">Search Results:</h3>
+                    {filteredCalculators.map((calc, idx) => (
+                      <Link key={idx} href={calc.href}>
+                        <div className="p-2 hover:bg-gray-100 rounded cursor-pointer">
+                          {calc.icon} {calc.name}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
-
-              {/* Search Results */}
-              {filteredCalculators.length > 0 && (
-                <div className="mt-4 bg-white rounded-lg p-4 text-gray-800 max-h-60 overflow-y-auto">
-                  <h3 className="font-bold mb-2">Search Results:</h3>
-                  {filteredCalculators.map((calc, idx) => (
-                    <Link key={idx} href={calc.href}>
-                      <div className="p-2 hover:bg-gray-100 rounded cursor-pointer">
-                        {calc.icon} {calc.name}
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              )}
             </div>
             
             <div className="w-full lg:w-1/2 flex justify-center">
