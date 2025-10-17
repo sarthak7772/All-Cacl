@@ -272,7 +272,7 @@ const PaymentCalculator = () => {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1 lg:ml-54 p-4 md:p-6 -mt-15">
+          <div className="flex-1 lg:ml-64 p-4 md:p-6 -mt-15">
             <div className="max-w-6xl mx-auto">
               <h1 className="text-2xl md:text-3xl font-bold text-[#111827] mb-2">Payment Calculator</h1>
               <p className="text-sm md:text-base text-gray-600 mb-6 leading-relaxed">

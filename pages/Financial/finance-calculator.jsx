@@ -233,7 +233,7 @@ const FinanceCalculator = () => {
         </div>
 
         {/* Main Content */}
-        <div className="w-full lg:ml-54 p-4 md:p-6 -mt-15">
+        <div className="w-full lg:ml-64 p-4 md:p-6 -mt-15">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Finance Calculator 
 </h1>
@@ -266,7 +266,7 @@ const FinanceCalculator = () => {
                       <label className="sm:w-32 text-sm N text-gray-900 font-medium">N (Periods)</label>
                       <input type="number" value={numberOfPeriods}
                         onChange={(e) => setNumberOfPeriods(Number(e.target.value))}
-                        className="w-full text-gray-900 sm:w-24 px-2 py-2 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
+                        className="w-full text-gray-900 sm:w-24 px-2 py-2 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                         disabled={activeTab === 'N'}
                       />
                       <span className="text-xs text-gray-900">periods</span>
@@ -276,7 +276,7 @@ const FinanceCalculator = () => {
                       <label className="sm:w-32 text-sm text-gray-900 font-medium">I/Y (Interest)</label>
                       <input type="number" step="0.01" value={interestRate}
                         onChange={(e) => setInterestRate(Number(e.target.value))}
-                        className="w-full sm:w-24  text-gray-900 px-2 py-2 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
+                        className="w-full sm:w-24  text-gray-900 px-2 py-2 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                         disabled={activeTab === 'I/Y'}
                       />
                       <span className="text-xs text-gray-900">% per year</span>
@@ -288,7 +288,7 @@ const FinanceCalculator = () => {
                         <span className="text-sm"></span>
                         <input type="number" value={presentValue}
                           onChange={(e) => setPresentValue(Number(e.target.value))}
-                          className="w-full sm:w-28  text-gray-900 px-2 py-2 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
+                          className="w-full sm:w-28  text-gray-900 px-2 py-2 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                           disabled={activeTab === 'PV'}
                         />
                       </div>
@@ -300,7 +300,7 @@ const FinanceCalculator = () => {
                         <span className="text-sm"></span>
                         <input type="number" value={periodicPayment}
                           onChange={(e) => setPeriodicPayment(Number(e.target.value))}
-                          className="w-full text-gray-900 sm:w-28 px-2 py-2 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
+                          className="w-full text-gray-900 sm:w-28 px-2 py-2 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                           disabled={activeTab === 'PMT'}
                         />
                       </div>
@@ -313,7 +313,7 @@ const FinanceCalculator = () => {
                           <span className="text-sm"></span>
                           <input type="number" value={futureValue}
                             onChange={(e) => setFutureValue(Number(e.target.value))}
-                            className="w-full text-gray-900 sm:w-28 px-2 py-2 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
+                            className="w-full text-gray-900 sm:w-28 px-2 py-2 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                           />
                         </div>
                       </div>

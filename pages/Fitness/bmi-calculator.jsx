@@ -152,7 +152,7 @@ const BMICalculator = () => {
                       <label className="sm:w-16 sm:text-right text-sm text-gray-900 font-medium">Age</label>
                       <input type="number" value={age}
                         onChange={(e) => setAge(Number(e.target.value))}
-                        className="w-full text-gray-900 sm:w-20 px-2 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
+                        className="w-full text-gray-900 sm:w-20 px-2 py-1 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
                       <span className="text-xs text-gray-900">ages: 15 - 80</span>
                     </div>
 
@@ -191,7 +191,7 @@ const BMICalculator = () => {
                       <label className="sm:w-16 sm:text-right text-sm font-medium">Height</label>
                       <input type="number" value={height}
                         onChange={(e) => setHeight(Number(e.target.value))}
-                        className="w-full sm:w-20 text-gray-900 px-2 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
+                        className="w-full sm:w-20 text-gray-900 px-2 py-1 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
                       <span className="text-xs text-gray-900">
                         {units === 'metric' ? 'cm' : 'inches'}
                       </span>
@@ -201,7 +201,7 @@ const BMICalculator = () => {
                       <label className="sm:w-16 sm:text-right text-sm font-medium">Weight</label>
                       <input type="number" value={weight}
                         onChange={(e) => setWeight(Number(e.target.value))}
-                        className="w-full sm:w-20 text-gray-900 px-2 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
+                        className="w-full sm:w-20 text-gray-900 px-2 py-1 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"/>
                       <span className="text-xs text-gray-900">
                         {units === 'metric' ? 'kg' : 'lbs'}
                       </span>

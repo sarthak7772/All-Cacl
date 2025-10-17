@@ -158,7 +158,7 @@ const CompoundInterestCalculator = () => {
                                 type="number"
                                 value={inputRate}
                                 onChange={(e) => setInputRate(parseFloat(e.target.value) || 0)}
-                                className="w-16 text-gray-900 px-2 py-2 border border-gray-900 text-right text-sm rounded-l"
+                                className="w-16 text-gray-900 px-2 py-2 border border-gray-900 text-left text-sm rounded-l"
                                 step="0.01"
                               />
                               <span className="bg-white border border-gray-900 border-l-0 px-2 py-2 text-sm  text-gray-900 rounded-r">%</span>
@@ -168,7 +168,7 @@ const CompoundInterestCalculator = () => {
                             <select
                               value={compoundFrequency}
                               onChange={(e) => setCompoundFrequency(e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-900 text-sm text-gray-900 bg-white rounded"
+                              className="w-full  px-3 py-2 border border-gray-900 text-sm text-gray-900 bg-white rounded"
                             >
                               <option value="Daily">Daily</option>
                               <option value="Weekly">Weekly</option>
@@ -183,7 +183,7 @@ const CompoundInterestCalculator = () => {
                             </select>
                           </td>
                           <td className="text-center px-4">
-                            <span className="text-xl font-bold text-gray-600">=</span>
+                            <span className="text-xl font-bold text-gray-900">=</span>
                           </td>
                           <td className="pr-4">
                             <div className="flex">
@@ -191,7 +191,7 @@ const CompoundInterestCalculator = () => {
                                 type="text"
                                 value={outputRate}
                                 readOnly
-                                className="w-20 px-2 py-2 border  border-gray-900 text-right text-sm font-bold text-green-600 rounded-l bg-gray-50"
+                                className="w-20 px-2 py-2 border  border-gray-900 text-left text-sm font-bold text-green-600 rounded-l bg-gray-50"
                               />
                               <span className="bg-white border border-gray-900 border-l-0 px-2 py-2 text-gray-900 text-sm rounded-r">%</span>
                             </div>
@@ -223,27 +223,27 @@ const CompoundInterestCalculator = () => {
                   <div className="md:hidden space-y-4">
                     {/* Input Section */}
                     <div className="bg-white p-4 rounded-lg border border-gray-200">
-                      <h3 className="text-sm font-semibold text-gray-700 mb-3">Input Interest Rate</h3>
+                      <h3 className="text-sm font-semibold text-gray-900 mb-3">Input Interest Rate</h3>
                       <div className="space-y-3">
                         <div>
-                          <label className="text-xs text-gray-600 mb-1 block">Interest Rate</label>
+                          <label className="text-xs text-gray-900 mb-1 block">Interest Rate</label>
                           <div className="flex">
                             <input
                               type="number"
                               value={inputRate}
                               onChange={(e) => setInputRate(parseFloat(e.target.value) || 0)}
-                              className="flex-1 px-3 py-2 border border-gray-300 text-right text-sm rounded-l"
+                              className="flex-1 px-3 text-gray-900 py-2 border border-gray-900 text-left text-sm rounded-l"
                               step="0.01"
                             />
-                            <span className="bg-white border border-gray-300 border-l-0 px-3 py-2 text-sm rounded-r">%</span>
+                            <span className="bg-white border text-gray-900 border-gray-900 border-l-0 px-3 py-2 text-sm rounded-r">%</span>
                           </div>
                         </div>
                         <div>
-                          <label className="text-xs text-gray-600 mb-1 block">Compound Frequency</label>
+                          <label className="text-xs text-gray-900 mb-1 block">Compound Frequency</label>
                           <select
                             value={compoundFrequency}
                             onChange={(e) => setCompoundFrequency(e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 text-sm bg-white rounded"
+                            className="w-full text-gray-900 px-3 py-2 border border-gray-900 text-sm bg-white rounded"
                           >
                             <option value="Daily">Daily</option>
                             <option value="Weekly">Weekly</option>
@@ -262,7 +262,7 @@ const CompoundInterestCalculator = () => {
 
                     {/* Equals Sign */}
                     <div className="text-center">
-                      <span className="text-2xl font-bold text-gray-600">⬇</span>
+                      <span className="text-2xl font-bold text-gray-900">⬇</span>
                     </div>
 
                     {/* Output Section */}
@@ -276,9 +276,9 @@ const CompoundInterestCalculator = () => {
                               type="text"
                               value={outputRate}
                               readOnly
-                              className="flex-1 px-3 py-2 border border-green-300 text-right text-sm font-bold text-green-700 rounded-l bg-white"
+                              className="flex-1 px-3 py-2 border border-green-300 text-left text-sm font-bold text-green-700 rounded-l bg-white"
                             />
-                            <span className="bg-white border border-green-300 border-l-0 px-3 py-2 text-sm rounded-r">%</span>
+                            <span className="bg-white border text-gray-900 border-green-300 border-l-0 px-3 py-2 text-sm rounded-r">%</span>
                           </div>
                         </div>
                         <div>
@@ -286,7 +286,7 @@ const CompoundInterestCalculator = () => {
                           <select
                             value={outputFrequency}
                             onChange={(e) => setOutputFrequency(e.target.value)}
-                            className="w-full px-3 py-2 border border-green-300 text-sm bg-white rounded"
+                            className="w-full px-3 py-2 text-gray-900 border border-green-900 text-sm bg-white rounded"
                           >
                             <option value="Daily">Daily</option>
                             <option value="Weekly">Weekly</option>

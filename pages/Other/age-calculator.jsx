@@ -265,7 +265,7 @@ const AgeCalculator = () => {
 
       {/* Main Content */}
       <div className="lg:ml-64 transition-all duration-300">
-        <main className="flex-1 bg-white p-4 lg:p-8 pt-16 lg:pt-8 overflow-y-auto">
+        <main className="flex-1 bg-white p-4 lg:p-8 pt-16 lg:pt-8 overflow-y-auto -mt-5">
           <div className="flex items-center gap-3 mb-4">
             <Calendar className="w-8 h-8 text-gray-900" />
             <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">Age Calculator</h1>

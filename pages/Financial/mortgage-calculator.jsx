@@ -272,7 +272,6 @@ const MortgageCalculator = () => {
                           />
                         </div>
                       </div>
-
                       <div>
                         <label className="block text-sm font-semibold text-gray-900 mb-2">Down Payment</label>
                         <div className="grid grid-cols-2 gap-3">

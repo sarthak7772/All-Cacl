@@ -2,7 +2,7 @@ import Head from "next/head";
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import { Calculator, Car, Home, } from 'lucide-react';
+import { Car } from 'lucide-react';
 
 const AutoLoanCalculator = () => {
   const [autoPrice, setAutoPrice] = useState(50000);
@@ -36,7 +36,6 @@ const AutoLoanCalculator = () => {
     { emoji: '🧾', name: 'Sales Tax Calculator', href: '/Financial/sales-tax-calculator' }
   ];
 
-  // Fetch user's currency from IP location API
   useEffect(() => {
     async function detectCurrency() {
       if (!navigator.geolocation) {
@@ -47,10 +46,8 @@ const AutoLoanCalculator = () => {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
           const { latitude, longitude } = position.coords;
-          console.log("Lat:", latitude, "Lon:", longitude);
 
           try {
-            // Step 1 - Reverse Geocode to get country code (ISO 3166)
             const geoRes = await fetch(
               `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
             );
@@ -60,12 +57,10 @@ const AutoLoanCalculator = () => {
             setCountry(geoData.address?.country || "Unknown");
 
             if (!countryCode) {
-              console.warn("Country code not found, defaulting to USD");
               setCurrency("USD");
               return;
             }
 
-            // Step 2 - Fetch currency info using REST Countries API
             const countryRes = await fetch(
               `https://restcountries.com/v3.1/alpha/${countryCode}`
             );
@@ -92,7 +87,6 @@ const AutoLoanCalculator = () => {
     detectCurrency();
   }, []);
 
-  // Format currency dynamically
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -165,7 +159,7 @@ const AutoLoanCalculator = () => {
           name="description"
           content="Use our free Auto Loan Calculator to estimate monthly car payments, interest rates, and total loan costs. Quick, accurate, and easy to use."
         />
-        <meta name="keywords" content="Auto Loan Calculator, Car Loan Calculator, Vehicle Loan Calculator, Auto Loan Payment Calculator, Online Auto Loan Calculator, Car Loan Payment Estimator, Auto Loan EMI Calculator, Monthly Car Loan Calculator, Free Auto Loan Calculator, Auto Loan Interest Calculator" />
+        <meta name="keywords" content="Auto Loan Calculator, Car Loan Calculator, Vehicle Loan Calculator, Auto Loan Payment Calculator" />
       </Head>
     <div className="min-h-screen bg-gray-100">
       
@@ -201,7 +195,7 @@ const AutoLoanCalculator = () => {
         </div>
 
         {/* Main Content */}
-        <div className="w-full lg:ml-54 p-4 md:p-6 -mt-15">
+        <div className="w-full lg:ml-64 p-4 md:p-6 pb-20 -mt-15">
           <div className="max-w-6xl mx-auto">
             <div className="bg-white rounded-lg shadow-sm">
               {/* Header Section */}
@@ -219,113 +213,101 @@ const AutoLoanCalculator = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
                   {/* Input Section */}
                   <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
-                    <h3 className="text-base md:text-lg font-bold text-gray-900 mb-4">Loan Parameters</h3>
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 mb-6">Loan Parameters</h3>
                     
-                    <div className="space-y-4">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium  text-gray-900 text-sm">Auto Price</label>
-                        <div className="flex items-center">
-                          <span className="mr-1"></span>
-                          <input
-                            type="number"
-                            value={autoPrice}
-                            onChange={(e) => setAutoPrice(Number(e.target.value))}
-                            className="w-full text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
-                          />
-                        </div>
+                    <div className="space-y-5">
+                      {/* Auto Price */}
+                      <div>
+                        <label className="block font-medium text-gray-900 text-sm mb-2">Auto Price</label>
+                        <input
+                          type="number"
+                          value={autoPrice}
+                          onChange={(e) => setAutoPrice(Number(e.target.value))}
+                          className="w-full text-gray-900 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        />
                       </div>
 
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-gray-900 text-sm">Loan Term</label>
-                        <div className="flex items-center space-x-2">
-                          <input
-                            type="number"
-                            value={loanTerm}
-                            onChange={(e) => setLoanTerm(Number(e.target.value))}
-                            className="w-20 text-gray-900 p-2 border border-gray-900 rounded text-center focus:ring-2 focus:ring-red-500"
-                          />
-                          <span className="text-sm text-gray-900 ">months</span>
-                        </div>
+                      {/* Loan Term */}
+                      <div>
+                        <label className="block font-medium text-gray-900 text-sm mb-2">Loan Term (months)</label>
+                        <input
+                          type="number"
+                          value={loanTerm}
+                          onChange={(e) => setLoanTerm(Number(e.target.value))}
+                          className="w-full text-gray-900 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        />
                       </div>
 
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium  text-gray-900 text-sm">Interest Rate</label>
-                        <div className="flex items-center space-x-2">
-                          <input
-                            type="number"
-                            step="0.1"
-                            value={interestRate}
-                            onChange={(e) => setInterestRate(Number(e.target.value))}
-                            className="w-20 text-gray-900 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
-                          />
-                          <span className="text-sm text-gray-900">%</span>
-                        </div>
+                      {/* Interest Rate */}
+                      <div>
+                        <label className="block font-medium text-gray-900 text-sm mb-2">Interest Rate (%)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={interestRate}
+                          onChange={(e) => setInterestRate(Number(e.target.value))}
+                          className="w-full text-gray-900 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        />
                       </div>
 
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium  text-gray-900 text-sm">Down Payment</label>
-                        <div className="flex items-center">
-                          <span className="mr-1"></span>
-                          <input
-                            type="number"
-                            value={downPayment}
-                            onChange={(e) => setDownPayment(Number(e.target.value))}
-                            className="w-full text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
-                          />
-                        </div>
+                      {/* Down Payment */}
+                      <div>
+                        <label className="block font-medium text-gray-900 text-sm mb-2">Down Payment</label>
+                        <input
+                          type="number"
+                          value={downPayment}
+                          onChange={(e) => setDownPayment(Number(e.target.value))}
+                          className="w-full text-gray-900 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        />
                       </div>
 
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-gray-900 text-sm">Trade-in Value</label>
-                        <div className="flex items-center">
-                          <span className="mr-1"></span>
-                          <input
-                            type="number"
-                            value={tradeInValue}
-                            onChange={(e) => setTradeInValue(Number(e.target.value))}
-                            className="w-full  text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
-                          />
-                        </div>
+                      {/* Trade-in Value */}
+                      <div>
+                        <label className="block font-medium text-gray-900 text-sm mb-2">Trade-in Value</label>
+                        <input
+                          type="number"
+                          value={tradeInValue}
+                          onChange={(e) => setTradeInValue(Number(e.target.value))}
+                          className="w-full text-gray-900 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        />
                       </div>
 
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-gray-900 text-sm">Sales Tax</label>
-                        <div className="flex items-center space-x-2">
-                          <input
-                            type="number"
-                            step="0.1"
-                            value={salesTax}
-                            onChange={(e) => setSalesTax(Number(e.target.value))}
-                            className="w-20 text-gray-900 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
-                          />
-                          <span className="text-sm">%</span>
-                        </div>
+                      {/* Sales Tax */}
+                      <div>
+                        <label className="block font-medium text-gray-900 text-sm mb-2">Sales Tax (%)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={salesTax}
+                          onChange={(e) => setSalesTax(Number(e.target.value))}
+                          className="w-full text-gray-900 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        />
                       </div>
 
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <label className="font-medium text-gray-900 text-sm">Title & Fees</label>
-                        <div className="flex items-center">
-                          <span className="mr-1"></span>
-                          <input
-                            type="number"
-                            value={titleFees}
-                            onChange={(e) => setTitleFees(Number(e.target.value))}
-                            className="w-full text-gray-900 sm:w-32 p-2 border border-gray-900 rounded text-right focus:ring-2 focus:ring-red-500"
-                          />
-                        </div>
+                      {/* Title & Fees */}
+                      <div>
+                        <label className="block font-medium text-gray-900 text-sm mb-2">Title & Fees</label>
+                        <input
+                          type="number"
+                          value={titleFees}
+                          onChange={(e) => setTitleFees(Number(e.target.value))}
+                          className="w-full text-gray-900 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        />
                       </div>
 
-                      <div className="flex items-center space-x-3">
+                      {/* Checkbox */}
+                      <div className="flex items-center gap-3 pt-2">
                         <input
                           type="checkbox"
                           checked={includeTaxesInLoan}
                           onChange={(e) => setIncludeTaxesInLoan(e.target.checked)}
-                          className="rounded"
+                          className="rounded w-4 h-4 accent-red-500"
                         />
-                        <label className="text-sm text-gray-900">Include taxes & fees in loan</label>
+                        <label className="text-sm text-gray-900 font-medium">Include taxes & fees in loan</label>
                       </div>
 
-                      <div className="flex space-x-2 pt-4">
+                      {/* Buttons */}
+                      <div className="flex gap-2 pt-4 border-t">
                         <button
                           onClick={calculateAutoLoan}
                           className="flex-1 bg-green-600 text-white py-3 px-4 rounded font-medium hover:bg-green-700 transition-colors"
@@ -334,7 +316,7 @@ const AutoLoanCalculator = () => {
                         </button>
                         <button
                           onClick={resetForm}
-                          className="px-4 py-3 bg-gray-400 text-white rounded hover:bg-gray-500 transition-colors"
+                          className="px-6 py-3 bg-gray-400 text-white rounded hover:bg-gray-500 transition-colors font-medium"
                         >
                           Clear
                         </button>
@@ -343,9 +325,9 @@ const AutoLoanCalculator = () => {
                   </div>
 
                   {/* Results Section */}
-                  <div className="bg-gray-900 text-white p-4 rounded-lg">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-base md:text-lg font-bold">Results:</h3>
+                  <div className="bg-gray-900 text-white p-4 md:p-6 rounded-lg">
+                    <div className="flex items-center justify-between mb-6">
+                      <h3 className="text-base md:text-lg font-bold">Results</h3>
                     </div>
 
                     {results ? (
@@ -359,7 +341,7 @@ const AutoLoanCalculator = () => {
                           </div>
                         </div>
 
-                        <div className="space-y-2 text-xs md:text-sm">
+                        <div className="space-y-3 text-xs md:text-sm border-t border-gray-700 pt-4">
                           <div className="flex justify-between">
                             <span>Total Loan Amount</span>
                             <span className="font-bold">{formatCurrency(results.totalLoanAmount)}</span>
@@ -386,9 +368,8 @@ const AutoLoanCalculator = () => {
                           </div>
                         </div>
 
-                        <div className="mt-4 p-3 bg-white text-gray-800 rounded text-xs">
-                          <strong>Note:</strong> Auto loan calculations are estimates based on fixed rates. 
-                          Actual terms may vary with credit score, dealer incentives, and market conditions.
+                        <div className="mt-4 p-3 bg-white text-gray-800 rounded text-xs leading-relaxed">
+                          <strong>Note:</strong> Auto loan calculations are estimates based on fixed rates. Actual terms may vary with credit score and market conditions.
                         </div>
                       </div>
                     ) : (
@@ -401,21 +382,20 @@ const AutoLoanCalculator = () => {
                 </div>
 
                 {/* Auto Loan Quick Tips */}
-                <div className="mt-6 md:mt-8 bg-gray-50 p-4 md:p-6 rounded-lg">
+                <div className="mt-6 md:mt-8 bg-gray-50 p-4 md:p-6 rounded-lg border-l-4 border-green-500">
                   <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-4">Auto Loan Quick Tips</h3>
-                  <ul className="space-y-2 text-xs md:text-sm text-gray-700">
-                    <li>• Keep your monthly payment within budget as it affects your debt-to-income ratio</li>
-                    <li>• Larger down payments help reduce monthly payments and total interest paid</li>
-                    <li>• Interest rates can vary significantly - compare offers from multiple lenders</li>
-                    <li>• Good credit history can reduce interest rates and improve loan approval odds</li>
+                  <ul className="space-y-3 text-xs md:text-sm text-gray-700">
+                    <li className="flex gap-3"><span className="text-green-600 font-bold">•</span><span>Keep your monthly payment within budget as it affects your debt-to-income ratio</span></li>
+                    <li className="flex gap-3"><span className="text-green-600 font-bold">•</span><span>Larger down payments help reduce monthly payments and total interest paid</span></li>
+                    <li className="flex gap-3"><span className="text-green-600 font-bold">•</span><span>Interest rates can vary significantly - compare offers from multiple lenders</span></li>
+                    <li className="flex gap-3"><span className="text-green-600 font-bold">•</span><span>Good credit history can reduce interest rates and improve loan approval odds</span></li>
                   </ul>
                 </div>
 
-                <div className="mt-6 bg-gray-900 text-white p-4 rounded-lg">
+                <div className="mt-6 bg-gray-900 text-white p-4 md:p-6 rounded-lg">
                   <h3 className="font-semibold mb-2 text-sm md:text-base">Accuracy & Limitations</h3>
                   <p className="text-xs md:text-sm text-red-100">
-                    Auto loan calculations are mathematical estimates that work well for financing planning 
-                    but may not account for all dealer incentives, rebates, or promotional rates.
+                    Auto loan calculations are mathematical estimates that work well for financing planning but may not account for all dealer incentives, rebates, or promotional rates.
                   </p>
                 </div>
               </div>
@@ -425,28 +405,27 @@ const AutoLoanCalculator = () => {
             <div className="mt-6 md:mt-8 bg-white rounded-lg shadow-sm p-4 md:p-6">
               <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-4">Understanding Your Auto Loan</h2>
               <p className="text-gray-700 text-xs md:text-sm leading-relaxed mb-4">
-                Your Auto Loan represents a secured financing agreement where the vehicle serves as collateral for the borrowed amount. 
-                It features fixed monthly payments that combine principal and interest over a predetermined term.
+                Your Auto Loan represents a secured financing agreement where the vehicle serves as collateral for the borrowed amount. It features fixed monthly payments that combine principal and interest over a predetermined term.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-6">
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-3 text-sm md:text-base">Key Factors</h3>
                   <ul className="space-y-2 text-xs md:text-sm text-gray-700">
-                    <li>• Credit score affects interest rates significantly</li>
-                    <li>• Down payment reduces loan amount and monthly costs</li>
-                    <li>• Loan term impacts monthly payment and total interest</li>
-                    <li>• Vehicle age and type influence available rates</li>
+                    <li className="flex gap-2"><span>•</span><span>Credit score affects interest rates significantly</span></li>
+                    <li className="flex gap-2"><span>•</span><span>Down payment reduces loan amount and monthly costs</span></li>
+                    <li className="flex gap-2"><span>•</span><span>Loan term impacts monthly payment and total interest</span></li>
+                    <li className="flex gap-2"><span>•</span><span>Vehicle age and type influence available rates</span></li>
                   </ul>
                 </div>
                 
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-3 text-sm md:text-base">Smart Tips</h3>
                   <ul className="space-y-2 text-xs md:text-sm text-gray-700">
-                    <li>• Shop around for best rates and terms</li>
-                    <li>• Consider total cost, not just monthly payment</li>
-                    <li>• Avoid being upside-down on your loan</li>
-                    <li>• Factor in insurance and maintenance costs</li>
+                    <li className="flex gap-2"><span>•</span><span>Shop around for best rates and terms</span></li>
+                    <li className="flex gap-2"><span>•</span><span>Consider total cost, not just monthly payment</span></li>
+                    <li className="flex gap-2"><span>•</span><span>Avoid being upside-down on your loan</span></li>
+                    <li className="flex gap-2"><span>•</span><span>Factor in insurance and maintenance costs</span></li>
                   </ul>
                 </div>
               </div>
@@ -460,4 +439,4 @@ const AutoLoanCalculator = () => {
   );
 };
 
-export default AutoLoanCalculator
+export default AutoLoanCalculator;

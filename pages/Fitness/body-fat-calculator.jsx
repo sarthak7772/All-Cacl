@@ -219,7 +219,7 @@ const BodyFatCalculator = () => {
                           type="number"
                           value={age}
                           onChange={(e) => setAge(e.target.value)}
-                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                         />
                         <span className="text-xs text-gray-900">ages: 15 - 80</span>
                       </div>
@@ -256,7 +256,7 @@ const BodyFatCalculator = () => {
                           type="number"
                           value={height}
                           onChange={(e) => setHeight(e.target.value)}
-                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                         />
                         <span className="text-xs text-gray-900">
                           {units === 'metric' ? 'cm' : 'inches'}
@@ -269,7 +269,7 @@ const BodyFatCalculator = () => {
                           type="number"
                           value={weight}
                           onChange={(e) => setWeight(e.target.value)}
-                          className="w-24 px-2 text-gray-900  py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                          className="w-24 px-2 text-gray-900  py-1 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                         />
                         <span className="text-xs text-gray-900">
                           {units === 'metric' ? 'kg' : 'lbs'}
@@ -282,7 +282,7 @@ const BodyFatCalculator = () => {
                           type="number"
                           value={neck}
                           onChange={(e) => setNeck(e.target.value)}
-                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                         />
                         <span className="text-xs text-gray-900">
                           {units === 'metric' ? 'cm' : 'inches'}
@@ -295,7 +295,7 @@ const BodyFatCalculator = () => {
                           type="number"
                           value={waist}
                           onChange={(e) => setWaist(e.target.value)}
-                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                          className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                         />
                         <span className="text-xs text-gray-900">
                           {units === 'metric' ? 'cm' : 'inches'}
@@ -309,7 +309,7 @@ const BodyFatCalculator = () => {
                             type="number"
                             value={hip}
                             onChange={(e) => setHip(e.target.value)}
-                            className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-center text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
+                            className="w-24 px-2 text-gray-900 py-1 border border-gray-900 rounded text-left text-sm focus:outline-none focus:ring-1 focus:ring-gray-900"
                           />
                           <span className="text-xs text-gray-900">
                             {units === 'metric' ? 'cm' : 'inches'}
@@ -534,6 +534,8 @@ const BodyFatCalculator = () => {
                   </p>
                 </div>
               </div>
+
+              
 
               {/* Body Fat Categories Explained */}
               <div className="mt-6 bg-white rounded-lg shadow-lg p-6">

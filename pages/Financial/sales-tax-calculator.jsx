@@ -96,7 +96,7 @@ const SalesTaxCalculator = () => {
         </div>
 
         {/* Main Content */}
-        <div className="w-full lg:ml-54 p-4 md:p-6 -mt-15">
+        <div className="w-full lg:ml-64 p-4 md:p-6 -mt-15">
           <div className="max-w-6xl mx-auto">
             <div className="bg-white rounded-lg shadow-sm">
               {/* Header Section */}

@@ -349,7 +349,7 @@ const InflationCalculator = () => {
                         className="w-16  text-gray-900 md:w-20 px-2 md:px-3 py-2 border border-gray-900 rounded focus:ring-2 focus:ring-gray-900 text-sm"
                       />
                       <span className="hidden sm:inline text-gray-900">with inflation rate</span>
-                      <span className="sm:hidden">@</span>
+                      <span className="sm:hidden text-gray-900">@</span>
                       <input
                         type="number"
                         step="0.1"

@@ -275,7 +275,7 @@ const IncomeTaxCalculator = () => {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1 lg:ml-54 -mt-15">
+          <div className="flex-1 lg:ml-64 -mt-15">
             <div className="max-w-7xl mx-auto px-4 py-6">
               {/* Title Card */}
               <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 mb-6 md:mb-8">

@@ -33,7 +33,7 @@
     "**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts"
-, "pages/Fitness/bmi-calculator.jsx", "pages/index.jsx", "pages/Financial/mortgage-calculator.jsx", "components/Navbar.jsx", "pages/_app.tsx"  ],
+, "pages/Fitness/bmi-calculator.jsx", "pages/index.jsx", "pages/Financial/mortgage-calculator.jsx", "components/Navbar.jsx", "pages/_app.tsx", "pages/_document.jsx"  ],
   "exclude": [
     "node_modules"
   ]

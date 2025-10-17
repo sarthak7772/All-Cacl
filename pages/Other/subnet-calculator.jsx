@@ -250,7 +250,7 @@ const IPSubnetCalculator = () => {
 
       {/* Main Content */}
       <div className="lg:ml-64 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-8 pt-16 lg:pt-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-8 pt-16 lg:pt-8 -mt-5">
           {/* Title */}
           <div className="flex items-center gap-3 mb-4">
             <Network className="w-8 h-8 text-gray-900" />
