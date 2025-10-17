@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>FlowCare - Period Tracker</title>
+        <title>All Calculatorsr</title>
         <meta name="description" content="Take control of your menstrual health with intelligent tracking, personalized insights, and complete privacy." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
